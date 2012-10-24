@@ -103,6 +103,7 @@ namespace TNTT.Class
                     ShowForm<FormView.frm_GiangVien>(parent); break;
             }
         }
+void xxx(){}
 
     }
 }
