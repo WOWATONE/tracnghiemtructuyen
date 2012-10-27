@@ -58,7 +58,7 @@ namespace TNTT.FormView
         {
             col_bomon.BestFit();
         }
-        public void Init()
+        public override void Init()
         {
             dt = gv.GetList();
             Decode();

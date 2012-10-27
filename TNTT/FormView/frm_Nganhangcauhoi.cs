@@ -28,7 +28,7 @@ namespace TNTT.FormView
         {
             gridColumn4.BestFit();
         }
-        public void Init()
+        public override void Init()
         {
             dt = ch.GetList("");
             BestFit();

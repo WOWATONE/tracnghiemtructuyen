@@ -61,10 +61,10 @@ namespace TNTT.FormView
         /// <param name="idlop"></param>
         void LoadMonHocByIdLop(string idlop)
         {
-            //dt_mh = mh.GetListFromDMMH(idlop);
-            //lk_monthi.Properties.DataSource = dt_mh;
-            //lk_monthi.Properties.ValueMember = "idmonhoc";
-            //lk_monthi.Properties.DisplayMember = "tenmonhoc";
+            dt_mh = mh.GetListFromDMMH(idlop);
+            lk_monthi.Properties.DataSource = dt_mh;
+            lk_monthi.Properties.ValueMember = "idmonhoc";
+            lk_monthi.Properties.DisplayMember = "tenmonhoc";
         }
         /// <summary>
         /// Load những đề thi nào thuộc những môn học đó
@@ -72,10 +72,10 @@ namespace TNTT.FormView
         /// <param name="idmon"></param>
         void LoadDeThiByMonHoc(string idmon)
         {
-            ////dt_dth = dethi.GetListByIdMon(idmon);
-            ////cbo_made.DataSource = dt_dth;
-            ////cbo_made.DisplayMember = "madethi";
-            ////cbo_made.ValueMember = "iddethi";
+            dt_dth = dethi.GetListByIdMon(idmon);
+            cbo_made.DataSource = dt_dth;
+            cbo_made.DisplayMember = "madethi";
+            cbo_made.ValueMember = "iddethi";
         }
         /// <summary>
         /// Load danh sách giảng viên gác thi

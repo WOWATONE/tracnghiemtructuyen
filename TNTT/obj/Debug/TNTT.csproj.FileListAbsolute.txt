@@ -94,3 +94,4 @@ C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.exe.licenses
 C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.exe
 C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.pdb
 C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_tuychontaocauhoi.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_tuychontaocauhoi.resources

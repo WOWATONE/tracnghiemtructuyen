@@ -142,7 +142,7 @@ namespace TNTT.FormView
             Init();
             DataBind();
         }
-        public void Init()
+        public override void Init()
         {
             BestFit();
             dt_khoa = khoa.GetList();

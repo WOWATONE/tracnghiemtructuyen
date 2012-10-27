@@ -18,7 +18,7 @@ namespace TNTT.FormView
         C_DeThi td = new C_DeThi();
         C_Time time = new C_Time();
         C_DeThi c_det = new C_DeThi();
-        bool truockhichon = false, saukhichon = false,blsuade = false;
+        bool truockhichon =false , saukhichon=false,blsuade = false;
         string suade = "";
         public frm_TaoDeThuCong()
         {
