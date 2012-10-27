@@ -60,3 +60,37 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.frm_MDI.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Properties.Resources.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.csproj.GenerateResource.Cache
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.exe.licenses
+C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.exe.config
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.exe
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.pdb
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_About.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_Loading.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_TuyChonDeThi.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_BoMon.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_CauHoi.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_changepwd.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Config.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_DeThi.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_DSMH.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_GiangVien.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Infomation.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Khoa.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Login.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Lop.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_MonHoc.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Nganhangcauhoi.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_Phongthi.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_SinhVien.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeNH.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeThuCong.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.FormView.frm_tool.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.frm_MDI.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Properties.Resources.resources
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.exe.licenses
+C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.exe
+C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.pdb
+C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_tuychontaocauhoi.resources

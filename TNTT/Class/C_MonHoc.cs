@@ -53,5 +53,13 @@ namespace TNTT.Class
             string sql = "Delete from MONHOC where idlop = " + idmonhoc;
             db.ExcuteNonQuery(sql);
         }
+
+        public DataTable GetListByIDBoMon(string idbomon)
+        {
+            string sql = @"SELECT idmonhoc,mamonhoc,tenmonhoc,ghichu_monhoc,bomon_idbomon FROM MONHOC WHERE bomon_idbomon = " + idbomon;
+            DataTable dt = new DataTable();
+            dt = db.GetData(sql);
+            return dt;
+        }
     }
 }

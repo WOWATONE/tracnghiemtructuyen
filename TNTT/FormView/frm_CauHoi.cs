@@ -43,6 +43,28 @@ namespace TNTT.FormView
             thamso = str;
             this.Text = "Sửa câu hỏi";
         }
+
+        public frm_CauHoi(string str,string xem)
+        {
+            InitializeComponent();
+            Enableall(false);
+            state = "edit";
+            thamso = str;
+            this.Text = "Sửa câu hỏi";
+        }
+
+        void Enableall(bool ena = true)
+        {
+            groupControl4.Enabled = ena;
+            groupControl2.Enabled = ena;
+            cbo_capdo.Enabled = ena;
+            cbb_monhoc.Enabled = ena;
+            spin_chuong.Enabled = ena;
+            spin_phan.Enabled = ena;
+            cmd_luu.Enabled = ena;
+            chk_tron.Enabled = ena;
+            chk_tinhtrang.Enabled = ena;
+        }
         /// <summary>
         /// Khởi tạo form
         /// </summary>
