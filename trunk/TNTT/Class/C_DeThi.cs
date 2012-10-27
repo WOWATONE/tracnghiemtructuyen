@@ -10,15 +10,32 @@ namespace TNTT.Class
         Database.Database db = new Database.Database();
         public DataTable GetList(string condition)
         {
-            string sql = @"select madethi,tenmonhoc,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien FROM dethi,giangvien,monhoc 
-                           WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc "+condition;
+            string sql = @"select iddethi,madethi,tenmonhoc,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien FROM dethi,giangvien,monhoc 
+                           WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc " + condition;
             return db.GetData(sql);
         }
+
         public void Add(string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
         {
             string sql = string.Format(@"SET DATEFORMAT dmy 
                         INSERT INTO DETHI(madethi,listidcauhoi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien)
-                        VALUES('{0}','{1}',{2},'{3}',{4})",madethi,listidcauhoi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien);
+                        VALUES('{0}','{1}',{2},'{3}',{4})", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien);
+            db.ExcuteNonQuery(sql);
+        }
+
+        public DataTable GetListiddethi(string iddethi)
+        {
+            string sql = @" select iddethi,madethi,tenmonhoc,listidcauhoi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien FROM dethi,giangvien,monhoc 
+                            WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc 
+                            and iddethi = " + iddethi;
+            return db.GetData(sql);
+        }
+
+        public void edit(string idmadethi, string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
+        {
+            string sql = string.Format(@"SET DATEFORMAT dmy 
+                        UPDATE DETHI set madethi = '{0}',listidcauhoi = N'{1}',monhoc_idmonhoc = {2},ngaytao = '{3}' ,giangvien_idgiangvien = {4}
+                        WHERE iddethi = {5}", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien, idmadethi);
             db.ExcuteNonQuery(sql);
         }
     }

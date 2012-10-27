@@ -6,26 +6,62 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Text.RegularExpressions;
 using TNTT.Class;
 namespace TNTT.FormView
 {
     public partial class frm_TaoDeThuCong : DevExpress.XtraEditors.XtraForm
     {
-        C_BoMon bm = new C_BoMon();
+        C_MonHoc mh = new C_MonHoc();
         C_CauHoi ch = new C_CauHoi();
         DataTable dt_ch = new DataTable();
-        C_TaoDe td = new C_TaoDe();
+        C_DeThi td = new C_DeThi();
         C_Time time = new C_Time();
-        bool truockhichon = false, saukhichon = false;
+        C_DeThi c_det = new C_DeThi();
+        bool truockhichon = false, saukhichon = false,blsuade = false;
+        string suade = "";
         public frm_TaoDeThuCong()
         {
             InitializeComponent();
         }
 
+        public frm_TaoDeThuCong(string iddethi)
+        {
+            InitializeComponent();
+            suade = iddethi;
+            blsuade = true;
+        }
+
+        void LoadFormThuCongTheoIdmade(string iddethi)
+        {
+            int dem = 0;
+            DataTable dt_dethi = c_det.GetListiddethi(iddethi);
+            txtMaDe.Text = dt_dethi.Rows[0]["madethi"].ToString();
+            cbo_monhoc.Enabled = false;
+            cbo_monhoc.SelectedValue = dt_dethi.Rows[0]["monhoc_idmonhoc"].ToString();
+            string[] mangdethi = dt_dethi.Rows[0]["listidcauhoi"].ToString().Split(new string[] { "|||" }, StringSplitOptions.None);
+            for (int i = 0; i < mangdethi.Length; i++)
+            {
+                for (int j = 0; j < gridView1.RowCount; j++)
+                {
+                    if (mangdethi[i] == gridView1.GetRowCellValue(j, "idnganhangcauhoi").ToString())
+                    {
+                        gridView1.SetRowCellValue(j, "check", "True");
+                        dem++;
+                        truockhichon = false;
+                        saukhichon = false;
+                        break;
+                    }
+                }
+            }
+            txtSoCauDaChon.Text = txtSoCau.Text = dem.ToString();
+        }
+
         private void frm_TaoDeThuCong_Load(object sender, EventArgs e)
         {
             LoadBoMon();
-            LoadCauHoi();
+            if (suade != "" && blsuade == true)
+                LoadFormThuCongTheoIdmade(suade);
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -37,10 +73,9 @@ namespace TNTT.FormView
         {
             try
             {
-                cboBoMon.DataSource = bm.GetList();
-                cboBoMon.ValueMember = "idbomon";
-                cboBoMon.DisplayMember = "mabomon";
-                cboBoMon.SelectedValue = PreBase.obj_user.Bomon_idbomon;
+                cbo_monhoc.DataSource = mh.GetListByIDBoMon(PreBase.obj_user.Bomon_idbomon);
+                cbo_monhoc.ValueMember = "idmonhoc";
+                cbo_monhoc.DisplayMember = "mamonhoc";
             }
             catch
             {
@@ -48,12 +83,12 @@ namespace TNTT.FormView
             }
         }
 
-        void LoadCauHoi()
+        void LoadCauHoi(string idmonhoc)
         {
             try
             {
-                dt_ch = ch.GetListByIDMonHoc(cboBoMon.SelectedValue.ToString());
-                dt_ch.Columns.Add("check",typeof(bool));
+                dt_ch = ch.GetListByIDMonHoc(idmonhoc);
+                dt_ch.Columns.Add("check", typeof(bool));
                 grd_CauHoi.DataSource = dt_ch;
             }
             catch
@@ -66,59 +101,69 @@ namespace TNTT.FormView
         {
             try
             {
-                if (gridView1.GetFocusedRowCellValue("check").ToString().ToLower() == "true")
-                    saukhichon = true;
-                else if (gridView1.GetFocusedRowCellValue("check").ToString().ToLower() == "false")
-                    saukhichon = false;
-                if (truockhichon != saukhichon)
+                int demc = 0;
+                for (int j = 0; j < gridView1.RowCount; j++)
                 {
-                    if (truockhichon == false)
-                        txtSoCauDaChon.Text = (int.Parse(txtSoCauDaChon.Text) + 1).ToString();
-                    else if (truockhichon == true)
-                        txtSoCauDaChon.Text = (int.Parse(txtSoCauDaChon.Text) - 1).ToString();
+                    if (gridView1.GetRowCellValue(j, "check").ToString().ToLower() == "true")
+                    {
+                        demc++;
+                    }
                 }
+                txtSoCauDaChon.Text = demc.ToString();
             }
             catch
             { }
         }
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            try
+            if (int.Parse(txtSoCau.Text) > int.Parse(txtSoCauDaChon.Text))
             {
-                if (gridView1.GetFocusedRowCellValue("check").ToString().ToLower() == "true")
-                    truockhichon = true;
-                else if (gridView1.GetFocusedRowCellValue("check").ToString().ToLower() == "false")
-                    truockhichon = false;
+                XtraMessageBox.Show("Lỗi chưa chọn đủ số câu !");
+                return;
             }
-            catch
-            { }
-        }
-
-        private void cmd_luu_Click(object sender, EventArgs e)
-        {
-            try
+            if (int.Parse(txtSoCau.Text) < int.Parse(txtSoCauDaChon.Text))
             {
-                if (int.Parse(txtSoCau.Text) > int.Parse(txtSoCauDaChon.Text))
+                XtraMessageBox.Show("lỗi chọn số câu vượt quy định");
+                return;
+            }
+            if (txtMaDe.Text == "" || txtSoCau.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng điền đầy đủ thông tin !");
+                return;
+            }
+
+            if (blsuade == false)
+            {
+                try
                 {
-                    XtraMessageBox.Show("Lỗi chưa chọn đủ số câu !");
-                    return;
+                    string chuoiidde = "";
+                    int dem = 0;
+                    for (int i = 0; i < gridView1.RowCount; i++)
+                    {
+                        if (gridView1.GetRowCellDisplayText(i, "check").ToString().ToLower() == "checked")
+                        {
+                            chuoiidde += gridView1.GetRowCellValue(i, "idnganhangcauhoi").ToString() + "|||";
+                            dem++;
+                        }
+                    }
+                    if (chuoiidde != "")
+                        chuoiidde = chuoiidde.Substring(0, chuoiidde.Length - 3);
+                    td.Add(txtMaDe.Text, chuoiidde, cbo_monhoc.SelectedValue.ToString(), time.GetNowTime(), PreBase.obj_user.Idgiangvien);
+                    XtraMessageBox.Show(string.Format("Thêm thành công ! với số câu hỏi là : {0} .", dem));
                 }
-                if (int.Parse(txtSoCau.Text) < int.Parse(txtSoCauDaChon.Text))
+                catch
                 {
-                    XtraMessageBox.Show("lỗi chọn số câu vượt quy định");
-                    return;
+                    XtraMessageBox.Show("Tạo đề thi không thành công !");
                 }
-                if (txtMaDe.Text == "" || txtSoCau.Text == "")
-                {
-                    XtraMessageBox.Show("Vui lòng điền đầy đủ thông tin !");
-                    return;
-                }
+            }
+            else if (blsuade)
+            {
                 string chuoiidde = "";
                 int dem = 0;
                 for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    if (gridView1.GetRowCellDisplayText(i,"check").ToString().ToLower() == "checked")
+                    if (gridView1.GetRowCellDisplayText(i, "check").ToString().ToLower() == "checked")
                     {
                         chuoiidde += gridView1.GetRowCellValue(i, "idnganhangcauhoi").ToString() + "|||";
                         dem++;
@@ -126,13 +171,8 @@ namespace TNTT.FormView
                 }
                 if (chuoiidde != "")
                     chuoiidde = chuoiidde.Substring(0, chuoiidde.Length - 3);
-                td.Add(txtMaDe.Text, chuoiidde, cboBoMon.SelectedValue.ToString(), time.GetNowTime(), cboBoMon.SelectedValue.ToString());
-                XtraMessageBox.Show(string.Format("Thêm thành công ! với số câu hỏi là : {0} .",dem));
-
-            }
-            catch
-            {
-                XtraMessageBox.Show("Tạo đề thi không thành công !");
+                td.edit(suade,txtMaDe.Text, chuoiidde, cbo_monhoc.SelectedValue.ToString(), time.GetNowTime(), PreBase.obj_user.Idgiangvien);
+                XtraMessageBox.Show(string.Format("Sửa thành công ! với số câu hỏi là : {0} .", dem));
             }
         }
 
@@ -140,6 +180,31 @@ namespace TNTT.FormView
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                frm_CauHoi frm_ch = new frm_CauHoi(gridView1.GetFocusedRowCellValue("idnganhangcauhoi").ToString(), "");
+                frm_ch.ShowDialog();
+            }
+            catch
+            { }
+        }
+
+        private void cbo_monhoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbo_monhoc.SelectedIndex > -1 && int.Parse(cbo_monhoc.SelectedValue.ToString()) > -1)
+                {
+                    LoadCauHoi(cbo_monhoc.SelectedValue.ToString());
+                    txtSoCauDaChon.Text = "0";
+                }
+            }
+            catch
+            { }
         }
 
     }

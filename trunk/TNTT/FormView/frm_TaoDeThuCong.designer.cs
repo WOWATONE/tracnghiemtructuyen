@@ -36,10 +36,10 @@
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.cbo_monhoc = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtSoCauDaChon = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboBoMon = new System.Windows.Forms.ComboBox();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.cmd_thoat = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_luu = new DevExpress.XtraEditors.SimpleButton();
             this.txtSoCau = new DevExpress.XtraEditors.TextEdit();
@@ -130,20 +130,38 @@
             // 
             // dockPanel2_Container
             // 
+            this.dockPanel2_Container.Controls.Add(this.cbo_monhoc);
+            this.dockPanel2_Container.Controls.Add(this.label2);
             this.dockPanel2_Container.Controls.Add(this.txtSoCauDaChon);
             this.dockPanel2_Container.Controls.Add(this.label1);
-            this.dockPanel2_Container.Controls.Add(this.cboBoMon);
-            this.dockPanel2_Container.Controls.Add(this.labelControl4);
             this.dockPanel2_Container.Controls.Add(this.cmd_thoat);
             this.dockPanel2_Container.Controls.Add(this.cmd_luu);
             this.dockPanel2_Container.Controls.Add(this.txtSoCau);
             this.dockPanel2_Container.Controls.Add(this.labelControl3);
             this.dockPanel2_Container.Controls.Add(this.labelControl2);
             this.dockPanel2_Container.Controls.Add(this.txtMaDe);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 25);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(792, 71);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(792, 73);
             this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // cbo_monhoc
+            // 
+            this.cbo_monhoc.FormattingEnabled = true;
+            this.cbo_monhoc.Location = new System.Drawing.Point(78, 42);
+            this.cbo_monhoc.Name = "cbo_monhoc";
+            this.cbo_monhoc.Size = new System.Drawing.Size(192, 21);
+            this.cbo_monhoc.TabIndex = 10;
+            this.cbo_monhoc.SelectedIndexChanged += new System.EventHandler(this.cbo_monhoc_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Môn Học :";
             // 
             // txtSoCauDaChon
             // 
@@ -163,23 +181,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Số câu đã chọn :";
             // 
-            // cboBoMon
-            // 
-            this.cboBoMon.Enabled = false;
-            this.cboBoMon.FormattingEnabled = true;
-            this.cboBoMon.Location = new System.Drawing.Point(78, 43);
-            this.cboBoMon.Name = "cboBoMon";
-            this.cboBoMon.Size = new System.Drawing.Size(192, 21);
-            this.cboBoMon.TabIndex = 6;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(19, 46);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(42, 13);
-            this.labelControl4.TabIndex = 5;
-            this.labelControl4.Text = "Bộ Môn :";
-            // 
             // cmd_thoat
             // 
             this.cmd_thoat.Location = new System.Drawing.Point(709, 43);
@@ -196,7 +197,7 @@
             this.cmd_luu.Size = new System.Drawing.Size(75, 23);
             this.cmd_luu.TabIndex = 4;
             this.cmd_luu.Text = "Lưu";
-            this.cmd_luu.Click += new System.EventHandler(this.cmd_luu_Click);
+            this.cmd_luu.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txtSoCau
             // 
@@ -264,8 +265,8 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // check
             // 
@@ -330,10 +331,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 386);
+            this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.dockPanel2);
             this.Name = "frm_TaoDeThuCong";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "frm_TaoDeThuCong";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_TaoDeThuCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
@@ -371,8 +376,6 @@
         private DevExpress.XtraEditors.TextEdit txtMaDe;
         private DevExpress.XtraEditors.SimpleButton cmd_thoat;
         private DevExpress.XtraEditors.SimpleButton cmd_luu;
-        private System.Windows.Forms.ComboBox cboBoMon;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.Columns.GridColumn check;
         private DevExpress.XtraGrid.Columns.GridColumn tieude;
         private DevExpress.XtraGrid.Columns.GridColumn chuong;
@@ -380,6 +383,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn capdo;
         private DevExpress.XtraEditors.TextEdit txtSoCauDaChon;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_monhoc;
+        private System.Windows.Forms.Label label2;
 
     }
 }

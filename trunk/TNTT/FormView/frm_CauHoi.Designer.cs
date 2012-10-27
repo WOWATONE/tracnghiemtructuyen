@@ -303,7 +303,7 @@
             // 
             // cmd_Huy
             // 
-            this.cmd_Huy.Location = new System.Drawing.Point(895, 30);
+            this.cmd_Huy.Location = new System.Drawing.Point(891, 32);
             this.cmd_Huy.Name = "cmd_Huy";
             this.cmd_Huy.Size = new System.Drawing.Size(75, 23);
             this.cmd_Huy.TabIndex = 13;
