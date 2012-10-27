@@ -61,6 +61,11 @@ namespace TNTT.FormView
         {
             //Click_Perform(false);
         }
+        public virtual void Init()
+        {
+            Click_Perform(true);
+            UserAccessFunction();
+        }
         public virtual void Encode() { }
         public virtual void Decode() { }
         public virtual void UserAccessFunction() { }
@@ -143,8 +148,7 @@ namespace TNTT.FormView
 
         private void frm_tool_Load(object sender, EventArgs e)
         {
-            Click_Perform(true);
-            UserAccessFunction();
+            Init();
         }
         private bool allowAdd;
         /// <summary>
