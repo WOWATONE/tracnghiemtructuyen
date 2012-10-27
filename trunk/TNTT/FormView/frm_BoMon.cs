@@ -24,7 +24,7 @@ namespace TNTT.FormView
         {
             Col_GhiChuBm.BestFit();
         }
-        public void Init()
+        public override void Init()
         {
             dt_bm = bm.GetList();
             BestFit();

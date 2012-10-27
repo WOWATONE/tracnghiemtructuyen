@@ -74,7 +74,7 @@ namespace TNTT.FormView
             Init();
             DataBind();         
         }
-        public void Init()
+        public override void Init()
         {
             dt_L = bm.GetList();
             BestFit();

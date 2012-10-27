@@ -18,7 +18,7 @@ namespace TNTT.FormView
         }
         DataTable dt = new DataTable();
         C_DeThi dth = new C_DeThi();
-        void Init()
+        public override void  Init()
         {
             string condition="";
             switch (int.Parse(PreBase.obj_user.Chucvu))

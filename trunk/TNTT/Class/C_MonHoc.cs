@@ -16,6 +16,11 @@ namespace TNTT.Class
             dt = db.GetData(sql);
             return dt;
         }
+        public DataTable GetListFromDMMH(string idlop)
+        {
+            string sql = @"SELECT idmonhoc,mamonhoc,tenmonhoc,ghichu_monhoc from monhoc where idmonhoc in (select monhoc_idmonhoc from dsmh where lop_idlop="+idlop+")";
+            return db.GetData(sql);
+        }
         public DataTable GetListByKhoa(string idkhoa)
         {
             string sql = @"SELECT idnganhangcauhoi,monhoc_idmonhoc,tenmonhoc,tieude,chuong,phan,capdo,ngaytao,tinhtrang,giangvien_idgiangvien,tengiangvien

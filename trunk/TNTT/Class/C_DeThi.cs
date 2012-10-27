@@ -14,7 +14,11 @@ namespace TNTT.Class
                            WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc " + condition;
             return db.GetData(sql);
         }
-
+        public DataTable GetListByIdMon(string idmon)
+        {
+            string sql = "select iddethi,madethi,tenmonhoc,monhoc_idmonhoc,ngaytao from dethi where bomon_idbomon = "+idmon;
+            return db.GetData(sql);
+        }
         public void Add(string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
         {
             string sql = string.Format(@"SET DATEFORMAT dmy 

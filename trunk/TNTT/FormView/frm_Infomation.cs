@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.IO;
-using System.Data;
 using System.Data.SqlClient;
 namespace TNTT.FormView
 {

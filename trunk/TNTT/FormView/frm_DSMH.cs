@@ -87,7 +87,7 @@ namespace TNTT.FormView
         }
 
         #region OVERIDE
-        public void Init()
+        public override void Init()
         {
             dt_DSMH = DSMH.GetList();
             grd_DanhSachMonHoc.DataSource = dt_DSMH;

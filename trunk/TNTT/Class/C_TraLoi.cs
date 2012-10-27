@@ -19,7 +19,7 @@ namespace TNTT.Class
         }
         public void Edit(string idnganhangcauhoi, string dapan, string truefalse)
         {
-            string sql = "INSERT INTO cautraloi ";
+            //string sql = "INSERT INTO cautraloi ";
         }
     }
 }
