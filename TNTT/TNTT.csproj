@@ -51,7 +51,8 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>_ws.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL" />
@@ -102,6 +103,7 @@
     <Compile Include="Class\C_Khoa.cs" />
     <Compile Include="Class\C_Lop.cs" />
     <Compile Include="Class\C_MonHoc.cs" />
+    <Compile Include="Class\C_PhongThi.cs" />
     <Compile Include="Class\C_Session.cs" />
     <Compile Include="Class\C_SinhVien.cs" />
     <Compile Include="Class\C_TaoDe.cs" />

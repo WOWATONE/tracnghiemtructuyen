@@ -18,13 +18,13 @@ namespace TNTT.Class
 {
     public static class PreBase
     {
-       public static C_Session obj_user = new C_Session();
-       public static void CloseAllForm(Form parent)
-       {
-           if (parent.MdiChildren != null)
-               foreach (Form i in parent.MdiChildren)
-                   i.Close();
-       }
+        public static C_Session obj_user = new C_Session();
+        public static void CloseAllForm(Form parent)
+        {
+            if (parent.MdiChildren != null)
+                foreach (Form i in parent.MdiChildren)
+                    i.Close();
+        }
         public static Form GetChild(Form parent, string child)
         {
             if (parent.MdiChildren != null)
@@ -44,14 +44,14 @@ namespace TNTT.Class
             var x = typeof(T);
             var frm = (T)GetChild(parent, x.FullName);
             Component.frm_Loading frm_loading = new Component.frm_Loading();
-            
+
 
             if (frm == null || frm.IsDisposed)
             {
                 frm = new T() { MdiParent = parent };
                 frm_loading.progress.Caption = "Đang load dữ liệu";
                 frm_loading.progress.Description = "Loading ...";
-                
+
                 frm.Show();
                 frm_loading.Show();
                 t = new Timer();
@@ -62,7 +62,7 @@ namespace TNTT.Class
                 });
                 t.Start();
             }
-            else 
+            else
                 frm.Activate();
         }
 
@@ -83,10 +83,10 @@ namespace TNTT.Class
         }
         public static string UserAcessControl(int chucvu)
         {
-            string[] cv = {"100101","111001", "111001","111101","111111"};
-            return cv[chucvu-1];
+            string[] cv = { "100101", "111001", "111001", "111101", "111111" };
+            return cv[chucvu - 1];
         }
-        public static void DefaultFormAfterLogin(string chucvu,Form parent)
+        public static void DefaultFormAfterLogin(string chucvu, Form parent)
         {
             switch (int.Parse(chucvu))
             {
@@ -103,7 +103,5 @@ namespace TNTT.Class
                     ShowForm<FormView.frm_GiangVien>(parent); break;
             }
         }
-void xxx(){}
-
     }
 }
