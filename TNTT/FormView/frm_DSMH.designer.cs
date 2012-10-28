@@ -81,16 +81,16 @@
             // 
             // dcpNoiDung
             // 
-            this.dcpNoiDung.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.dcpNoiDung.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.dcpNoiDung.Appearance.Options.UseBackColor = true;
             this.dcpNoiDung.Controls.Add(this.dockPanel1_Container);
             this.dcpNoiDung.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dcpNoiDung.ID = new System.Guid("cfe0d7ed-a69f-4230-82fb-c4cfb8bb30be");
-            this.dcpNoiDung.Location = new System.Drawing.Point(0, 63);
+            this.dcpNoiDung.Location = new System.Drawing.Point(0, 65);
             this.dcpNoiDung.Name = "dcpNoiDung";
             this.dcpNoiDung.Options.ShowCloseButton = false;
-            this.dcpNoiDung.OriginalSize = new System.Drawing.Size(200, 120);
-            this.dcpNoiDung.Size = new System.Drawing.Size(711, 120);
+            this.dcpNoiDung.OriginalSize = new System.Drawing.Size(200, 99);
+            this.dcpNoiDung.Size = new System.Drawing.Size(711, 99);
             this.dcpNoiDung.Text = "Nội dung :";
             // 
             // dockPanel1_Container
@@ -103,15 +103,15 @@
             this.dockPanel1_Container.Controls.Add(this.labelControl4);
             this.dockPanel1_Container.Controls.Add(this.labelControl3);
             this.dockPanel1_Container.Controls.Add(this.labelControl2);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(703, 91);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(703, 72);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // dat_ngayhoc
             // 
             this.dat_ngayhoc.EditValue = null;
-            this.dat_ngayhoc.Location = new System.Drawing.Point(84, 68);
+            this.dat_ngayhoc.Location = new System.Drawing.Point(84, 41);
             this.dat_ngayhoc.Name = "dat_ngayhoc";
             this.dat_ngayhoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -122,6 +122,7 @@
             // 
             // lk_giangvien
             // 
+            this.lk_giangvien.Enabled = false;
             this.lk_giangvien.Location = new System.Drawing.Point(443, 41);
             this.lk_giangvien.Name = "lk_giangvien";
             this.lk_giangvien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -140,7 +141,7 @@
             // 
             // lk_lophoc
             // 
-            this.lk_lophoc.Location = new System.Drawing.Point(443, 11);
+            this.lk_lophoc.Location = new System.Drawing.Point(84, 15);
             this.lk_lophoc.Name = "lk_lophoc";
             this.lk_lophoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -159,7 +160,8 @@
             // 
             // lk_monhoc
             // 
-            this.lk_monhoc.Location = new System.Drawing.Point(84, 41);
+            this.lk_monhoc.Enabled = false;
+            this.lk_monhoc.Location = new System.Drawing.Point(443, 15);
             this.lk_monhoc.Name = "lk_monhoc";
             this.lk_monhoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -167,6 +169,7 @@
             this.lk_monhoc.Properties.View = this.gridLookUpEdit1View;
             this.lk_monhoc.Size = new System.Drawing.Size(252, 20);
             this.lk_monhoc.TabIndex = 6;
+            this.lk_monhoc.EditValueChanged += new System.EventHandler(this.lk_monhoc_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -177,7 +180,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(7, 71);
+            this.labelControl5.Location = new System.Drawing.Point(7, 44);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(53, 13);
             this.labelControl5.TabIndex = 5;
@@ -193,7 +196,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 44);
+            this.labelControl3.Location = new System.Drawing.Point(371, 18);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 13);
             this.labelControl3.TabIndex = 3;
@@ -201,7 +204,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(371, 14);
+            this.labelControl2.Location = new System.Drawing.Point(15, 18);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(45, 13);
             this.labelControl2.TabIndex = 2;
@@ -211,9 +214,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_DanhSachMonHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 183);
+            this.groupControl1.Location = new System.Drawing.Point(0, 164);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(711, 163);
+            this.groupControl1.Size = new System.Drawing.Size(711, 182);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Danh sách môn học";
             // 
@@ -223,7 +226,7 @@
             this.grd_DanhSachMonHoc.Location = new System.Drawing.Point(2, 21);
             this.grd_DanhSachMonHoc.MainView = this.gridView1;
             this.grd_DanhSachMonHoc.Name = "grd_DanhSachMonHoc";
-            this.grd_DanhSachMonHoc.Size = new System.Drawing.Size(707, 140);
+            this.grd_DanhSachMonHoc.Size = new System.Drawing.Size(707, 159);
             this.grd_DanhSachMonHoc.TabIndex = 0;
             this.grd_DanhSachMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -102,5 +102,16 @@ namespace TNTT.Class
             string sql = "UPDATE giangvien SET avatar_giangvien = "+image+" WHERE idgiangvien="+idgiangvien;
             db.ExcuteNonQuery(sql);
         }
+
+        public DataTable GetListByIdMonHoc(string idmonhoc)
+        {
+            string sql = string.Format(@"SELECT * FROM GIANGVIEN WHERE bomon_idbomon 
+	                                        in (SELECT idbomon FROM BOMON WHERE idbomon
+		                                        in (SELECT bomon_idbomon FROM MONHOC WHERE idmonhoc
+                                                        = {0}))", idmonhoc);
+            DataTable dt = new DataTable();
+            dt = db.GetData(sql);
+            return dt;
+        }
     }
 }
