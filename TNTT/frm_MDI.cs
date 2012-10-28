@@ -176,5 +176,10 @@ namespace TNTT
         {
             PreBase.ShowForm<FormView.frm_Phongthi>(this);
         }
+
+        private void TabMDI_SelectedPageChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
