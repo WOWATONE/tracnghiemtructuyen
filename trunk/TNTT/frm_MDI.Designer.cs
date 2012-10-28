@@ -85,25 +85,24 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_Test = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.tab_admin = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.tab_help = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.TabMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.tab_Help = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabMDI)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -162,10 +161,10 @@
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.tab_Home,
             this.tab_manager,
-            this.tab_question,
             this.tab_Test,
-            this.ribbonPage2,
-            this.ribbonPage3});
+            this.tab_question,
+            this.tab_admin,
+            this.tab_help});
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1,
             this.repositoryItemHyperLinkEdit1});
@@ -632,14 +631,14 @@
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Danh sách phòng thi";
             // 
-            // ribbonPage2
+            // tab_admin
             // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.tab_admin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
             this.ribbonPageGroup7});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Quản trị";
-            this.ribbonPage2.Visible = false;
+            this.tab_admin.Name = "tab_admin";
+            this.tab_admin.Text = "Quản trị";
+            this.tab_admin.Visible = false;
             // 
             // ribbonPageGroup6
             // 
@@ -653,10 +652,10 @@
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Cài đặt";
             // 
-            // ribbonPage3
+            // tab_help
             // 
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Trợ giúp";
+            this.tab_help.Name = "tab_help";
+            this.tab_help.Text = "Trợ giúp";
             // 
             // repositoryItemPictureEdit1
             // 
@@ -680,10 +679,11 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Blue";
             // 
-            // xtraTabbedMdiManager1
+            // TabMDI
             // 
-            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
-            this.xtraTabbedMdiManager1.MdiParent = this;
+            this.TabMDI.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
+            this.TabMDI.MdiParent = this;
+            this.TabMDI.SelectedPageChanged += new System.EventHandler(this.TabMDI_SelectedPageChanged);
             // 
             // ribbonPage1
             // 
@@ -727,14 +727,6 @@
             // helpRibbonPageGroup
             // 
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
-            this.helpRibbonPageGroup.Text = "Help";
-            // 
-            // tab_Help
-            // 
-            this.tab_Help.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.helpRibbonPageGroup});
-            this.tab_Help.Name = "tab_Help";
-            this.tab_Help.Text = "Trợ Giúp";
             // 
             // frm_MDI
             // 
@@ -754,7 +746,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabMDI)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -783,7 +775,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbp_Theme;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager TabMDI;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpg_system;
         private DevExpress.XtraBars.Ribbon.RibbonPage tab_manager;
         private DevExpress.XtraBars.Ribbon.RibbonPage tab_question;
@@ -815,10 +807,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_Exit;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tab_admin;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tab_help;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup helpRibbonPageGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonPage tab_Help;
+        //private DevExpress.XtraBars.Ribbon.RibbonPage tab_Help;
         private DevExpress.XtraBars.BarButtonItem btn_Giangvien;
         private DevExpress.XtraBars.BarStaticItem siStatus1;
         private DevExpress.XtraBars.BarStaticItem siStatus;

@@ -61,7 +61,11 @@ namespace TNTT.Class
                 t.Start();
             }
             else
+            {
                 frm.Activate();
+                int index = NumberRibbonPageActiveForm(frm, parent);
+                //((RibbonForm)parent).Ribbon.Page
+            }
         }
 
         static void t_Tick(Form frm)
@@ -100,6 +104,11 @@ namespace TNTT.Class
                 default:
                     ShowForm<FormView.frm_GiangVien>(parent); break;
             }
+        }
+        public static int NumberRibbonPageActiveForm(Form child,Form parent)
+        {
+            
+            return 1;
         }
     }
 }
