@@ -101,7 +101,7 @@
             this.dockPanel1.Location = new System.Drawing.Point(0, 63);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 144);
-            this.dockPanel1.Size = new System.Drawing.Size(831, 144);
+            this.dockPanel1.Size = new System.Drawing.Size(898, 144);
             this.dockPanel1.Text = "Nhập liệu";
             // 
             // dockPanel1_Container
@@ -127,7 +127,7 @@
             this.dockPanel1_Container.Controls.Add(this.txt_tengiangvien);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(823, 115);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(890, 115);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // cmd_eyes
@@ -307,7 +307,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 207);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(831, 234);
+            this.groupControl1.Size = new System.Drawing.Size(898, 234);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -317,7 +317,7 @@
             this.grd_gv.Location = new System.Drawing.Point(2, 21);
             this.grd_gv.MainView = this.grd_Giangvien;
             this.grd_gv.Name = "grd_gv";
-            this.grd_gv.Size = new System.Drawing.Size(827, 211);
+            this.grd_gv.Size = new System.Drawing.Size(894, 211);
             this.grd_gv.TabIndex = 0;
             this.grd_gv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grd_Giangvien});
@@ -415,7 +415,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 441);
+            this.ClientSize = new System.Drawing.Size(898, 441);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.dockPanel1);
             this.Name = "frm_GiangVien";

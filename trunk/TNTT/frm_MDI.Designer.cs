@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MDI));
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.iNew = new DevExpress.XtraBars.BarButtonItem();
             this.iOpen = new DevExpress.XtraBars.BarButtonItem();
@@ -70,21 +72,24 @@
             this.btn_DeThi = new DevExpress.XtraBars.BarButtonItem();
             this.btn_TaoDeTC = new DevExpress.XtraBars.BarButtonItem();
             this.btn_TaoDeNH = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.tab_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpg_system = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbp_Theme = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpg_Infomation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_manager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbp_study = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpg_Khoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.tab_Test = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_question = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.tab_Test = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_admin = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -153,9 +158,11 @@
             this.btn_Phongthi,
             this.btn_DeThi,
             this.btn_TaoDeTC,
-            this.btn_TaoDeNH});
+            this.btn_TaoDeNH,
+            this.barButtonGroup1,
+            this.ribbonGalleryBarItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 96;
+            this.ribbonControl.MaxItemId = 100;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.btn_Introdue);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -359,6 +366,7 @@
             // btn_ChangeInfo
             // 
             this.btn_ChangeInfo.Caption = "Đổi Thông Tin";
+            this.btn_ChangeInfo.Glyph = global::TNTT.Properties.Resources.user;
             this.btn_ChangeInfo.Id = 70;
             this.btn_ChangeInfo.LargeGlyph = global::TNTT.Properties.Resources.user;
             this.btn_ChangeInfo.Name = "btn_ChangeInfo";
@@ -517,12 +525,39 @@
             this.btn_TaoDeNH.Name = "btn_TaoDeNH";
             this.btn_TaoDeNH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TaoDeNH_ItemClick);
             // 
+            // barButtonGroup1
+            // 
+            this.barButtonGroup1.Caption = "barButtonGroup1";
+            this.barButtonGroup1.Id = 98;
+            this.barButtonGroup1.Name = "barButtonGroup1";
+            // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Caption = "ribbonGalleryBarItem1";
+            // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Gallery.AllowHoverImages = true;
+            galleryItemGroup1.Caption = "Group1";
+            galleryItem1.Caption = "Item1";
+            galleryItem1.Checked = true;
+            galleryItem1.HoverImage = global::TNTT.Properties.Resources.user;
+            galleryItem1.Image = global::TNTT.Properties.Resources.user;
+            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem1});
+            this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
+            galleryItemGroup1});
+            this.ribbonGalleryBarItem1.Id = 99;
+            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
+            this.ribbonGalleryBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ribbonGalleryBarItem1_ItemClick);
+            // 
             // tab_Home
             // 
             this.tab_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rpg_system,
             this.rbp_Theme,
-            this.rpg_Infomation});
+            this.rpg_Infomation,
+            this.ribbonPageGroup9});
             this.tab_Home.Name = "tab_Home";
             this.tab_Home.Text = "Trang Chính";
             // 
@@ -548,6 +583,13 @@
             this.rpg_Infomation.Name = "rpg_Infomation";
             this.rpg_Infomation.Text = "Tài khoản cá nhân";
             this.rpg_Infomation.Visible = false;
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonGroup1);
+            this.ribbonPageGroup9.ItemLinks.Add(this.ribbonGalleryBarItem1);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // tab_manager
             // 
@@ -588,6 +630,20 @@
             this.rpg_Khoa.Name = "rpg_Khoa";
             this.rpg_Khoa.Text = "Khoa";
             // 
+            // tab_Test
+            // 
+            this.tab_Test.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup8});
+            this.tab_Test.Name = "tab_Test";
+            this.tab_Test.Text = "Mở Phòng Thi";
+            this.tab_Test.Visible = false;
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_Phongthi);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Danh sách phòng thi";
+            // 
             // tab_question
             // 
             this.tab_question.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -616,20 +672,6 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_TaoDeNH);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Tạo đề thi";
-            // 
-            // tab_Test
-            // 
-            this.tab_Test.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8});
-            this.tab_Test.Name = "tab_Test";
-            this.tab_Test.Text = "Mở Phòng Thi";
-            this.tab_Test.Visible = false;
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btn_Phongthi);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "Danh sách phòng thi";
             // 
             // tab_admin
             // 
@@ -823,6 +865,9 @@
         private DevExpress.XtraBars.BarButtonItem btn_DeThi;
         private DevExpress.XtraBars.BarButtonItem btn_TaoDeTC;
         private DevExpress.XtraBars.BarButtonItem btn_TaoDeNH;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
 
     }
 }

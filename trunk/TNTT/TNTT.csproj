@@ -110,11 +110,11 @@
     <Compile Include="Class\C_Time.cs" />
     <Compile Include="Class\C_TraLoi.cs" />
     <Compile Include="Class\C_Valid.cs" />
-    <Compile Include="Component\frm-tuychontaocauhoi.cs">
+    <Compile Include="Component\frm_TuyChonCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\frm-tuychontaocauhoi.designer.cs">
-      <DependentUpon>frm-tuychontaocauhoi.cs</DependentUpon>
+    <Compile Include="Component\frm_TuyChonCauHoi.designer.cs">
+      <DependentUpon>frm_TuyChonCauHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\frm_About.cs">
       <SubType>Form</SubType>
@@ -253,8 +253,8 @@
     <Compile Include="PreBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Component\frm-tuychontaocauhoi.resx">
-      <DependentUpon>frm-tuychontaocauhoi.cs</DependentUpon>
+    <EmbeddedResource Include="Component\frm_TuyChonCauHoi.resx">
+      <DependentUpon>frm_TuyChonCauHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_About.resx">
       <DependentUpon>frm_About.cs</DependentUpon>
