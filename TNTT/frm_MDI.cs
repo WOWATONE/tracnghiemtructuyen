@@ -29,6 +29,7 @@ namespace TNTT
 
         private void frm_MDI_Load(object sender, EventArgs e)
         {
+            
             Login();
         }
 
@@ -180,6 +181,11 @@ namespace TNTT
         private void TabMDI_SelectedPageChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void ribbonGalleryBarItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

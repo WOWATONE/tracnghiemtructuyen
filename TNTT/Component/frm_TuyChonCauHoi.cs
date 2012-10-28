@@ -25,13 +25,19 @@ namespace TNTT.Component
 
         private void cmd_ngaunhien_Click(object sender, EventArgs e)
         {
+            this.Hide();
             PreBase.ShowDiaLog<frm_TaoDeNH>(this);
-            Close();
+            this.Close();
         }
 
         private void cmd_thoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frm_tuychontaocauhoi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
