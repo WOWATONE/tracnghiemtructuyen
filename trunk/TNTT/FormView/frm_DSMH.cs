@@ -26,6 +26,7 @@ namespace TNTT.FormView
         private void frm_DSMH_Load(object sender, EventArgs e)
         {
             dat_ngayhoc.DateTime = DateTime.Now;
+            Click_Perform(true);
             loadlophoc();
             Init();
             DataBind();
@@ -63,7 +64,7 @@ namespace TNTT.FormView
         {
             try
             {
-                lk_giangvien.Properties.DataSource = giangvien.GetListByIdLop(malop);
+                lk_giangvien.Properties.DataSource = giangvien.GetListByIdMonHoc(malop);
                 lk_giangvien.Properties.ValueMember = "idgiangvien";
                 lk_giangvien.Properties.DisplayMember = "tengiangvien";
             }
@@ -77,8 +78,11 @@ namespace TNTT.FormView
         {
             try
             {
+                DataTable dtrong = new DataTable();
+                lk_monhoc.Properties.DataSource = dtrong;
+                lk_giangvien.Properties.DataSource = dtrong;
                 loadmonhoc(lk_lophoc.EditValue.ToString());
-                loadgiangvien(lk_lophoc.EditValue.ToString());
+                lk_monhoc.Enabled = true;
             }
             catch
             {
@@ -86,19 +90,28 @@ namespace TNTT.FormView
             }
         }
 
+        private void lk_monhoc_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                loadgiangvien(lk_monhoc.EditValue.ToString());
+                lk_giangvien.Enabled = true;
+            }
+            catch
+            {
+                XtraMessageBox.Show("Lỗi chọn môn học");
+            }
+        }
+
         #region OVERIDE
-        public override void Init()
+    
+        public void Init()
         {
             dt_DSMH = DSMH.GetList();
             grd_DanhSachMonHoc.DataSource = dt_DSMH;
             DataBind();
         }
 
-        public override bool ValidInput()
-        {
-           
-            return base.ValidInput();//true
-        }
         public override void Add()
         {
             base.Add();
@@ -118,8 +131,9 @@ namespace TNTT.FormView
                 DialogResult Result = XtraMessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (Result == DialogResult.OK)
                 {
-                    //string id = txt_dsmh.Text;
-                    //DSMH.Delete(id);
+                    string dsmh = gridView1.GetFocusedRowCellValue("idddsmh").ToString();
+                    DSMH.Delete(dsmh);
+                    Init();
                 }
             }
             catch
@@ -129,23 +143,17 @@ namespace TNTT.FormView
         }
         public override void Save()
         {
+            string ngay = dat_ngayhoc.DateTime.Day + "-" + dat_ngayhoc.DateTime.Month + "-" + dat_ngayhoc.DateTime.Year;
             switch (_state)
             {
-                case "add":
-                    if (ValidInput())
-                    {
-                        string ngay = dat_ngayhoc.DateTime.Day + "-" + dat_ngayhoc.DateTime.Month + "-" + dat_ngayhoc.DateTime.Year;
+                case "add":                        
                         DSMH.Add(lk_lophoc.EditValue.ToString(), lk_monhoc.EditValue.ToString(), lk_giangvien.EditValue.ToString(), ngay);
                         Init();
-                    }
                     break;
                 case "edit":
-                    if (ValidInput())
-                    {
-                        string ngay = dat_ngayhoc.DateTime.Day + "-" + dat_ngayhoc.DateTime.Month + "-" + dat_ngayhoc.DateTime.Year;
-                        DSMH.Edit("", lk_lophoc.EditValue.ToString(), lk_monhoc.EditValue.ToString(), lk_giangvien.EditValue.ToString(), ngay);
-                        Init();
-                    }
+                    string dsmh = gridView1.GetFocusedRowCellValue("idddsmh").ToString();
+                    DSMH.Edit(dsmh, lk_lophoc.EditValue.ToString(), lk_monhoc.EditValue.ToString(), lk_giangvien.EditValue.ToString(), ngay);
+                    Init();
                     break;
 
                 default: break;
@@ -182,7 +190,8 @@ namespace TNTT.FormView
 
         public override void Click_Perform(bool flag)
         {
-            lk_lophoc.Enabled = lk_giangvien.Enabled = lk_monhoc.Enabled = dat_ngayhoc.Enabled = !flag;
+            lk_lophoc.Enabled = dat_ngayhoc.Enabled = !flag;
+            lk_giangvien.Enabled = lk_monhoc.Enabled = !flag;
             grd_DanhSachMonHoc.Enabled = flag;
             base.Click_Perform(flag);
         }
