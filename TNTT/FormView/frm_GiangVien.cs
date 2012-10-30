@@ -9,6 +9,8 @@ using DevExpress.XtraEditors;
 using TNTT.Class;
 using System.IO;
 using System.Data.SqlClient;
+//dành cho thanh dock
+using DevExpress.XtraBars.Docking;
 namespace TNTT.FormView
 {
     public partial class frm_GiangVien : frm_tool
@@ -43,7 +45,7 @@ namespace TNTT.FormView
         {
             InitializeComponent();
         }
-
+      
         private void frm_GiangVien_Load(object sender, EventArgs e)
         {
             UserAccessFunction();
@@ -58,8 +60,14 @@ namespace TNTT.FormView
         {
             col_bomon.BestFit();
         }
+        public override void Expand(bool flag)
+        {
+            dock_NhapLieu.Visibility = flag?DockVisibility.Visible:DockVisibility.Hidden;
+            base.Expand(flag);
+        }
         public override void Init()
         {
+           // dock_NhapLieu.Visibility = DockVisibility.Hidden;
             dt = gv.GetList();
             Decode();
             grd_gv.DataSource = dt;
@@ -169,6 +177,7 @@ namespace TNTT.FormView
             ConvertImage(@"Avatar/1.jpg");
             //
             lk_bomon.ItemIndex = -1;
+            //dock_NhapLieu.Visibility = DockVisibility.Visible;
         }
 
         public override void Edit()

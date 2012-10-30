@@ -23,22 +23,24 @@ namespace TNTT.FormView
             Click_Perform(false);
             Expand(true);
             isReadOnly(true);
+            Expand(true);
         }
         public virtual void Edit()
         {
             Click_Perform(false);
             Expand(true);
             isReadOnly(true);
+            Expand(true);
         }
         public virtual void Delete()
         {
-            //Click_Perform(false);
-           // isReadOnly(true);
+           
         }
         public virtual void Save()
         {
             Expand(false);
             Click_Perform(true);
+            Expand(false);
         }
         public virtual void Cancel()
         {
@@ -55,16 +57,17 @@ namespace TNTT.FormView
         }
         public virtual void Print()
         {
-            //Click_Perform(false);
+            
         }
         public virtual void ReFresh()
         {
-            //Click_Perform(false);
+            Init();
         }
         public virtual void Init()
         {
             Click_Perform(true);
             UserAccessFunction();
+            Expand(false);
         }
         public virtual void Encode() { }
         public virtual void Decode() { }
@@ -84,7 +87,7 @@ namespace TNTT.FormView
         }
         public virtual void Expand(bool flag)
         { 
-            //
+            
         }
         public virtual void isReadOnly(bool flag)
         { }
