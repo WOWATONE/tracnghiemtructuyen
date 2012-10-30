@@ -78,7 +78,6 @@
             this.rpg_system = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbp_Theme = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpg_Infomation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_manager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbp_study = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -104,6 +103,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_ChangePass = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
@@ -160,9 +160,10 @@
             this.btn_TaoDeTC,
             this.btn_TaoDeNH,
             this.barButtonGroup1,
-            this.ribbonGalleryBarItem1});
+            this.ribbonGalleryBarItem1,
+            this.btn_ChangePass});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 100;
+            this.ribbonControl.MaxItemId = 101;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.btn_Introdue);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -556,8 +557,7 @@
             this.tab_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rpg_system,
             this.rbp_Theme,
-            this.rpg_Infomation,
-            this.ribbonPageGroup9});
+            this.rpg_Infomation});
             this.tab_Home.Name = "tab_Home";
             this.tab_Home.Text = "Trang Chính";
             // 
@@ -566,6 +566,7 @@
             this.rpg_system.ItemLinks.Add(this.btn_Login);
             this.rpg_system.ItemLinks.Add(this.btn_Setup);
             this.rpg_system.ItemLinks.Add(this.btn_CloseAll);
+            this.rpg_system.ItemLinks.Add(this.btn_Exit);
             this.rpg_system.Name = "rpg_system";
             this.rpg_system.Text = "Hệ Thống";
             // 
@@ -579,17 +580,10 @@
             // rpg_Infomation
             // 
             this.rpg_Infomation.ItemLinks.Add(this.btn_ChangeInfo);
-            this.rpg_Infomation.ItemLinks.Add(this.btn_Exit);
+            this.rpg_Infomation.ItemLinks.Add(this.btn_ChangePass);
             this.rpg_Infomation.Name = "rpg_Infomation";
             this.rpg_Infomation.Text = "Tài khoản cá nhân";
             this.rpg_Infomation.Visible = false;
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonGroup1);
-            this.ribbonPageGroup9.ItemLinks.Add(this.ribbonGalleryBarItem1);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // tab_manager
             // 
@@ -770,6 +764,13 @@
             // 
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
             // 
+            // btn_ChangePass
+            // 
+            this.btn_ChangePass.Caption = "Đổi mật khẩu";
+            this.btn_ChangePass.Id = 100;
+            this.btn_ChangePass.LargeGlyph = global::TNTT.Properties.Resources.changepass1;
+            this.btn_ChangePass.Name = "btn_ChangePass";
+            // 
             // frm_MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -867,7 +868,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_TaoDeNH;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btn_ChangePass;
 
     }
 }

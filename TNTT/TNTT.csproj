@@ -110,6 +110,13 @@
     <Compile Include="Class\C_Time.cs" />
     <Compile Include="Class\C_TraLoi.cs" />
     <Compile Include="Class\C_Valid.cs" />
+    <Compile Include="Component\Com_Base.cs" />
+    <Compile Include="Component\frm_ChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\frm_ChangePwd.Designer.cs">
+      <DependentUpon>frm_ChangePwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\frm_TuyChonCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,12 +160,6 @@
     </Compile>
     <Compile Include="FormView\frm_CauHoi.Designer.cs">
       <DependentUpon>frm_CauHoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormView\frm_changepwd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormView\frm_changepwd.Designer.cs">
-      <DependentUpon>frm_changepwd.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\frm_Config.cs">
       <SubType>Form</SubType>
@@ -265,6 +266,9 @@
     <Compile Include="Report\frm_ReportDeThi.Designer.cs">
       <DependentUpon>frm_ReportDeThi.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component\frm_ChangePwd.resx">
+      <DependentUpon>frm_ChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_TuyChonCauHoi.resx">
       <DependentUpon>frm_TuyChonCauHoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,9 +289,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_CauHoi.resx">
       <DependentUpon>frm_CauHoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormView\frm_changepwd.resx">
-      <DependentUpon>frm_changepwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_Config.resx">
       <DependentUpon>frm_Config.cs</DependentUpon>
@@ -483,6 +484,7 @@
     <None Include="Images\Ribbon_Close_32x32.png" />
     <None Include="Resources\Resource\avarta.png" />
     <Content Include="Database\ThucHanh-CNPM.sql" />
+    <Content Include="Images\changepass.png" />
     <Content Include="Resources\avt.png" />
     <None Include="Resources\Eye-icon.png" />
     <None Include="Resources\eyes.png" />
@@ -496,6 +498,9 @@
     <None Include="Resources\new1.png" />
     <None Include="Resources\question2.png" />
     <None Include="Resources\delete1.png" />
+    <None Include="Resources\changepass.png" />
+    <None Include="Resources\changepass1.png" />
+    <None Include="Resources\refresh1.png" />
     <Content Include="_ws.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

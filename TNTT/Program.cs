@@ -20,7 +20,7 @@ namespace TNTT
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            Application.Run(new frm_MDI());
+            Application.Run(new Component.frm_ChangePwd());
         }
     }
 }

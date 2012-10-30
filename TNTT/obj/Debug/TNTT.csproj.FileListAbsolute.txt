@@ -40,7 +40,6 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_Loading.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_TuyChonDeThi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_BoMon.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_CauHoi.resources
-F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_changepwd.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_Config.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_DeThi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_DSMH.resources
@@ -97,3 +96,4 @@ C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_tuychontaoca
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_tuychontaocauhoi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportDeThi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ViewerCauHoi.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ChangePwd.resources
