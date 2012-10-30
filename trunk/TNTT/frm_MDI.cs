@@ -187,5 +187,10 @@ namespace TNTT
         {
 
         }
+
+        private void btn_ChangePass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PreBase.ShowDiaLog<Component.frm_ChangePwd>(this);
+        }
     }
 }

@@ -92,6 +92,13 @@ namespace TNTT.Class
             get { return idkhoa; }
             set { idkhoa = value; }
         }
+        private string matkhau;
+
+        public string Matkhau
+        {
+            get { return matkhau; }
+            set { matkhau = value; }
+        }
 
     }
 }

@@ -74,6 +74,7 @@
             this.btn_TaoDeNH = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.btn_ChangePass = new DevExpress.XtraBars.BarButtonItem();
             this.tab_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpg_system = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbp_Theme = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -103,7 +104,6 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_ChangePass = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
@@ -552,6 +552,14 @@
             this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             this.ribbonGalleryBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ribbonGalleryBarItem1_ItemClick);
             // 
+            // btn_ChangePass
+            // 
+            this.btn_ChangePass.Caption = "Đổi mật khẩu";
+            this.btn_ChangePass.Id = 100;
+            this.btn_ChangePass.LargeGlyph = global::TNTT.Properties.Resources.changepass1;
+            this.btn_ChangePass.Name = "btn_ChangePass";
+            this.btn_ChangePass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChangePass_ItemClick);
+            // 
             // tab_Home
             // 
             this.tab_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -763,13 +771,6 @@
             // helpRibbonPageGroup
             // 
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
-            // 
-            // btn_ChangePass
-            // 
-            this.btn_ChangePass.Caption = "Đổi mật khẩu";
-            this.btn_ChangePass.Id = 100;
-            this.btn_ChangePass.LargeGlyph = global::TNTT.Properties.Resources.changepass1;
-            this.btn_ChangePass.Name = "btn_ChangePass";
             // 
             // frm_MDI
             // 

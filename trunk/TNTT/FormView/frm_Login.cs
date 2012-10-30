@@ -58,6 +58,7 @@ namespace TNTT.FormView
                 PreBase.obj_user.Bomon_idbomon = dt.Rows[0]["bomon_idbomon"].ToString();
                 PreBase.obj_user.Chucvu = dt.Rows[0]["chucvu"].ToString();
                 PreBase.obj_user.Hoten_giangvien = dt.Rows[0]["tengiangvien"].ToString();
+                PreBase.obj_user.Matkhau = dt.Rows[0]["matkhau"].ToString();
                 //Khi hinh anh nhom
                 PreBase.obj_user.Avatar_giangvien = null;
 

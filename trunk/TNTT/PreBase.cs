@@ -36,7 +36,7 @@ namespace TNTT.Class
             var frm = new T();
             frm.ShowDialog();
         }
-        static Timer t;
+        //static Timer t;
         public static void ShowForm<T>(Form parent) where T : Form, new()
         {
             var x = typeof(T);
@@ -47,18 +47,18 @@ namespace TNTT.Class
             if (frm == null || frm.IsDisposed)
             {
                 frm = new T() { MdiParent = parent };
-                frm_loading.progress.Caption = "Đang load dữ liệu";
-                frm_loading.progress.Description = "Loading ...";
+                //frm_loading.progress.Caption = "Đang load dữ liệu";
+                //frm_loading.progress.Description = "Loading ...";
 
                 frm.Show();
-                frm_loading.Show();
-                t = new Timer();
-                t.Interval = 1000;
-                t.Tick += new EventHandler((Object sender, EventArgs e) =>
-                {
-                    t_Tick(frm_loading);
-                });
-                t.Start();
+                //frm_loading.Show();
+                //t = new Timer();
+                //t.Interval = 1000;
+                //t.Tick += new EventHandler((Object sender, EventArgs e) =>
+                //{
+                //    t_Tick(frm_loading);
+                //});
+                //t.Start();
             }
             else
             {
@@ -70,7 +70,7 @@ namespace TNTT.Class
 
         static void t_Tick(Form frm)
         {
-            frm.Close();
+           // frm.Close();
             //throw new NotImplementedException();
         }
         public static void VisibleMenu(Form parent, bool visible = true)
