@@ -64,6 +64,11 @@ namespace TNTT.Class
                             (select bomon_idbomon from GIANGVIEN where idgiangvien="+idgiangvien+"))";
             return db.GetData(sql);
         }
+        public void ChangePwd(string magiangvien, string matkhaumoi)
+        {
+            string sql = "UPDATE giangvien set matkhau='"+matkhaumoi+"' WHERE magiangvien= '"+magiangvien+"'";
+            db.ExcuteNonQuery(sql);
+        }
         /// <summary>
         /// Thêm mới 1 giảng viên
         /// </summary>

@@ -104,6 +104,7 @@
     <Compile Include="Class\C_Lop.cs" />
     <Compile Include="Class\C_MonHoc.cs" />
     <Compile Include="Class\C_PhongThi.cs" />
+    <Compile Include="Class\C_Random.cs" />
     <Compile Include="Class\C_Session.cs" />
     <Compile Include="Class\C_SinhVien.cs" />
     <Compile Include="Class\C_TaoDe.cs" />
