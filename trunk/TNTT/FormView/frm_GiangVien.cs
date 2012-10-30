@@ -82,6 +82,7 @@ namespace TNTT.FormView
             //col.Visible = true;
             //col.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             grd_Giangvien.CustomUnboundColumnData += gridView1_CustomUnboundColumnData;
+            base.Init();
             
         }
         void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
