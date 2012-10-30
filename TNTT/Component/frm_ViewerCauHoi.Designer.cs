@@ -41,14 +41,14 @@
             this.redit.Location = new System.Drawing.Point(0, 0);
             this.redit.Name = "redit";
             this.redit.ReadOnly = true;
-            this.redit.Size = new System.Drawing.Size(637, 374);
+            this.redit.Size = new System.Drawing.Size(747, 329);
             this.redit.TabIndex = 0;
             // 
             // frm_ViewerCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 374);
+            this.ClientSize = new System.Drawing.Size(747, 329);
             this.Controls.Add(this.redit);
             this.Name = "frm_ViewerCauHoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

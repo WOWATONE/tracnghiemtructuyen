@@ -57,6 +57,10 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.grd_Dethi = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.b = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xem = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.col_cauhoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_chuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_phan = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,11 +68,6 @@
             this.col_ngaytao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_nguoitao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Tron = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.b = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.xem = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.cmd_delete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -400,16 +399,15 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3,
             this.col_cauhoi,
             this.col_chuong,
             this.col_phan,
             this.col_mucdo,
             this.col_ngaytao,
             this.col_nguoitao,
-            this.col_Tron,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
+            this.col_Tron});
             this.gridView1.GridControl = this.grd_Dethi;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -418,101 +416,6 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.PreviewLineCount = 1;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
-            // 
-            // col_cauhoi
-            // 
-            this.col_cauhoi.Caption = "Câu hỏi";
-            this.col_cauhoi.FieldName = "tieude";
-            this.col_cauhoi.Name = "col_cauhoi";
-            this.col_cauhoi.OptionsColumn.AllowEdit = false;
-            this.col_cauhoi.OptionsColumn.AllowFocus = false;
-            this.col_cauhoi.Visible = true;
-            this.col_cauhoi.VisibleIndex = 1;
-            this.col_cauhoi.Width = 370;
-            // 
-            // col_chuong
-            // 
-            this.col_chuong.Caption = "Chương ";
-            this.col_chuong.FieldName = "chuong";
-            this.col_chuong.MaxWidth = 50;
-            this.col_chuong.Name = "col_chuong";
-            this.col_chuong.OptionsColumn.AllowEdit = false;
-            this.col_chuong.OptionsColumn.AllowFocus = false;
-            this.col_chuong.Visible = true;
-            this.col_chuong.VisibleIndex = 2;
-            this.col_chuong.Width = 50;
-            // 
-            // col_phan
-            // 
-            this.col_phan.Caption = "Phần";
-            this.col_phan.FieldName = "phan";
-            this.col_phan.MaxWidth = 50;
-            this.col_phan.Name = "col_phan";
-            this.col_phan.OptionsColumn.AllowEdit = false;
-            this.col_phan.OptionsColumn.AllowFocus = false;
-            this.col_phan.Visible = true;
-            this.col_phan.VisibleIndex = 3;
-            this.col_phan.Width = 50;
-            // 
-            // col_mucdo
-            // 
-            this.col_mucdo.Caption = "Mức độ";
-            this.col_mucdo.FieldName = "capdo";
-            this.col_mucdo.MaxWidth = 80;
-            this.col_mucdo.Name = "col_mucdo";
-            this.col_mucdo.OptionsColumn.AllowEdit = false;
-            this.col_mucdo.OptionsColumn.AllowFocus = false;
-            this.col_mucdo.Visible = true;
-            this.col_mucdo.VisibleIndex = 4;
-            this.col_mucdo.Width = 53;
-            // 
-            // col_ngaytao
-            // 
-            this.col_ngaytao.Caption = "Ngày tạo";
-            this.col_ngaytao.DisplayFormat.FormatString = "\"dd/mm/yyyy\"";
-            this.col_ngaytao.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.col_ngaytao.FieldName = "ngaytao";
-            this.col_ngaytao.MaxWidth = 150;
-            this.col_ngaytao.Name = "col_ngaytao";
-            this.col_ngaytao.OptionsColumn.AllowEdit = false;
-            this.col_ngaytao.OptionsColumn.AllowFocus = false;
-            this.col_ngaytao.Visible = true;
-            this.col_ngaytao.VisibleIndex = 5;
-            this.col_ngaytao.Width = 150;
-            // 
-            // col_nguoitao
-            // 
-            this.col_nguoitao.Caption = "Người tạo";
-            this.col_nguoitao.FieldName = "tengiangvien";
-            this.col_nguoitao.MaxWidth = 180;
-            this.col_nguoitao.Name = "col_nguoitao";
-            this.col_nguoitao.OptionsColumn.AllowEdit = false;
-            this.col_nguoitao.OptionsColumn.AllowFocus = false;
-            this.col_nguoitao.Visible = true;
-            this.col_nguoitao.VisibleIndex = 6;
-            this.col_nguoitao.Width = 180;
-            // 
-            // col_Tron
-            // 
-            this.col_Tron.Caption = "Trộn câu hỏi";
-            this.col_Tron.FieldName = "troncau";
-            this.col_Tron.MaxWidth = 100;
-            this.col_Tron.Name = "col_Tron";
-            this.col_Tron.Visible = true;
-            this.col_Tron.VisibleIndex = 7;
-            this.col_Tron.Width = 100;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Thứ tự trong NHCH";
-            this.gridColumn1.FieldName = "idnganhangcauhoi";
-            this.gridColumn1.MaxWidth = 100;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.AllowFocus = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 100;
             // 
             // gridColumn2
             // 
@@ -524,7 +427,7 @@
             this.gridColumn2.MaxWidth = 30;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 8;
+            this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 22;
             // 
             // b
@@ -544,11 +447,12 @@
             this.gridColumn3.ColumnEdit = this.xem;
             this.gridColumn3.FieldName = "view";
             this.gridColumn3.ImageAlignment = System.Drawing.StringAlignment.Center;
-            this.gridColumn3.MaxWidth = 30;
+            this.gridColumn3.MaxWidth = 45;
+            this.gridColumn3.MinWidth = 30;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 9;
-            this.gridColumn3.Width = 20;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 30;
             // 
             // xem
             // 
@@ -558,6 +462,89 @@
             this.xem.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.xem.Name = "xem";
             this.xem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            // 
+            // col_cauhoi
+            // 
+            this.col_cauhoi.Caption = "Câu hỏi";
+            this.col_cauhoi.FieldName = "tieude";
+            this.col_cauhoi.Name = "col_cauhoi";
+            this.col_cauhoi.OptionsColumn.AllowEdit = false;
+            this.col_cauhoi.OptionsColumn.AllowFocus = false;
+            this.col_cauhoi.Visible = true;
+            this.col_cauhoi.VisibleIndex = 2;
+            this.col_cauhoi.Width = 370;
+            // 
+            // col_chuong
+            // 
+            this.col_chuong.Caption = "Chương ";
+            this.col_chuong.FieldName = "chuong";
+            this.col_chuong.MaxWidth = 50;
+            this.col_chuong.Name = "col_chuong";
+            this.col_chuong.OptionsColumn.AllowEdit = false;
+            this.col_chuong.OptionsColumn.AllowFocus = false;
+            this.col_chuong.Visible = true;
+            this.col_chuong.VisibleIndex = 3;
+            this.col_chuong.Width = 50;
+            // 
+            // col_phan
+            // 
+            this.col_phan.Caption = "Phần";
+            this.col_phan.FieldName = "phan";
+            this.col_phan.MaxWidth = 50;
+            this.col_phan.Name = "col_phan";
+            this.col_phan.OptionsColumn.AllowEdit = false;
+            this.col_phan.OptionsColumn.AllowFocus = false;
+            this.col_phan.Visible = true;
+            this.col_phan.VisibleIndex = 4;
+            this.col_phan.Width = 50;
+            // 
+            // col_mucdo
+            // 
+            this.col_mucdo.Caption = "Mức độ";
+            this.col_mucdo.FieldName = "capdo";
+            this.col_mucdo.MaxWidth = 80;
+            this.col_mucdo.Name = "col_mucdo";
+            this.col_mucdo.OptionsColumn.AllowEdit = false;
+            this.col_mucdo.OptionsColumn.AllowFocus = false;
+            this.col_mucdo.Visible = true;
+            this.col_mucdo.VisibleIndex = 5;
+            this.col_mucdo.Width = 53;
+            // 
+            // col_ngaytao
+            // 
+            this.col_ngaytao.Caption = "Ngày tạo";
+            this.col_ngaytao.DisplayFormat.FormatString = "\"dd/mm/yyyy\"";
+            this.col_ngaytao.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.col_ngaytao.FieldName = "ngaytao";
+            this.col_ngaytao.MaxWidth = 150;
+            this.col_ngaytao.Name = "col_ngaytao";
+            this.col_ngaytao.OptionsColumn.AllowEdit = false;
+            this.col_ngaytao.OptionsColumn.AllowFocus = false;
+            this.col_ngaytao.Visible = true;
+            this.col_ngaytao.VisibleIndex = 6;
+            this.col_ngaytao.Width = 150;
+            // 
+            // col_nguoitao
+            // 
+            this.col_nguoitao.Caption = "Người tạo";
+            this.col_nguoitao.FieldName = "tengiangvien";
+            this.col_nguoitao.MaxWidth = 180;
+            this.col_nguoitao.Name = "col_nguoitao";
+            this.col_nguoitao.OptionsColumn.AllowEdit = false;
+            this.col_nguoitao.OptionsColumn.AllowFocus = false;
+            this.col_nguoitao.Visible = true;
+            this.col_nguoitao.VisibleIndex = 7;
+            this.col_nguoitao.Width = 180;
+            // 
+            // col_Tron
+            // 
+            this.col_Tron.Caption = "Trộn câu hỏi";
+            this.col_Tron.FieldName = "troncau";
+            this.col_Tron.MaxWidth = 100;
+            this.col_Tron.Name = "col_Tron";
+            this.col_Tron.Visible = true;
+            this.col_Tron.VisibleIndex = 8;
+            this.col_Tron.Width = 100;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -662,7 +649,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.SimpleButton cmd_Taolai;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmd_delete;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
