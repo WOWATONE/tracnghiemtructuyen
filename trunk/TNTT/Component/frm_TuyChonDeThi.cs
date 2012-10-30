@@ -44,8 +44,21 @@ namespace TNTT.Component
         {
             DataTable dt_mh = new DataTable();
             C_MonHoc mh = new C_MonHoc();
-            
-            dt_mh = mh.GetList();
+
+            string conditon = "";
+
+            switch (PreBase.obj_user.Chucvu)
+            {
+                case "2":
+                    conditon = " and monhoc_idmonhoc in (select idmonhoc from monhoc where bomon_idbomon = "+PreBase.obj_user.Bomon_idbomon+")";
+                    break;
+                case "3":
+                    conditon = " and monhoc_idmonhoc in (select idmonhoc from monhoc where bomon_idbomon = " + PreBase.obj_user.Bomon_idbomon;
+                    conditon += ")";
+                    break;
+                default: break;
+            }
+            dt_mh = mh.GetList(conditon);
             cbb_monhoc.DataSource = dt_mh;
             cbb_monhoc.DisplayMember = "tenmonhoc";
             cbb_monhoc.ValueMember = "idmonhoc";

@@ -167,7 +167,11 @@ namespace TNTT.FormView
                     trb_Socaungaunhien.Value = trb_Socaungaunhien.Properties.Maximum;
             }
             else
+            {
                 trb_Socaungaunhien.Value = 0;
+                lb_socaungaunhien.Text = "0";
+
+            }
 
             grd_Dethi.DataSource = dt;
             if (dt.Rows.Count == int.Parse(lb_socau.Text))
@@ -216,7 +220,7 @@ namespace TNTT.FormView
         }
         string Condition()
         {
-            string condition = "";
+            string condition = " and monhoc_idmonhoc = "+idmonhoc;
             if (txt_chuong.Text != null)
                 condition += " and chuong like '%" + txt_chuong.Text + "%' ";
             if (txt_phan.Text != null)

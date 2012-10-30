@@ -16,6 +16,13 @@ namespace TNTT.Class
             dt = db.GetData(sql);
             return dt;
         }
+        public DataTable GetList(string condition)
+        {
+            string sql = "SELECT idmonhoc,mamonhoc,tenmonhoc,ghichu_monhoc,bomon_idbomon,idbomon,tenbomon from MONHOC mh,BOMON bm where bm.idbomon = mh.bomon_idbomon"+condition;
+            DataTable dt = new DataTable();
+            dt = db.GetData(sql);
+            return dt;
+        }
         public DataTable GetListFromDMMH(string idlop)
         {
             string sql = @"SELECT idmonhoc,mamonhoc,tenmonhoc,ghichu_monhoc from monhoc where idmonhoc in (select monhoc_idmonhoc from dsmh where lop_idlop="+idlop+")";
