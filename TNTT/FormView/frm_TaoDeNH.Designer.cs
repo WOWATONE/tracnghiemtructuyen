@@ -67,6 +67,8 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.b = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xem = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.cmd_delete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -89,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_Dethi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmd_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
@@ -385,7 +388,8 @@
             this.b,
             this.cmd_delete,
             this.repositoryItemPictureEdit1,
-            this.repositoryItemButtonEdit1});
+            this.repositoryItemButtonEdit1,
+            this.xem});
             this.grd_Dethi.Size = new System.Drawing.Size(1164, 406);
             this.grd_Dethi.TabIndex = 0;
             this.grd_Dethi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -404,7 +408,8 @@
             this.col_nguoitao,
             this.col_Tron,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView1.GridControl = this.grd_Dethi;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -423,7 +428,7 @@
             this.col_cauhoi.OptionsColumn.AllowFocus = false;
             this.col_cauhoi.Visible = true;
             this.col_cauhoi.VisibleIndex = 1;
-            this.col_cauhoi.Width = 331;
+            this.col_cauhoi.Width = 370;
             // 
             // col_chuong
             // 
@@ -435,7 +440,7 @@
             this.col_chuong.OptionsColumn.AllowFocus = false;
             this.col_chuong.Visible = true;
             this.col_chuong.VisibleIndex = 2;
-            this.col_chuong.Width = 48;
+            this.col_chuong.Width = 50;
             // 
             // col_phan
             // 
@@ -447,7 +452,7 @@
             this.col_phan.OptionsColumn.AllowFocus = false;
             this.col_phan.Visible = true;
             this.col_phan.VisibleIndex = 3;
-            this.col_phan.Width = 48;
+            this.col_phan.Width = 50;
             // 
             // col_mucdo
             // 
@@ -459,7 +464,7 @@
             this.col_mucdo.OptionsColumn.AllowFocus = false;
             this.col_mucdo.Visible = true;
             this.col_mucdo.VisibleIndex = 4;
-            this.col_mucdo.Width = 48;
+            this.col_mucdo.Width = 53;
             // 
             // col_ngaytao
             // 
@@ -485,7 +490,7 @@
             this.col_nguoitao.OptionsColumn.AllowFocus = false;
             this.col_nguoitao.Visible = true;
             this.col_nguoitao.VisibleIndex = 6;
-            this.col_nguoitao.Width = 175;
+            this.col_nguoitao.Width = 180;
             // 
             // col_Tron
             // 
@@ -495,7 +500,7 @@
             this.col_Tron.Name = "col_Tron";
             this.col_Tron.Visible = true;
             this.col_Tron.VisibleIndex = 7;
-            this.col_Tron.Width = 97;
+            this.col_Tron.Width = 100;
             // 
             // gridColumn1
             // 
@@ -507,7 +512,7 @@
             this.gridColumn1.OptionsColumn.AllowFocus = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 97;
+            this.gridColumn1.Width = 100;
             // 
             // gridColumn2
             // 
@@ -520,7 +525,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 8;
-            this.gridColumn2.Width = 20;
+            this.gridColumn2.Width = 22;
             // 
             // b
             // 
@@ -532,6 +537,27 @@
             this.b.LinkColor = System.Drawing.Color.Blue;
             this.b.Name = "b";
             this.b.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Chi tiết";
+            this.gridColumn3.ColumnEdit = this.xem;
+            this.gridColumn3.FieldName = "view";
+            this.gridColumn3.ImageAlignment = System.Drawing.StringAlignment.Center;
+            this.gridColumn3.MaxWidth = 30;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 9;
+            this.gridColumn3.Width = 20;
+            // 
+            // xem
+            // 
+            this.xem.AccessibleRole = System.Windows.Forms.AccessibleRole.Link;
+            this.xem.AutoHeight = false;
+            this.xem.Image = global::TNTT.Properties.Resources.eyes;
+            this.xem.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xem.Name = "xem";
+            this.xem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -590,6 +616,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_Dethi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmd_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
@@ -643,5 +670,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraEditors.TextEdit txt_madethi;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit xem;
     }
 }

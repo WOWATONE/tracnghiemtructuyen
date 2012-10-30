@@ -334,15 +334,21 @@ namespace TNTT.FormView
         {
             txt_madethi.Text = txt_madethi.Text.ToUpper();
         }
-
+        void Viewer()
+        {
+            string id = gridView1.GetFocusedRowCellValue("idnganhangcauhoi").ToString();
+            Component.frm_ViewerCauHoi frm = new Component.frm_ViewerCauHoi(id);
+            frm.ShowDialog();
+        }
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             try
             {
                 if (gridView1.FocusedColumn.FieldName == "xoa")
-                {
                     Delete();
-                }
+                if (gridView1.FocusedColumn.FieldName == "view")
+                    Viewer();
+                
             }
             catch { }
         }

@@ -33,6 +33,12 @@ namespace TNTT.Class
             dt = db.GetData(sql);
             return dt;
         }
+        public DataTable GetInfoById(string id)
+        { 
+            string sql=@"select tieude,CAUTRALOI  from nganhangcauhoi,CAUTRALOI where CAUTRALOI.nhch_idnganhangcauhoi = NGANHANGCAUHOI.idnganhangcauhoi
+                            and idnganhangcauhoi = "+id;
+            return db.GetData(sql);
+        }
         public void Add(string monhoc_idmonhoc,string tieude,string chuong,string phan,string capdo,string tinhtrang,string troncau,string giangvien_idgiangvien)
         {
             C_Time now = new C_Time();
