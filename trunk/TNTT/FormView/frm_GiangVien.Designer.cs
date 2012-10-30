@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dock_NhapLieu = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.cmd_eyes = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_changevt = new DevExpress.XtraEditors.SimpleButton();
@@ -62,7 +62,7 @@
             this.col_email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_bomon = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.dockPanel1.SuspendLayout();
+            this.dock_NhapLieu.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lk_bomon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lk_chucvu.Properties)).BeginInit();
@@ -83,7 +83,7 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
+            this.dock_NhapLieu});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -91,18 +91,19 @@
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
-            // dockPanel1
+            // dock_NhapLieu
             // 
-            this.dockPanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.dockPanel1.Appearance.Options.UseBackColor = true;
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
-            this.dockPanel1.ID = new System.Guid("2149a136-451e-47f9-b05f-8c516f9cbeeb");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 63);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 144);
-            this.dockPanel1.Size = new System.Drawing.Size(898, 144);
-            this.dockPanel1.Text = "Nhập liệu";
+            this.dock_NhapLieu.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.dock_NhapLieu.Appearance.Options.UseBackColor = true;
+            this.dock_NhapLieu.Controls.Add(this.dockPanel1_Container);
+            this.dock_NhapLieu.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.dock_NhapLieu.ID = new System.Guid("2149a136-451e-47f9-b05f-8c516f9cbeeb");
+            this.dock_NhapLieu.Location = new System.Drawing.Point(0, 65);
+            this.dock_NhapLieu.Name = "dock_NhapLieu";
+            this.dock_NhapLieu.Options.ShowCloseButton = false;
+            this.dock_NhapLieu.OriginalSize = new System.Drawing.Size(200, 144);
+            this.dock_NhapLieu.Size = new System.Drawing.Size(898, 144);
+            this.dock_NhapLieu.Text = "Nhập liệu";
             // 
             // dockPanel1_Container
             // 
@@ -125,9 +126,9 @@
             this.dockPanel1_Container.Controls.Add(this.labelControl1);
             this.dockPanel1_Container.Controls.Add(this.txt_diachi);
             this.dockPanel1_Container.Controls.Add(this.txt_tengiangvien);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(890, 115);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(890, 117);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // cmd_eyes
@@ -305,9 +306,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_gv);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 207);
+            this.groupControl1.Location = new System.Drawing.Point(0, 209);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(898, 234);
+            this.groupControl1.Size = new System.Drawing.Size(898, 232);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -317,7 +318,7 @@
             this.grd_gv.Location = new System.Drawing.Point(2, 21);
             this.grd_gv.MainView = this.grd_Giangvien;
             this.grd_gv.Name = "grd_gv";
-            this.grd_gv.Size = new System.Drawing.Size(894, 211);
+            this.grd_gv.Size = new System.Drawing.Size(894, 209);
             this.grd_gv.TabIndex = 0;
             this.grd_gv.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grd_Giangvien});
@@ -417,14 +418,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 441);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.dock_NhapLieu);
             this.Name = "frm_GiangVien";
             this.Text = "Quản lý Giảng viên";
             this.Load += new System.EventHandler(this.frm_GiangVien_Load);
-            this.Controls.SetChildIndex(this.dockPanel1, 0);
+            this.Controls.SetChildIndex(this.dock_NhapLieu, 0);
             this.Controls.SetChildIndex(this.groupControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
+            this.dock_NhapLieu.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             this.dockPanel1_Container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lk_bomon.Properties)).EndInit();
@@ -456,7 +457,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_dienthoai;
         private DevExpress.XtraGrid.Columns.GridColumn col_email;
         private DevExpress.XtraGrid.Columns.GridColumn col_bomon;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.DockPanel dock_NhapLieu;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraEditors.SimpleButton cmd_changevt;
         private System.Windows.Forms.PictureBox pic_avt;
