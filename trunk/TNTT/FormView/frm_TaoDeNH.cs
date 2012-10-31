@@ -42,7 +42,7 @@ namespace TNTT.FormView
         {
             //lb_socau.DataBindings.Add("text", trb_Cauhoi, "value");
             lb_socaungaunhien.DataBindings.Add("text",trb_Socaungaunhien,"value");
-            //lb_socauduocchon.DataBindings.Add("text", dt, "Rows.Count");
+          
         }
         void Init()
         {
@@ -355,6 +355,12 @@ namespace TNTT.FormView
                 
             }
             catch { }
+        }
+
+        private void cmd_Print_Click(object sender, EventArgs e)
+        {
+            Report.frm_ReportDeThi frm = new Report.frm_ReportDeThi(dt);
+            frm.ShowDialog();
         }
 
     }

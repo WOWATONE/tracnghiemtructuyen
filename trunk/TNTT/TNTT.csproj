@@ -286,11 +286,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>da_TracNghiem.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\frm_ReportDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_ReportDeThi.Designer.cs">
+      <DependentUpon>frm_ReportDeThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\frm_ReportGV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\frm_ReportGV.Designer.cs">
       <DependentUpon>frm_ReportGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rpt_Dethi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Dethi.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\rpt_Giangvien.cs">
       <AutoGen>True</AutoGen>
@@ -387,8 +399,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\frm_ReportDeThi.resx">
+      <DependentUpon>frm_ReportDeThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\frm_ReportGV.resx">
       <DependentUpon>frm_ReportGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpt_Dethi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Dethi.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rpt_Giangvien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
