@@ -34,7 +34,7 @@ namespace TNTT.Class
         {
             if (phone.Length <= 9 || phone.Length>=12)
             {
-                XtraMessageBox.Show("Độ dài không cho phép");
+                XtraMessageBox.Show("Độ dài số điện thoại không hợp lệ");
                 return false;
             }
             for (int i = 0; i < phone.Length; i++)

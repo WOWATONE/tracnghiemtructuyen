@@ -94,6 +94,8 @@ C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.exe
 C:\Users\Administrator\Desktop\sv\TNTT\bin\Debug\TNTT.pdb
 C:\Users\Administrator\Desktop\sv\TNTT\obj\Debug\TNTT.Component.frm_tuychontaocauhoi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_tuychontaocauhoi.resources
-F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportDeThi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ViewerCauHoi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ChangePwd.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_Backup.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_EditInformation.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportGV.resources

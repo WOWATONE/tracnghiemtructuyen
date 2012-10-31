@@ -34,7 +34,10 @@ namespace TNTT.Class
         }
         public DataTable GetInfomation(string uid, string pwd)
         {
-            string sql = string.Format("SELECT * FROM GIANGVIEN WHERE magiangvien='{0}' AND matkhau='{1}'", uid, pwd);
+            string sql = string.Format(@"SELECT idgiangvien,magiangvien,matkhau,tengiangvien,diachi_giangvien,dienthoai_giangvien,email_giangvien,avatar_giangvien
+                                            ,bomon_idbomon,chucvu,tenbomon
+                                            FROM GIANGVIEN,BOMON
+                                            WHERE GIANGVIEN.bomon_idbomon = BOMON.idbomon and magiangvien='{0}' AND matkhau='{1}'", uid, pwd);
             DataTable dt = new DataTable();
             dt = db.GetData(sql);
             return dt;
@@ -117,6 +120,11 @@ namespace TNTT.Class
             DataTable dt = new DataTable();
             dt = db.GetData(sql);
             return dt;
+        }
+        public void UpdateInfo(string idgiangvien,string name, string address, string mail)
+        {
+            string sql = "UPDATE giangvien SET tengiangvien=N'"+name+"', diachi_giangvien=N'"+address+"', email_giangvien=N'"+mail+"' WHERE idgiangvien="+idgiangvien;
+            db.ExcuteNonQuery(sql);
         }
     }
 }

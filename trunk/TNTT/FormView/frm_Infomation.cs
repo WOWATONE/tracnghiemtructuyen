@@ -22,11 +22,26 @@ namespace TNTT.FormView
         private void Infomation()
         {
             lb_name.Text = PreBase.obj_user.Hoten_giangvien;
+            if (lb_name.Text == "")
+                lb_name.Text = "(Chưa có)";
+
             lb_address.Text = PreBase.obj_user.Diachi_giangvien;
-            lb_bomon.Text = PreBase.obj_user.Bomon_idbomon;
-            lb_cv.Text = PreBase.obj_user.Chucvu;
+            if (lb_address.Text == "")
+                lb_address.Text = "(Chưa có)";
+
+            lb_bomon.Text = PreBase.obj_user.Tenbomon;
+            if (lb_bomon.Text == "")
+                lb_bomon.Text = "(Chưa có)";
+
+            
+  
+
             lb_email.Text = PreBase.obj_user.Email_giangvien;
+            if (lb_cv.Text == "")
+                lb_cv.Text = "(Chưa có)";
+
             lb_chucvu.Text = "Chức vụ:" + chucvu[Convert.ToInt32(PreBase.obj_user.Chucvu) - 1];
+            lb_cv.Text = lb_chucvu.Text.Substring(lb_chucvu.Text.LastIndexOf(":") + 1);
 
         }
         private void frm_Infomation_Load(object sender, EventArgs e)
@@ -92,6 +107,13 @@ namespace TNTT.FormView
         private void timer1_Tick(object sender, EventArgs e)
         {
             lb_time.Text = "Bây giờ là: "+DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        private void cmd_Sua_Click(object sender, EventArgs e)
+        {
+            Component.frm_EditInformation frm = new Component.frm_EditInformation();
+            frm.Infomation += Infomation;
+            frm.ShowDialog();
         }
     }   
 }

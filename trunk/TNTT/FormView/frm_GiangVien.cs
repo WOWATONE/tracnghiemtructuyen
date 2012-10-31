@@ -65,6 +65,13 @@ namespace TNTT.FormView
             dock_NhapLieu.Visibility = flag?DockVisibility.Visible:DockVisibility.Hidden;
             base.Expand(flag);
         }
+        public override void Print()
+        {
+            Report.frm_ReportGV frm = new Report.frm_ReportGV(dt);
+
+            frm.Show();
+            base.Print();
+        }
         public override void Init()
         {
            // dock_NhapLieu.Visibility = DockVisibility.Hidden;
@@ -228,7 +235,6 @@ namespace TNTT.FormView
                         SaveImage(dt_idgiangvien.Rows[0]["idgiangvien"].ToString());
                         Init();
                         DataBind();
-
                         _state = "";
                     }
                     else
