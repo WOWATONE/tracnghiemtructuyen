@@ -178,7 +178,6 @@
             this.cmd_Hide2.Name = "cmd_Hide2";
             this.cmd_Hide2.Size = new System.Drawing.Size(33, 20);
             this.cmd_Hide2.TabIndex = 13;
-            //this.cmd_Hide2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmd_Hide2_KeyUp);
             this.cmd_Hide2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmd_Hide2_MouseDown);
             this.cmd_Hide2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmd_Hide2_MouseUp);
             // 
@@ -189,7 +188,6 @@
             this.cmd_Hide1.Name = "cmd_Hide1";
             this.cmd_Hide1.Size = new System.Drawing.Size(33, 20);
             this.cmd_Hide1.TabIndex = 14;
-            //this.cmd_Hide1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmd_Hide1_KeyUp);
             this.cmd_Hide1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmd_Hide1_MouseDown);
             this.cmd_Hide1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmd_Hide1_MouseUp);
             // 

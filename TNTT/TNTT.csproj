@@ -55,6 +55,10 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -80,9 +84,11 @@
     <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v11.2.Design, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
@@ -90,6 +96,8 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -117,6 +125,12 @@
     </Compile>
     <Compile Include="Component\frm_ChangePwd.Designer.cs">
       <DependentUpon>frm_ChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\frm_EditInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\frm_EditInformation.Designer.cs">
+      <DependentUpon>frm_EditInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\frm_TuyChonCauHoi.cs">
       <SubType>Form</SubType>
@@ -150,6 +164,12 @@
     </Compile>
     <Compile Include="Database\Database.cs" />
     <Compile Include="FormView\Base.cs" />
+    <Compile Include="FormView\frm_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\frm_Backup.Designer.cs">
+      <DependentUpon>frm_Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\frm_BoMon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,14 +281,28 @@
     <Compile Include="PreBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report\frm_ReportDeThi.cs">
+    <Compile Include="Report\da_TracNghiem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>da_TracNghiem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_ReportGV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report\frm_ReportDeThi.Designer.cs">
-      <DependentUpon>frm_ReportDeThi.cs</DependentUpon>
+    <Compile Include="Report\frm_ReportGV.Designer.cs">
+      <DependentUpon>frm_ReportGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rpt_Giangvien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Giangvien.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Component\frm_ChangePwd.resx">
       <DependentUpon>frm_ChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\frm_EditInformation.resx">
+      <DependentUpon>frm_EditInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_TuyChonCauHoi.resx">
       <DependentUpon>frm_TuyChonCauHoi.cs</DependentUpon>
@@ -284,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_ViewerCauHoi.resx">
       <DependentUpon>frm_ViewerCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\frm_Backup.resx">
+      <DependentUpon>frm_Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_BoMon.resx">
       <DependentUpon>frm_BoMon.cs</DependentUpon>
@@ -350,9 +387,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report\frm_ReportDeThi.resx">
-      <DependentUpon>frm_ReportDeThi.cs</DependentUpon>
+    <EmbeddedResource Include="Report\frm_ReportGV.resx">
+      <DependentUpon>frm_ReportGV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpt_Giangvien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Giangvien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Database\App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -385,6 +427,17 @@
     <Folder Include="Avatar\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Report\da_TracNghiem.xsc">
+      <DependentUpon>da_TracNghiem.xsd</DependentUpon>
+    </None>
+    <None Include="Report\da_TracNghiem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>da_TracNghiem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\da_TracNghiem.xss">
+      <DependentUpon>da_TracNghiem.xsd</DependentUpon>
+    </None>
     <None Include="Resources\add.png" />
   </ItemGroup>
   <ItemGroup>
@@ -502,7 +555,13 @@
     <None Include="Resources\changepass.png" />
     <None Include="Resources\changepass1.png" />
     <None Include="Resources\refresh1.png" />
+    <None Include="Resources\dshocsinh.png" />
+    <None Include="Resources\lophoc.png" />
+    <None Include="Resources\help.png" />
     <Content Include="_ws.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

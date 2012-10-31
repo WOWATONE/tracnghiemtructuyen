@@ -16,21 +16,23 @@ namespace TNTT.FormView
             InitializeComponent();
         }
         #region VIRTUAL
+        /// <summary>
+        /// Trước khi thêm phải clear Databind
+        /// </summary>
         public virtual void Add()
         {
             ClearDataBind();
             ResetInput();
             Click_Perform(false);
-            Expand(true);
-            isReadOnly(true);
-            Expand(true);
+            //isReadOnly(true);
+            //Expand(true);
         }
         public virtual void Edit()
         {
             Click_Perform(false);
             Expand(true);
             isReadOnly(true);
-            Expand(true);
+            //Expand(true);
         }
         public virtual void Delete()
         {
@@ -40,20 +42,17 @@ namespace TNTT.FormView
         {
             Expand(false);
             Click_Perform(true);
-            Expand(false);
+            //Expand(false);
         }
         public virtual void Cancel()
         {
-            Expand(false);
             ReFresh();
             Click_Perform(true);
+            DataBind();
         }
         public virtual void Search()
         {
-            Click_Perform(false);
-            isReadOnly(true);
-            Expand(true);
-        
+                  
         }
         public virtual void Print()
         {
@@ -67,7 +66,7 @@ namespace TNTT.FormView
         {
             Click_Perform(true);
             UserAccessFunction();
-            Expand(false);
+            //Expand(false);
         }
         public virtual void Encode() { }
         public virtual void Decode() { }
@@ -235,7 +234,7 @@ namespace TNTT.FormView
         }
         private bool allowSearch;
         /// <summary>
-        /// CÓ HIỂN THỊ NÚT DELETE HAY KHÔNG
+        /// CÓ HIỂN THỊ NÚT SEARCH HAY KHÔNG
         /// </summary>
         [DefaultValue(false)]
         public bool AllowSearch

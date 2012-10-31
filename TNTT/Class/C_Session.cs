@@ -99,6 +99,14 @@ namespace TNTT.Class
             get { return matkhau; }
             set { matkhau = value; }
         }
+        private string tenbomon;
+
+        public string Tenbomon
+        {
+            get { return tenbomon; }
+            set { tenbomon = value; }
+        }
+
 
     }
 }
