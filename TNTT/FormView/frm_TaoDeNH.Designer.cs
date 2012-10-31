@@ -72,6 +72,7 @@
             this.cmd_delete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -121,6 +122,7 @@
             // 
             // txt_made
             // 
+            this.txt_made.Controls.Add(this.cmd_Print);
             this.txt_made.Controls.Add(this.labelControl8);
             this.txt_made.Controls.Add(this.txt_madethi);
             this.txt_made.Controls.Add(this.cmd_Taolai);
@@ -570,6 +572,16 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
+            // cmd_Print
+            // 
+            this.cmd_Print.Image = global::TNTT.Properties.Resources.printer;
+            this.cmd_Print.Location = new System.Drawing.Point(710, 40);
+            this.cmd_Print.Name = "cmd_Print";
+            this.cmd_Print.Size = new System.Drawing.Size(100, 51);
+            this.cmd_Print.TabIndex = 17;
+            this.cmd_Print.Text = "In đề thi";
+            this.cmd_Print.Click += new System.EventHandler(this.cmd_Print_Click);
+            // 
             // frm_TaoDeNH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -658,5 +670,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit xem;
+        private DevExpress.XtraEditors.SimpleButton cmd_Print;
     }
 }

@@ -99,3 +99,4 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ChangePwd.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_Backup.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_EditInformation.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportGV.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportDeThi.resources

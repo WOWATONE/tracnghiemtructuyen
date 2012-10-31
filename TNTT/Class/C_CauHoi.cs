@@ -21,10 +21,16 @@ namespace TNTT.Class
         public DataTable GetListRandom(string number,string condition)
         {
             string sql = @"SELECT TOP "+number+@" idnganhangcauhoi,monhoc_idmonhoc,tenmonhoc, tieude,chuong,phan,case capdo when 1 then N'Dễ' when 2 then N'Trung bình' else N'Khó' end as capdo,ngaytao,tinhtrang,giangvien_idgiangvien,tengiangvien,troncau
-			from giangvien gv, monhoc mh, nganhangcauhoi ch WHERE gv.idgiangvien=ch.giangvien_idgiangvien AND ch.monhoc_idmonhoc=mh.idmonhoc  " + condition+ " ORDER BY NEWID()";
+            from giangvien gv, monhoc mh, nganhangcauhoi ch WHERE gv.idgiangvien=ch.giangvien_idgiangvien AND ch.monhoc_idmonhoc=mh.idmonhoc  " + condition+ " ORDER BY NEWID()";
             DataTable dt = new DataTable();
             dt = db.GetData(sql);
             return dt;
+        }
+        public DataTable GetListRePort(string condition)
+        {
+            string sql = "select * from View_Cauhoi"+ condition;
+            return db.GetData(sql);
+
         }
         public DataTable GetMaxId()
         {

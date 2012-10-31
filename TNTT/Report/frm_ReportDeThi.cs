@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using System.Data;
-using System.Data.SqlClient;
-using CrystalDecisions.Windows.Forms;
-using CrystalDecisions.CrystalReports;
-
-
 namespace TNTT.Report
 {
-    public partial class frm_ReportGV : DevExpress.XtraEditors.XtraForm
+    public partial class frm_ReportDeThi : DevExpress.XtraEditors.XtraForm
     {
         DataTable dt = new DataTable();
-        public frm_ReportGV(DataTable dt)
+        public frm_ReportDeThi(DataTable dt)
         {
             InitializeComponent();
             this.dt = dt;
@@ -25,7 +20,7 @@ namespace TNTT.Report
 
         private void frm_ReportDeThi_Load(object sender, EventArgs e)
         {
-            rpt_Giangvien crp = new rpt_Giangvien();
+            rpt_Dethi crp = new rpt_Dethi();
             crp.SetDataSource(dt);
             crystalReportViewer1.ReportSource = crp;
         }
