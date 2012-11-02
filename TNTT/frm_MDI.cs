@@ -29,7 +29,7 @@ namespace TNTT
 
         private void frm_MDI_Load(object sender, EventArgs e)
         {
-            
+            //PreBase.CheckBeforeLoad(this);
             Login();
         }
 
@@ -116,7 +116,7 @@ namespace TNTT
 
         private void btn_Setup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowDiaLog<FormView.frm_Config>(this);
+            PreBase.ShowDiaLog<Component.frm_Config>(this);
         }
 
         private void btn_Monhoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -171,6 +171,7 @@ namespace TNTT
 
         private void btn_Backup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            PreBase.ShowForm<FormView.Form1>(this);
         }
 
         private void btn_Phongthi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -91,8 +91,10 @@ namespace TNTT.FormView
 #if DEBUG
             txt_uid.Text = "admin";
             txt_pwd.Text = "123456";
+            
 
 #endif
+            //Login();
         }
         private void frm_Login_KeyDown(object sender, KeyEventArgs e)
         {

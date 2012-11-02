@@ -67,10 +67,15 @@ namespace TNTT.FormView
         }
         public override void Print()
         {
-            Report.frm_ReportGV frm = new Report.frm_ReportGV(dt);
+            //Report.frm_ReportGV frm = new Report.frm_ReportGV(dt);
 
-            frm.Show();
-            base.Print();
+            //frm.Show();
+            //base.Print();
+            C_DeThi dthi = new C_DeThi();
+            DataTable dt_thi =  new DataTable();
+            dt_thi = dthi.GetDeThi();
+            Report.C_Export word = new Report.C_Export();
+            word.ExportToWord(dt_thi);
         }
         public override void Init()
         {

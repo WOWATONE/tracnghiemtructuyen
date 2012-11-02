@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using DevExpress.XtraBars.Docking;
 namespace TNTT.FormView
 {
     public partial class frm_Lop : frm_tool
@@ -51,11 +51,15 @@ namespace TNTT.FormView
 
         public override void Click_Perform(bool flag)
         {
-          
+            grd_Lop.Enabled = flag;
             txt_MaLop.Enabled = txt_TenLop.Enabled = LK_MaKhoa.Enabled =! flag;
             base.Click_Perform(flag);
         }
-
+        public override void Expand(bool flag)
+        {
+            dpn_containt.Visibility = flag == true ? DockVisibility.Visible : DockVisibility.Hidden;
+            base.Expand(flag);
+        }
         public override void DataBind()
         {
             if (dt_L.Rows.Count > 0)
@@ -83,6 +87,7 @@ namespace TNTT.FormView
             LK_MaKhoa.Properties.DataSource = dt_khoa;
             LK_MaKhoa.Properties.DisplayMember = "tenkhoa";
             LK_MaKhoa.Properties.ValueMember = "idkhoa";
+            base.Init();
         }
 
         public void BestFit()
