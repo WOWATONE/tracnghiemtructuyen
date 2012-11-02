@@ -42,5 +42,12 @@ namespace TNTT.Class
                         WHERE iddethi = {5}", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien, idmadethi);
             db.ExcuteNonQuery(sql);
         }
+        public DataTable GetDeThi()
+        {
+            string sql = @"SELECT TOP 1000 [tieude]
+                          ,[cautraloi]
+                           FROM [QLCHAMDIEMTRACNGHIEM].[dbo].[View_Cauhoi]";
+            return db.GetData(sql);
+        }
     }
 }

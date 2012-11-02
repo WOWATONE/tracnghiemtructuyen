@@ -8,9 +8,11 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Docking;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using DevExpress.XtraEditors;
 using TNTT.Class;
+using System.Configuration;
 
 namespace TNTT.Class
 {
@@ -109,6 +111,20 @@ namespace TNTT.Class
         {
             
             return 1;
+        }
+        public static void CheckBeforeLoad(Form parent)
+        {
+            try
+            {
+                SqlConnection sqlcnn;
+                string connstr = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+                sqlcnn = new SqlConnection(connstr);
+                sqlcnn.Open();
+            }
+            catch
+            {
+                ShowDiaLog<Component.frm_Config>(parent);
+            }
         }
     }
 }
