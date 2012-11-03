@@ -19,10 +19,7 @@ namespace TNTT.FormView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            axFramerControl1.CreateNew("Word.Document");
-            axFramerControl1.Menubar = false;
-            axFramerControl1.Titlebar = false;
-            axFramerControl1.Toolbars = false;
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

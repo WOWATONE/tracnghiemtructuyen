@@ -171,7 +171,7 @@ namespace TNTT
 
         private void btn_Backup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowForm<FormView.Form1>(this);
+            PreBase.ShowForm<FormView.frm_TaoCauHoi>(this);
         }
 
         private void btn_Phongthi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -192,6 +192,11 @@ namespace TNTT
         private void btn_ChangePass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             PreBase.ShowDiaLog<Component.frm_ChangePwd>(this);
+        }
+
+        private void btn_MoPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PreBase.ShowForm<FormView.frm_MoPhong>(this);
         }
     }
 }
