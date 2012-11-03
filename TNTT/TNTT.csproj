@@ -723,6 +723,10 @@
     <None Include="Resources\help.png" />
     <None Include="Resources\srv.png" />
     <None Include="Resources\comment.png" />
+    <None Include="Resources\taomatkhau.png" />
+    <None Include="Resources\chuyenlop.png" />
+    <None Include="Resources\saoluudulieu.png" />
+    <None Include="Resources\open.png" />
     <Content Include="_ws.ico" />
   </ItemGroup>
   <ItemGroup>

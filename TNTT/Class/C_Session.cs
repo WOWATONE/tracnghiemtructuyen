@@ -106,6 +106,14 @@ namespace TNTT.Class
             get { return tenbomon; }
             set { tenbomon = value; }
         }
+        private bool isConnect = false;
+
+        public bool IsConnect
+        {
+            get { return isConnect; }
+            set { isConnect = value; }
+        }
+
 
 
     }

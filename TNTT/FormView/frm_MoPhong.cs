@@ -13,16 +13,18 @@ using System.Threading;
 using System.Collections;
 using System.Data.OleDb;
 
+//image
+using System.IO;
 
 namespace TNTT.FormView
 {
-    public partial class frm_MoPhong : DevExpress.XtraEditors.XtraForm
+    public partial class cbo_Phongthi : DevExpress.XtraEditors.XtraForm
     {
         DataTable dt = new DataTable();
         Class.C_PhongThi pt = new Class.C_PhongThi();
         string strimg="";
         int index=-1;
-        public frm_MoPhong()
+        public cbo_Phongthi()
         {
             InitializeComponent();
         }
@@ -30,16 +32,24 @@ namespace TNTT.FormView
         void Loaddata()
         {
             dt = pt.GetListByIdGiamThi(Class.PreBase.obj_user.Idgiangvien);
-            lst_phongThi.DataSource = dt;
-            lst_phongThi.ValueMember = "idphongthi";
-            lst_phongThi.DisplayMember = "tenphongthi";
+            cbo_DsPhong.DataSource = dt;
+            cbo_DsPhong.ValueMember = "idphongthi";
+            cbo_DsPhong.DisplayMember = "tenphongthi";
+            cbo_DsPhong.SelectedIndex = 0;
         }
 
         private void frm_MoPhong_Load(object sender, EventArgs e)
         {
             lb_ip.Text = GetIP();
+            rich_mess.Enabled = false;
+            cmd_thubaithi.Enabled = false;
+            lst_Log.Enabled = false;
             Loaddata();
-            OpenConnection();
+            if(Class.PreBase.obj_user.IsConnect==false)
+                OpenConnection();
+            lb_tengv.Text = Class.PreBase.obj_user.Hoten_giangvien;
+            LoadImage();
+            
         }
 
         private void btn_TaoMK_Click(object sender, EventArgs e)
@@ -51,39 +61,25 @@ namespace TNTT.FormView
                     strimg = Class.C_Random.GetStringRandom(4);
                 pictureBox1.Image = Component.Com_Base.Convert_Text_to_Image(strimg, "Bookman Old Style", 20); // Passing appropriate value to Convert_Text_to_Image method 
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                btn_TaoMK.Enabled = false;
+                btn_TaoMK.Visible = false;
                 dt.Rows[index]["matkhau"] = strimg;
             }
         }
 
         private void lst_phongThi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lst_phongThi.SelectedIndex!=-1)
+            if (cbo_DsPhong.SelectedIndex != -1)
             {
-            index = lst_phongThi.SelectedIndex;
+                index = cbo_DsPhong.SelectedIndex;
             lb_maphong.Text = dt.Rows[index]["maphongthi"].ToString();
-            lb_tenphong.Text = dt.Rows[index]["tenphongthi"].ToString();
+            cbo_DsPhong.Text = dt.Rows[index]["tenphongthi"].ToString();
             lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
             try
             {
                 //btn_TaoMK_Click(sender, e);
             }
             catch { }
-            //if (dt.Rows[index]["matkhau"].ToString().Length > 0)
-            //{
-            //    strimg = dt.Rows[index]["matkhau"].ToString();
-            //    pictureBox1.Image = Component.Com_Base.Convert_Text_to_Image(strimg, "Bookman Old Style", 20); // Passing appropriate value to Convert_Text_to_Image method 
-            //    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    btn_TaoMK.Enabled = false;
-            //    if (index != -1)
-            //        dt.Rows[index]["matkhau"] = strimg;
-            //    btn_TaoMK.Enabled = false;
-            //}
-            //else
-            //{
-            //    btn_TaoMK.Enabled = true;
-            //    strimg = "";
-            //}
+        
             }
         }
 
@@ -104,8 +100,7 @@ namespace TNTT.FormView
 
 
         int port = 8000;
-
-        private void cmd_Mophongthi_Click(object sender, EventArgs e)
+        void Connect()
         {
             try
             {
@@ -123,11 +118,24 @@ namespace TNTT.FormView
                         }
                     }
                 }
+                Class.PreBase.obj_user.IsConnect = true;
             }
             catch (SocketException se)
             {
+                
                 MessageBox.Show(se.Message);
             }
+        }
+        private void cmd_Mophongthi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Class.PreBase.obj_user.IsConnect.ToString());
+            if (Class.PreBase.obj_user.IsConnect == false)
+             Connect();
+            rich_mess.Enabled = true;
+            cmd_thubaithi.Enabled = true;
+            cmd_Mophongthi.Enabled = false;
+            lst_Log.Enabled = true;
+            
         }
 
         void OpenConnection()
@@ -233,7 +241,7 @@ namespace TNTT.FormView
                 // Hence we will use the invoke method on the control which will
                 // be called when the Main thread is free
                 // Do UI update on UI thread
-                lp_ip.BeginInvoke(new UpdateClientListCallback(UpdateClientList), null);
+                lst_Log.BeginInvoke(new UpdateClientListCallback(UpdateClientList), null);
             }
             else
             {
@@ -244,7 +252,7 @@ namespace TNTT.FormView
         }
         void UpdateClientList()
         {
-            lp_ip.Items.Clear();
+            lst_Log.Items.Clear();
             for (int i = 0; i < m_workerSocketList.Count; i++)
             {
                 string clientKey = Convert.ToString(i + 1);
@@ -253,7 +261,7 @@ namespace TNTT.FormView
                 {
                     if (workerSocket.Connected)
                     {
-                        lp_ip.Items.Add(clientKey);
+                        lst_Log.Items.Add(clientKey);
                     }
                 }
             }
@@ -452,6 +460,39 @@ namespace TNTT.FormView
             catch (SocketException se)
             {
                 MessageBox.Show(se.Message);
+            }
+        }
+
+
+
+
+        ///trinh bay giao dien
+        ///
+
+        public void LoadImage()
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream((byte[])Class.PreBase.obj_user.Avatar_giangvien);
+                pictureBox2.Image = Image.FromStream(ms);
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox2.Refresh();
+            }
+            catch
+            {
+                pictureBox2.Image = Image.FromFile(@"Avatar/1.jpg");
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox2.Refresh();
+            }
+        }
+
+        private void cbo_DsPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            index = cbo_DsPhong.SelectedIndex;
+            if (index != -1)
+            {
+                lb_maphong.Text = cbo_DsPhong.SelectedValue.ToString();
+                lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
             }
         }
         
