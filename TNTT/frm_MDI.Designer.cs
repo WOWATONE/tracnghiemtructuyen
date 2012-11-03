@@ -75,6 +75,7 @@
             this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.btn_ChangePass = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_MoPhong = new DevExpress.XtraBars.BarButtonItem();
             this.tab_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpg_system = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbp_Theme = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -102,7 +103,6 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_MoPhong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
@@ -561,6 +561,14 @@
             this.btn_ChangePass.Name = "btn_ChangePass";
             this.btn_ChangePass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChangePass_ItemClick);
             // 
+            // btn_MoPhong
+            // 
+            this.btn_MoPhong.Caption = "Mở phòng thi";
+            this.btn_MoPhong.Id = 101;
+            this.btn_MoPhong.LargeGlyph = global::TNTT.Properties.Resources.exam;
+            this.btn_MoPhong.Name = "btn_MoPhong";
+            this.btn_MoPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_MoPhong_ItemClick);
+            // 
             // tab_Home
             // 
             this.tab_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -761,13 +769,6 @@
             // helpRibbonPageGroup
             // 
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
-            // 
-            // btn_MoPhong
-            // 
-            this.btn_MoPhong.Caption = "Mở phòng thi";
-            this.btn_MoPhong.Id = 101;
-            this.btn_MoPhong.LargeGlyph = global::TNTT.Properties.Resources.exam;
-            this.btn_MoPhong.Name = "btn_MoPhong";
             // 
             // frm_MDI
             // 

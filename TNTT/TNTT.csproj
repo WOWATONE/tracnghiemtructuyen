@@ -358,6 +358,12 @@
     <Compile Include="FormView\frm_MonHoc.Designer.cs">
       <DependentUpon>frm_MonHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\frm_MoPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\frm_MoPhong.Designer.cs">
+      <DependentUpon>frm_MoPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\frm_Nganhangcauhoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +381,12 @@
     </Compile>
     <Compile Include="FormView\frm_SinhVien.designer.cs">
       <DependentUpon>frm_SinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView\frm_TaoCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\frm_TaoCauHoi.Designer.cs">
+      <DependentUpon>frm_TaoCauHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormView\frm_TaoDeNH.cs">
       <SubType>Form</SubType>
@@ -493,6 +505,9 @@
     <EmbeddedResource Include="FormView\frm_MonHoc.resx">
       <DependentUpon>frm_MonHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormView\frm_MoPhong.resx">
+      <DependentUpon>frm_MoPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_Nganhangcauhoi.resx">
       <DependentUpon>frm_Nganhangcauhoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_SinhVien.resx">
       <DependentUpon>frm_SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\frm_TaoCauHoi.resx">
+      <DependentUpon>frm_TaoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_TaoDeNH.resx">
       <DependentUpon>frm_TaoDeNH.cs</DependentUpon>
@@ -704,6 +722,7 @@
     <None Include="Resources\lophoc.png" />
     <None Include="Resources\help.png" />
     <None Include="Resources\srv.png" />
+    <None Include="Resources\comment.png" />
     <Content Include="_ws.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -248,3 +248,11 @@ F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\de\DevExpress.XtraVerticalGrid.v11.2.resou
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\es\DevExpress.XtraVerticalGrid.v11.2.resources.dll
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\ja\DevExpress.XtraVerticalGrid.v11.2.resources.dll
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\ru\DevExpress.XtraVerticalGrid.v11.2.resources.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Interop.DSOFramer.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\AxInterop.DSOFramer.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\Interop.DSOFramer.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\AxInterop.DSOFramer.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.csproj.ResolveComReference.cache
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.Form1.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoCauHoi.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_MoPhong.resources

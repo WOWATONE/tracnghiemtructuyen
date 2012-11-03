@@ -40,5 +40,12 @@ namespace TNTT.Class
                 WHERE idphongthi = {8}", idphonthi, tenphongthi, maphongthi,  dmsh_idddsmh,dethi_iddethi,ngaythi,thoigianthi,idgiangvien,tongthoigianthi);
             db.ExcuteNonQuery(sql);
         }
+        public DataTable GetListByIdGiamThi(string idgiamthi)
+        {
+            C_Time t = new C_Time();
+            string sql = string.Format(@" set dateformat dmy
+            select * from phongthi where idgiangvien={0} and ngaythi='{1}'",idgiamthi,t.GetNowTime());
+            return db.GetData(sql);
+        }
     }
 }
