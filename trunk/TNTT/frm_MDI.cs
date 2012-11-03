@@ -196,7 +196,7 @@ namespace TNTT
 
         private void btn_MoPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowForm<FormView.frm_MoPhong>(this);
+            PreBase.ShowForm<FormView.cbo_Phongthi>(this);
         }
     }
 }

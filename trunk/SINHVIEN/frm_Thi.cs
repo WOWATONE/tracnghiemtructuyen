@@ -125,15 +125,16 @@ namespace SINHVIEN
                 if (straa == "123454321")
                 {
                     cmd_Nopbai.Enabled = true;
-                    MessageBox.Show("1");
+                    //MessageBox.Show("1");
                 }
                 else
                 {
-                    notifyIcon1.BalloonTipTitle = "Tin nhắn từ giám thị";
-                    notifyIcon1.BalloonTipText = straa;
-                    notifyIcon1.Icon = Properties.Resources._ws;
-                    notifyIcon1.ShowBalloonTip(5000, "Tin nhắn", straa, ToolTipIcon.Info);
-                    MessageBox.Show("2");
+                    //notifyIcon1.BalloonTipTitle = "Tin nhắn từ giám thị";
+                    //notifyIcon1.BalloonTipText = straa;
+                    //notifyIcon1.Icon = Properties.Resources._ws;
+                    //notifyIcon1.ShowBalloonTip(5000, "Tin nhắn", straa, ToolTipIcon.Info);
+                    //MessageBox.Show("2");
+                    richEditControl1.Text = szData;
                 }
                     WaitForData();
                 

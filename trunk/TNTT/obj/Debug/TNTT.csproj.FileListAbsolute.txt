@@ -255,4 +255,4 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\AxInterop.DSOFramer.dll
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.csproj.ResolveComReference.cache
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.Form1.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoCauHoi.resources
-F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_MoPhong.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.cbo_Phongthi.resources
