@@ -491,7 +491,7 @@ namespace TNTT.FormView
             index = cbo_DsPhong.SelectedIndex;
             if (index != -1)
             {
-                lb_maphong.Text = cbo_DsPhong.SelectedValue.ToString();
+                lb_maphong.Text = cbo_DsPhong.Text;
                 lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
             }
         }
