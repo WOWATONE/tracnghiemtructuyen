@@ -7,7 +7,7 @@ using TNTT.Database;
 
 namespace TNTT.Class
 {
-    class C_PhongThi
+    public class C_PhongThi
     {
         Database.Database db = new Database.Database();
         
@@ -20,7 +20,13 @@ namespace TNTT.Class
             dt = db.GetData(sql);
             return dt;
         }
-
+        public DataTable GetListByDate()
+        {
+            string sql = @"SET DATEFORMAT DMY GO 
+                    SELECT * FROM Phongthi
+                    WHERE ngaythi = '"+DateTime.Now.ToShortDateString()+"'";
+            return db.GetData(sql);
+        }
         public void Add(string tenphongthi,string maphongthi,string dmsh_idddsmh,string dethi_iddethi,string ngaythi,string thoigianthi,string idgiangvien,string tongthoigianthi)
         {
             string sql = string.Format(@" SET DATEFORMAT DMY INSERT INTO PHONGTHI VALUES(N'{0}','{1}',' ',{2},{3},'{4}','{5}',0,{6},{7})"
