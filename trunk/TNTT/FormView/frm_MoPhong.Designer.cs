@@ -53,9 +53,9 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.btn_Tinnhan = new DevExpress.XtraEditors.SimpleButton();
             this.lst_Log = new System.Windows.Forms.ListBox();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_Tinnhan = new DevExpress.XtraEditors.SimpleButton();
             this.rich_mess = new DevExpress.XtraRichEdit.RichEditControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -136,7 +136,7 @@
             this.navBarGroupControlContainer1.Controls.Add(this.labelControl3);
             this.navBarGroupControlContainer1.Controls.Add(this.labelControl1);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(223, 174);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(223, 177);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // btn_TaoMK
@@ -246,7 +246,7 @@
             this.navBarGroupControlContainer2.Controls.Add(this.pictureBox2);
             this.navBarGroupControlContainer2.Controls.Add(this.labelControl5);
             this.navBarGroupControlContainer2.Name = "navBarGroupControlContainer2";
-            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(223, 284);
+            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(223, 287);
             this.navBarGroupControlContainer2.TabIndex = 1;
             // 
             // lb_chucvu
@@ -320,16 +320,6 @@
             this.groupControl4.Size = new System.Drawing.Size(717, 589);
             this.groupControl4.TabIndex = 8;
             // 
-            // btn_Tinnhan
-            // 
-            this.btn_Tinnhan.Image = global::TNTT.Properties.Resources.chuyenlop;
-            this.btn_Tinnhan.Location = new System.Drawing.Point(219, 208);
-            this.btn_Tinnhan.Name = "btn_Tinnhan";
-            this.btn_Tinnhan.Size = new System.Drawing.Size(64, 31);
-            this.btn_Tinnhan.TabIndex = 2;
-            this.btn_Tinnhan.Text = "Gửi";
-            this.btn_Tinnhan.Click += new System.EventHandler(this.btn_Tinnhan_Click);
-            // 
             // lst_Log
             // 
             this.lst_Log.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -350,6 +340,16 @@
             this.groupControl6.Size = new System.Drawing.Size(289, 523);
             this.groupControl6.TabIndex = 2;
             this.groupControl6.Text = "groupControl6";
+            // 
+            // btn_Tinnhan
+            // 
+            this.btn_Tinnhan.Image = global::TNTT.Properties.Resources.chuyenlop;
+            this.btn_Tinnhan.Location = new System.Drawing.Point(219, 208);
+            this.btn_Tinnhan.Name = "btn_Tinnhan";
+            this.btn_Tinnhan.Size = new System.Drawing.Size(64, 31);
+            this.btn_Tinnhan.TabIndex = 2;
+            this.btn_Tinnhan.Text = "Gửi";
+            this.btn_Tinnhan.Click += new System.EventHandler(this.btn_Tinnhan_Click);
             // 
             // rich_mess
             // 

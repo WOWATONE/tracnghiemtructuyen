@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 namespace TNTT.Class
 {
-    class C_DeThi
+    public class C_DeThi
     {
         Database.Database db = new Database.Database();
         public DataTable GetList(string condition)
@@ -66,6 +66,16 @@ WHERE giangvien.idgiangvien = DETHI.giangvien_idgiangvien and monhoc_idmonhoc in
             string sql = @" select iddethi,madethi,tenmonhoc,listidcauhoi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien FROM dethi,giangvien,monhoc 
                             WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc 
                             and madethi = '" + madethi + "'";
+            return db.GetData(sql);
+        }
+        public DataTable GetIDQuestionByIdDeThi(string id)
+        {
+            string sql = "SELECT * from dethi WHERE iddethi='"+id+"'";
+            return db.GetData(sql);
+        }
+        public DataTable GetListAns(string condition)
+        {
+            string sql = "SELECT * from cautraloi WHERE nhch_idnganhangcauhoi in "+condition;
             return db.GetData(sql);
         }
     }
