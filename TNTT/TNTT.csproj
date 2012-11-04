@@ -700,6 +700,9 @@
     <None Include="Images\Ribbon_Info_32x32.png" />
     <None Include="Images\Ribbon_Close_32x32.png" />
     <None Include="Resources\Resource\avarta.png" />
+    <Content Include="Database\QLCHAMDIEMTRACNGHIEM.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Database\ThucHanh-CNPM.sql" />
     <Content Include="Images\changepass.png" />
     <Content Include="Resources\avt.png" />

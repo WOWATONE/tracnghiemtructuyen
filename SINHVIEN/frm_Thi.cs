@@ -9,7 +9,7 @@ using DevExpress.XtraEditors;
 //soc ket
 using System.Net.Sockets;
 using System.Net;
-
+using FirstConnectDB;
 namespace SINHVIEN
 {
     public partial class frm_Thi : DevExpress.XtraEditors.XtraForm
@@ -21,7 +21,14 @@ namespace SINHVIEN
 
         private void frm_Thi_Load(object sender, EventArgs e)
         {
-            ConnectToServer();
+            //ConnectToServer();
+            var frm = new FrmAddConnection();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(@"Đã lưu cấu hình của chương trình!\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
+                 Application.Restart();
+            }
+            //frm.Show();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -65,7 +72,7 @@ namespace SINHVIEN
                 m_clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 // Cet the remote IP address
-                IPAddress ip = IPAddress.Parse("10.0.0.25");
+                IPAddress ip = IPAddress.Parse("192.168.1.100");
                 int iPortNo = port;
                 // Create the end point 
                 IPEndPoint ipEnd = new IPEndPoint(ip, iPortNo);
