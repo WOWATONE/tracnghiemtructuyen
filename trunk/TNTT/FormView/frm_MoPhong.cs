@@ -35,7 +35,7 @@ namespace TNTT.FormView
             cbo_DsPhong.DataSource = dt;
             cbo_DsPhong.ValueMember = "idphongthi";
             cbo_DsPhong.DisplayMember = "tenphongthi";
-            cbo_DsPhong.SelectedIndex = 0;
+            //cbo_DsPhong.SelectedIndex = 0;
         }
 
         private void frm_MoPhong_Load(object sender, EventArgs e)

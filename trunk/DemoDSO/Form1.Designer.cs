@@ -103,7 +103,6 @@
 
         #endregion
 
-        private AxDSOFramer.AxFramerControl axFramerControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.GroupControl groupControl2;

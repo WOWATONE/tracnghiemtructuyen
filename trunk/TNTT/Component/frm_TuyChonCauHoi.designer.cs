@@ -78,28 +78,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(290, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(282, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 143);
-            this.barDockControlBottom.Size = new System.Drawing.Size(290, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 135);
+            this.barDockControlBottom.Size = new System.Drawing.Size(282, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 143);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 135);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(290, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 143);
+            this.barDockControlRight.Location = new System.Drawing.Point(282, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 135);
             // 
             // cd_thoat
             // 
@@ -115,7 +115,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 143);
+            this.ClientSize = new System.Drawing.Size(282, 135);
             this.ControlBox = false;
             this.Controls.Add(this.cd_thoat);
             this.Controls.Add(this.cmd_ngaunhien);

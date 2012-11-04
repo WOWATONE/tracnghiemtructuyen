@@ -19,7 +19,7 @@ namespace TNTT.Component
 
         private void cmd_thucong_Click(object sender, EventArgs e)
         {
-            PreBase.ShowDiaLog<frm_TaoDeThuCong>(this);
+            PreBase.ShowDiaLog<frm_TaoDeTC>(this);
             Close();
         }
 

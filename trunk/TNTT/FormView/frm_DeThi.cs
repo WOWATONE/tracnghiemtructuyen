@@ -26,7 +26,7 @@ namespace TNTT.FormView
                 case 2: condition += " idgiangvien= " + PreBase.obj_user.Idgiangvien; break;
                 default: break;
             }
-            dt=dth.GetList(condition);
+            dt = dth.GetListBybomon(PreBase.obj_user.Bomon_idbomon);
             grd_dethi.DataSource = dt;
         }
 
@@ -57,7 +57,7 @@ namespace TNTT.FormView
         {
             if (gridView1.RowCount > 0)
             {
-                frm_TaoDeThuCong tdtc = new frm_TaoDeThuCong(gridView1.GetFocusedRowCellValue("iddethi").ToString());
+                frm_TaoDeTC tdtc = new frm_TaoDeTC(gridView1.GetFocusedRowCellValue("iddethi").ToString());
                 tdtc.ShowDialog();
             }
             //base.Edit();

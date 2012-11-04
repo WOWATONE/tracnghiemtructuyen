@@ -79,9 +79,19 @@ namespace TNTT.Class
         }
         public DataTable GetListByIDMonHoc(string idmonhoc)
         {
-            string sql = @" SELECT idnganhangcauhoi,monhoc_idmonhoc,left(tieude,100) + ' ...' as tieude,chuong,phan,case capdo when 1 then N'Dễ' when 2 then N'Trung Bình' when 3 then N'Khó' end as capdo,tinhtrang,troncau,giangvien_idgiangvien,ngaytao
-                            FROM NGANHANGCAUHOI
-                            WHERE tinhtrang = 1 and monhoc_idmonhoc = " + idmonhoc;
+            string sql = @" SELECT idnganhangcauhoi,monhoc_idmonhoc,left(tieude,100) + ' ...' as tieude,chuong,phan,case capdo when 1 then N'Dễ' when 2 then N'Trung Bình' when 3 then N'Khó' end as capdo,tinhtrang,troncau,giangvien_idgiangvien,ngaytao,magiangvien
+                            FROM NGANHANGCAUHOI,GIANGVIEN
+                            WHERE tinhtrang = 1 and NGANHANGCAUHOI.giangvien_idgiangvien = GIANGVIEN.idgiangvien and monhoc_idmonhoc = " + idmonhoc;
+            DataTable dt = new DataTable();
+            dt = db.GetData(sql);
+            return dt;
+        }
+
+        public DataTable GetListByidnganhangcauhoi(string idmonhoc)
+        {
+            string sql = @" SELECT idnganhangcauhoi,monhoc_idmonhoc,left(tieude,100) + ' ...' as tieude,chuong,phan,case capdo when 1 then N'Dễ' when 2 then N'Trung Bình' when 3 then N'Khó' end as capdo,tinhtrang,troncau,giangvien_idgiangvien,ngaytao,magiangvien
+                            FROM NGANHANGCAUHOI,GIANGVIEN
+                            WHERE tinhtrang = 1 and NGANHANGCAUHOI.giangvien_idgiangvien = GIANGVIEN.idgiangvien and idnganhangcauhoi = " + idmonhoc;
             DataTable dt = new DataTable();
             dt = db.GetData(sql);
             return dt;

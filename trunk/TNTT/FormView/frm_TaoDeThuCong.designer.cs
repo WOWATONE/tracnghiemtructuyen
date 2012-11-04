@@ -140,9 +140,9 @@
             this.dockPanel2_Container.Controls.Add(this.labelControl3);
             this.dockPanel2_Container.Controls.Add(this.labelControl2);
             this.dockPanel2_Container.Controls.Add(this.txtMaDe);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(792, 73);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(792, 71);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // cbo_monhoc

@@ -359,8 +359,6 @@ namespace TNTT.FormView
 
         private void cmd_Print_Click(object sender, EventArgs e)
         {
-            Report.frm_ReportDeThi frm = new Report.frm_ReportDeThi(dt);
-            frm.ShowDialog();
         }
 
     }
