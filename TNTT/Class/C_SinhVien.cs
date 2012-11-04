@@ -6,7 +6,7 @@ using System.Data;
 
 namespace TNTT.Class
 {
-    class C_SinhVien
+    public class C_SinhVien
     {
         Database.Database db = new Database.Database();
 
@@ -52,5 +52,22 @@ namespace TNTT.Class
             string sql = "Delete from SINHVIEN where MaSinhVien = " + lop_idlop;
             db.ExcuteNonQuery(sql);
         }
+        public DataTable Login(string masv,string pass)
+        {
+            string sql = @" select masinhvien from SINHVIEN 
+                            where masinhvien='"+masv+"' and lop_idlop in (select lop_idlop from DSMH where idddsmh in (select dsmh_idddsmh from PHONGTHI where tinhtrang = 1 and matkhau='"+pass+"'))";
+            if(db.GetData(sql).Rows.Count==1)
+                return db.GetData(sql);
+            string sql2 = "select sinhvien_masinhvien from DSMONHOCLAI  where masinhvien='" + masv + "' and dsmh_idddsmh in (select dsmh_idddsmh from PHONGTHI where tinhtrang = 1 and matkhau='" + pass + "')";
+            return db.GetData(sql);
+        }
+
+        #region Solution Sinh Viên 
+        public DataTable GetInfoById(string id)
+        {
+            string sql = "SELECT * FROM SINHVIEN WHERE masinhvien='"+id+"'";
+            return db.GetData(sql);
+        }
+        #endregion
     }
 }

@@ -8,6 +8,6 @@ namespace SINHVIEN
     public static class C_Base
     {
         public static C_Info obj = new C_Info();
-
+        public static C_ThongTinPhong tt = new C_ThongTinPhong();
     }
 }

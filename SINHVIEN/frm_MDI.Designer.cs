@@ -47,45 +47,45 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_Next = new DevExpress.XtraEditors.SimpleButton();
             this.panel14 = new System.Windows.Forms.Panel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.splitterControl7 = new DevExpress.XtraEditors.SplitterControl();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.richEditControl7 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.r6 = new DevExpress.XtraRichEdit.RichEditControl();
             this.panel12 = new System.Windows.Forms.Panel();
             this.checkEdit6 = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl6 = new DevExpress.XtraEditors.SplitterControl();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.richEditControl6 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.r5 = new DevExpress.XtraRichEdit.RichEditControl();
             this.panel10 = new System.Windows.Forms.Panel();
             this.checkEdit5 = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl5 = new DevExpress.XtraEditors.SplitterControl();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.richEditControl5 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.r4 = new DevExpress.XtraRichEdit.RichEditControl();
             this.panel8 = new System.Windows.Forms.Panel();
             this.checkEdit4 = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl4 = new DevExpress.XtraEditors.SplitterControl();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.richEditControl4 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.r3 = new DevExpress.XtraRichEdit.RichEditControl();
             this.panel6 = new System.Windows.Forms.Panel();
             this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl3 = new DevExpress.XtraEditors.SplitterControl();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richEditControl3 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.r2 = new DevExpress.XtraRichEdit.RichEditControl();
             this.panel4 = new System.Windows.Forms.Panel();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl2 = new DevExpress.XtraEditors.SplitterControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richEditControl2 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.r1 = new DevExpress.XtraRichEdit.RichEditControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_mess = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_nop = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
@@ -144,7 +144,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(200, 561);
+            this.groupControl1.Size = new System.Drawing.Size(200, 630);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin sinh viên";
             // 
@@ -282,12 +282,11 @@
             this.groupControl2.Controls.Add(this.splitterControl2);
             this.groupControl2.Controls.Add(this.panel1);
             this.groupControl2.Controls.Add(this.splitterControl1);
-            this.groupControl2.Controls.Add(this.richEditControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(2, 21);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(522, 400);
+            this.groupControl2.Size = new System.Drawing.Size(522, 469);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "groupControl2";
             // 
@@ -296,28 +295,29 @@
             this.panel13.Controls.Add(this.panel15);
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(0, 353);
+            this.panel13.Location = new System.Drawing.Point(0, 360);
             this.panel13.MinimumSize = new System.Drawing.Size(0, 80);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(522, 80);
+            this.panel13.Size = new System.Drawing.Size(522, 109);
             this.panel13.TabIndex = 36;
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.simpleButton2);
+            this.panel15.Controls.Add(this.cmd_Next);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel15.Location = new System.Drawing.Point(390, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(132, 80);
+            this.panel15.Size = new System.Drawing.Size(132, 109);
             this.panel15.TabIndex = 1;
             // 
-            // simpleButton2
+            // cmd_Next
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(15, 28);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(100, 30);
-            this.simpleButton2.TabIndex = 23;
-            this.simpleButton2.Text = "Câu tiếp theo >>";
+            this.cmd_Next.Location = new System.Drawing.Point(15, 28);
+            this.cmd_Next.Name = "cmd_Next";
+            this.cmd_Next.Size = new System.Drawing.Size(100, 30);
+            this.cmd_Next.TabIndex = 23;
+            this.cmd_Next.Text = "Câu tiếp theo >>";
+            this.cmd_Next.Click += new System.EventHandler(this.cmd_Next_Click);
             // 
             // panel14
             // 
@@ -325,7 +325,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(133, 80);
+            this.panel14.Size = new System.Drawing.Size(133, 109);
             this.panel14.TabIndex = 0;
             // 
             // simpleButton3
@@ -335,37 +335,38 @@
             this.simpleButton3.Size = new System.Drawing.Size(100, 30);
             this.simpleButton3.TabIndex = 22;
             this.simpleButton3.Text = "<< Câu trước";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click_1);
             // 
             // splitterControl7
             // 
             this.splitterControl7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl7.Location = new System.Drawing.Point(0, 348);
+            this.splitterControl7.Location = new System.Drawing.Point(0, 354);
             this.splitterControl7.Name = "splitterControl7";
-            this.splitterControl7.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl7.Size = new System.Drawing.Size(522, 6);
             this.splitterControl7.TabIndex = 35;
             this.splitterControl7.TabStop = false;
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.richEditControl7);
+            this.panel11.Controls.Add(this.r6);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 295);
+            this.panel11.Location = new System.Drawing.Point(0, 301);
             this.panel11.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(522, 53);
             this.panel11.TabIndex = 34;
             // 
-            // richEditControl7
+            // r6
             // 
-            this.richEditControl7.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl7.Location = new System.Drawing.Point(51, 0);
-            this.richEditControl7.MinimumSize = new System.Drawing.Size(0, 53);
-            this.richEditControl7.Name = "richEditControl7";
-            this.richEditControl7.ReadOnly = true;
-            this.richEditControl7.Size = new System.Drawing.Size(471, 53);
-            this.richEditControl7.TabIndex = 1;
+            this.r6.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.r6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.r6.Location = new System.Drawing.Point(51, 0);
+            this.r6.MinimumSize = new System.Drawing.Size(0, 53);
+            this.r6.Name = "r6";
+            this.r6.ReadOnly = true;
+            this.r6.Size = new System.Drawing.Size(471, 53);
+            this.r6.TabIndex = 1;
             // 
             // panel12
             // 
@@ -387,33 +388,33 @@
             // splitterControl6
             // 
             this.splitterControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl6.Location = new System.Drawing.Point(0, 290);
+            this.splitterControl6.Location = new System.Drawing.Point(0, 295);
             this.splitterControl6.Name = "splitterControl6";
-            this.splitterControl6.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl6.Size = new System.Drawing.Size(522, 6);
             this.splitterControl6.TabIndex = 33;
             this.splitterControl6.TabStop = false;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.richEditControl6);
+            this.panel9.Controls.Add(this.r5);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 237);
+            this.panel9.Location = new System.Drawing.Point(0, 242);
             this.panel9.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(522, 53);
             this.panel9.TabIndex = 32;
             // 
-            // richEditControl6
+            // r5
             // 
-            this.richEditControl6.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl6.Location = new System.Drawing.Point(51, 0);
-            this.richEditControl6.MinimumSize = new System.Drawing.Size(0, 53);
-            this.richEditControl6.Name = "richEditControl6";
-            this.richEditControl6.ReadOnly = true;
-            this.richEditControl6.Size = new System.Drawing.Size(471, 53);
-            this.richEditControl6.TabIndex = 1;
+            this.r5.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.r5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.r5.Location = new System.Drawing.Point(51, 0);
+            this.r5.MinimumSize = new System.Drawing.Size(0, 53);
+            this.r5.Name = "r5";
+            this.r5.ReadOnly = true;
+            this.r5.Size = new System.Drawing.Size(471, 53);
+            this.r5.TabIndex = 1;
             // 
             // panel10
             // 
@@ -435,33 +436,33 @@
             // splitterControl5
             // 
             this.splitterControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl5.Location = new System.Drawing.Point(0, 232);
+            this.splitterControl5.Location = new System.Drawing.Point(0, 236);
             this.splitterControl5.Name = "splitterControl5";
-            this.splitterControl5.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl5.Size = new System.Drawing.Size(522, 6);
             this.splitterControl5.TabIndex = 31;
             this.splitterControl5.TabStop = false;
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.richEditControl5);
+            this.panel7.Controls.Add(this.r4);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 179);
+            this.panel7.Location = new System.Drawing.Point(0, 183);
             this.panel7.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(522, 53);
             this.panel7.TabIndex = 30;
             // 
-            // richEditControl5
+            // r4
             // 
-            this.richEditControl5.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl5.Location = new System.Drawing.Point(51, 0);
-            this.richEditControl5.MinimumSize = new System.Drawing.Size(0, 53);
-            this.richEditControl5.Name = "richEditControl5";
-            this.richEditControl5.ReadOnly = true;
-            this.richEditControl5.Size = new System.Drawing.Size(471, 53);
-            this.richEditControl5.TabIndex = 1;
+            this.r4.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.r4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.r4.Location = new System.Drawing.Point(51, 0);
+            this.r4.MinimumSize = new System.Drawing.Size(0, 53);
+            this.r4.Name = "r4";
+            this.r4.ReadOnly = true;
+            this.r4.Size = new System.Drawing.Size(471, 53);
+            this.r4.TabIndex = 1;
             // 
             // panel8
             // 
@@ -483,33 +484,33 @@
             // splitterControl4
             // 
             this.splitterControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl4.Location = new System.Drawing.Point(0, 174);
+            this.splitterControl4.Location = new System.Drawing.Point(0, 177);
             this.splitterControl4.Name = "splitterControl4";
-            this.splitterControl4.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl4.Size = new System.Drawing.Size(522, 6);
             this.splitterControl4.TabIndex = 29;
             this.splitterControl4.TabStop = false;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.richEditControl4);
+            this.panel5.Controls.Add(this.r3);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 121);
+            this.panel5.Location = new System.Drawing.Point(0, 124);
             this.panel5.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(522, 53);
             this.panel5.TabIndex = 28;
             // 
-            // richEditControl4
+            // r3
             // 
-            this.richEditControl4.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl4.Location = new System.Drawing.Point(51, 0);
-            this.richEditControl4.MinimumSize = new System.Drawing.Size(0, 53);
-            this.richEditControl4.Name = "richEditControl4";
-            this.richEditControl4.ReadOnly = true;
-            this.richEditControl4.Size = new System.Drawing.Size(471, 53);
-            this.richEditControl4.TabIndex = 1;
+            this.r3.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.r3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.r3.Location = new System.Drawing.Point(51, 0);
+            this.r3.MinimumSize = new System.Drawing.Size(0, 53);
+            this.r3.Name = "r3";
+            this.r3.ReadOnly = true;
+            this.r3.Size = new System.Drawing.Size(471, 53);
+            this.r3.TabIndex = 1;
             // 
             // panel6
             // 
@@ -531,33 +532,33 @@
             // splitterControl3
             // 
             this.splitterControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl3.Location = new System.Drawing.Point(0, 116);
+            this.splitterControl3.Location = new System.Drawing.Point(0, 118);
             this.splitterControl3.Name = "splitterControl3";
-            this.splitterControl3.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl3.Size = new System.Drawing.Size(522, 6);
             this.splitterControl3.TabIndex = 27;
             this.splitterControl3.TabStop = false;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.richEditControl3);
+            this.panel3.Controls.Add(this.r2);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 63);
+            this.panel3.Location = new System.Drawing.Point(0, 65);
             this.panel3.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(522, 53);
             this.panel3.TabIndex = 26;
             // 
-            // richEditControl3
+            // r2
             // 
-            this.richEditControl3.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl3.Location = new System.Drawing.Point(51, 0);
-            this.richEditControl3.MinimumSize = new System.Drawing.Size(0, 53);
-            this.richEditControl3.Name = "richEditControl3";
-            this.richEditControl3.ReadOnly = true;
-            this.richEditControl3.Size = new System.Drawing.Size(471, 53);
-            this.richEditControl3.TabIndex = 1;
+            this.r2.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.r2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.r2.Location = new System.Drawing.Point(51, 0);
+            this.r2.MinimumSize = new System.Drawing.Size(0, 53);
+            this.r2.Name = "r2";
+            this.r2.ReadOnly = true;
+            this.r2.Size = new System.Drawing.Size(471, 53);
+            this.r2.TabIndex = 1;
             // 
             // panel4
             // 
@@ -579,33 +580,33 @@
             // splitterControl2
             // 
             this.splitterControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl2.Location = new System.Drawing.Point(0, 58);
+            this.splitterControl2.Location = new System.Drawing.Point(0, 59);
             this.splitterControl2.Name = "splitterControl2";
-            this.splitterControl2.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl2.Size = new System.Drawing.Size(522, 6);
             this.splitterControl2.TabIndex = 25;
             this.splitterControl2.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.richEditControl2);
+            this.panel1.Controls.Add(this.r1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 5);
+            this.panel1.Location = new System.Drawing.Point(0, 6);
             this.panel1.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(522, 53);
             this.panel1.TabIndex = 24;
             // 
-            // richEditControl2
+            // r1
             // 
-            this.richEditControl2.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl2.Location = new System.Drawing.Point(51, 0);
-            this.richEditControl2.MinimumSize = new System.Drawing.Size(0, 53);
-            this.richEditControl2.Name = "richEditControl2";
-            this.richEditControl2.ReadOnly = true;
-            this.richEditControl2.Size = new System.Drawing.Size(471, 53);
-            this.richEditControl2.TabIndex = 1;
+            this.r1.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.r1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.r1.Location = new System.Drawing.Point(51, 0);
+            this.r1.MinimumSize = new System.Drawing.Size(0, 53);
+            this.r1.Name = "r1";
+            this.r1.ReadOnly = true;
+            this.r1.Size = new System.Drawing.Size(471, 53);
+            this.r1.TabIndex = 1;
             // 
             // panel2
             // 
@@ -629,18 +630,18 @@
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitterControl1.Location = new System.Drawing.Point(0, 0);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(522, 5);
+            this.splitterControl1.Size = new System.Drawing.Size(522, 6);
             this.splitterControl1.TabIndex = 23;
             this.splitterControl1.TabStop = false;
             // 
             // richEditControl1
             // 
             this.richEditControl1.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl1.Location = new System.Drawing.Point(2, 21);
+            this.richEditControl1.Location = new System.Drawing.Point(207, 6);
             this.richEditControl1.MinimumSize = new System.Drawing.Size(0, 105);
             this.richEditControl1.Name = "richEditControl1";
             this.richEditControl1.ReadOnly = true;
-            this.richEditControl1.Size = new System.Drawing.Size(683, 105);
+            this.richEditControl1.Size = new System.Drawing.Size(655, 105);
             this.richEditControl1.TabIndex = 22;
             // 
             // notifyIcon1
@@ -650,8 +651,9 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.simpleButton4);
-            this.groupControl4.Controls.Add(this.simpleButton1);
+            this.groupControl4.Controls.Add(this.richEditControl1);
+            this.groupControl4.Controls.Add(this.cmd_mess);
+            this.groupControl4.Controls.Add(this.cmd_nop);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl4.Location = new System.Drawing.Point(200, 0);
             this.groupControl4.Name = "groupControl4";
@@ -659,34 +661,36 @@
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "Chức năng";
             // 
-            // simpleButton4
+            // cmd_mess
             // 
-            this.simpleButton4.Image = global::SINHVIEN.Properties.Resources.Messages48;
-            this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(129, 29);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 72);
-            this.simpleButton4.TabIndex = 1;
-            this.simpleButton4.Text = "Tin nhắn ";
+            this.cmd_mess.Image = global::SINHVIEN.Properties.Resources.Messages48;
+            this.cmd_mess.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.cmd_mess.Location = new System.Drawing.Point(129, 29);
+            this.cmd_mess.Name = "cmd_mess";
+            this.cmd_mess.Size = new System.Drawing.Size(75, 72);
+            this.cmd_mess.TabIndex = 1;
+            this.cmd_mess.Text = "Tin nhắn ";
             // 
-            // simpleButton1
+            // cmd_nop
             // 
-            this.simpleButton1.Image = global::SINHVIEN.Properties.Resources.send48;
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(43, 28);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 72);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Nộp bài";
+            this.cmd_nop.Image = global::SINHVIEN.Properties.Resources.send48;
+            this.cmd_nop.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.cmd_nop.Location = new System.Drawing.Point(43, 28);
+            this.cmd_nop.Name = "cmd_nop";
+            this.cmd_nop.Size = new System.Drawing.Size(75, 72);
+            this.cmd_nop.TabIndex = 0;
+            this.cmd_nop.Text = "Nộp bài";
             // 
             // groupControl3
             // 
+            this.groupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl3.Controls.Add(this.groupControl6);
             this.groupControl3.Controls.Add(this.groupControl5);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(200, 115);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(730, 446);
+            this.groupControl3.ShowCaption = false;
+            this.groupControl3.Size = new System.Drawing.Size(730, 515);
             this.groupControl3.TabIndex = 4;
             this.groupControl3.Text = "Thông tin câu hỏi";
             // 
@@ -696,7 +700,7 @@
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl6.Location = new System.Drawing.Point(202, 21);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(526, 423);
+            this.groupControl6.Size = new System.Drawing.Size(526, 492);
             this.groupControl6.TabIndex = 3;
             this.groupControl6.Text = "groupControl6";
             // 
@@ -705,7 +709,7 @@
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl5.Location = new System.Drawing.Point(2, 21);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(200, 423);
+            this.groupControl5.Size = new System.Drawing.Size(200, 492);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "groupControl5";
             // 
@@ -718,7 +722,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 561);
+            this.ClientSize = new System.Drawing.Size(930, 630);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.groupControl1);
@@ -783,39 +787,39 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
         private System.Windows.Forms.Panel panel11;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl7;
+        private DevExpress.XtraRichEdit.RichEditControl r6;
         private System.Windows.Forms.Panel panel12;
         private DevExpress.XtraEditors.CheckEdit checkEdit6;
         private DevExpress.XtraEditors.SplitterControl splitterControl6;
         private System.Windows.Forms.Panel panel9;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl6;
+        private DevExpress.XtraRichEdit.RichEditControl r5;
         private System.Windows.Forms.Panel panel10;
         private DevExpress.XtraEditors.CheckEdit checkEdit5;
         private DevExpress.XtraEditors.SplitterControl splitterControl5;
         private System.Windows.Forms.Panel panel7;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl5;
+        private DevExpress.XtraRichEdit.RichEditControl r4;
         private System.Windows.Forms.Panel panel8;
         private DevExpress.XtraEditors.CheckEdit checkEdit4;
         private DevExpress.XtraEditors.SplitterControl splitterControl4;
         private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl4;
+        private DevExpress.XtraRichEdit.RichEditControl r3;
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraEditors.CheckEdit checkEdit3;
         private DevExpress.XtraEditors.SplitterControl splitterControl3;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl3;
+        private DevExpress.XtraRichEdit.RichEditControl r2;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.SplitterControl splitterControl2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel15;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton cmd_Next;
         private System.Windows.Forms.Panel panel14;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SplitterControl splitterControl7;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl2;
+        private DevExpress.XtraRichEdit.RichEditControl r1;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
@@ -824,7 +828,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton cmd_nop;
+        private DevExpress.XtraEditors.SimpleButton cmd_mess;
     }
 }

@@ -22,7 +22,7 @@ namespace TNTT.Class
         }
         public DataTable GetListByDate()
         {
-            string sql = @"SET DATEFORMAT DMY GO 
+            string sql = @"SET DATEFORMAT DMY 
                     SELECT * FROM Phongthi
                     WHERE ngaythi = '"+DateTime.Now.ToShortDateString()+"'";
             return db.GetData(sql);
@@ -51,6 +51,12 @@ namespace TNTT.Class
             C_Time t = new C_Time();
             string sql = string.Format(@" set dateformat dmy
             select * from phongthi where idgiangvien={0} and ngaythi='{1}'",idgiamthi,t.GetNowTime());
+            return db.GetData(sql);
+        }
+        public DataTable GetInfo(string masv)
+        {
+            string sql = @"select * from PHONGTHI,DSMH where tinhtrang= 1 and PHONGTHI.dsmh_idddsmh = DSMH.idddsmh
+and lop_idlop in (select lop_idlop from SINHVIEN where masinhvien='"+masv+"')";
             return db.GetData(sql);
         }
     }

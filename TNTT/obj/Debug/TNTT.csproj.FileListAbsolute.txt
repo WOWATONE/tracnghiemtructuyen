@@ -35,7 +35,6 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.pdb
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\TNTT.exe
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\TNTT.pdb
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.csprojResolveAssemblyReference.cache
-F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_About.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_Loading.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_TuyChonDeThi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_BoMon.resources
@@ -97,8 +96,6 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ViewerCauHoi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_ChangePwd.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_Backup.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_EditInformation.resources
-F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportGV.resources
-F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Report.frm_ReportDeThi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Microsoft.Office.Interop.Word.dll
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\office.dll
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Microsoft.Office.Interop.Word.xml
@@ -445,3 +442,5 @@ C:\Users\Administrator\Desktop\QLTNTT\TNTT\bin\Debug\ru\DevExpress.XtraVerticalG
 C:\Users\Administrator\Desktop\QLTNTT\TNTT\bin\Debug\Interop.DSOFramer.dll
 C:\Users\Administrator\Desktop\QLTNTT\TNTT\bin\Debug\AxInterop.DSOFramer.dll
 C:\Users\Administrator\Desktop\QLTNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeTC.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Database\QLCHAMDIEMTRACNGHIEM.mdf
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeTC.resources

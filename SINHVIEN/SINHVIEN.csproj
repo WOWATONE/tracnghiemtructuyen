@@ -95,7 +95,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\C_Aquestion.cs" />
     <Compile Include="Class\C_Info.cs" />
+    <Compile Include="Class\C_List.cs" />
+    <Compile Include="Class\C_ThongTinPhong.cs" />
     <Compile Include="C_Base.cs" />
     <Compile Include="frm_DangNhap.cs">
       <SubType>Form</SubType>
