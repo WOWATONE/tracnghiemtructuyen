@@ -310,7 +310,6 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.btn_Tinnhan);
             this.groupControl4.Controls.Add(this.lst_Log);
             this.groupControl4.Controls.Add(this.groupControl6);
             this.groupControl4.Controls.Add(this.groupControl5);
@@ -324,7 +323,7 @@
             // btn_Tinnhan
             // 
             this.btn_Tinnhan.Image = global::TNTT.Properties.Resources.chuyenlop;
-            this.btn_Tinnhan.Location = new System.Drawing.Point(207, 167);
+            this.btn_Tinnhan.Location = new System.Drawing.Point(219, 208);
             this.btn_Tinnhan.Name = "btn_Tinnhan";
             this.btn_Tinnhan.Size = new System.Drawing.Size(64, 31);
             this.btn_Tinnhan.TabIndex = 2;
@@ -342,6 +341,7 @@
             // 
             // groupControl6
             // 
+            this.groupControl6.Controls.Add(this.btn_Tinnhan);
             this.groupControl6.Controls.Add(this.rich_mess);
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl6.Location = new System.Drawing.Point(2, 2);
@@ -359,6 +359,7 @@
             this.rich_mess.Name = "rich_mess";
             this.rich_mess.Size = new System.Drawing.Size(285, 200);
             this.rich_mess.TabIndex = 1;
+            this.rich_mess.Text = "123";
             // 
             // groupControl5
             // 

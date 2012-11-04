@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNTT", "TNTT\TNTT.csproj", "{E0248D1C-4E86-4C15-A728-03381606F772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoDSO", "DemoDSO\DemoDSO.csproj", "{D6D83BA7-6B02-4674-95B0-20E3C4553252}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SINHVIEN", "SINHVIEN\SINHVIEN.csproj", "{E6BF937E-4513-4F2D-BDF8-2F3DFE421EDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstConnectDB", "C:\Users\Trung Toan\Desktop\Connect To Server\QLTHPT\FirstConnectDB\FirstConnectDB.csproj", "{82C3749C-81E4-4B71-AED0-523D2A08D8D4}"
@@ -29,16 +27,6 @@ Global
 		{E0248D1C-4E86-4C15-A728-03381606F772}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E0248D1C-4E86-4C15-A728-03381606F772}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E0248D1C-4E86-4C15-A728-03381606F772}.Release|x86.ActiveCfg = Release|Any CPU
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Debug|x86.ActiveCfg = Debug|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Debug|x86.Build.0 = Debug|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Release|Any CPU.ActiveCfg = Release|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Release|Mixed Platforms.Build.0 = Release|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Release|x86.ActiveCfg = Release|x86
-		{D6D83BA7-6B02-4674-95B0-20E3C4553252}.Release|x86.Build.0 = Release|x86
 		{E6BF937E-4513-4F2D-BDF8-2F3DFE421EDD}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{E6BF937E-4513-4F2D-BDF8-2F3DFE421EDD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{E6BF937E-4513-4F2D-BDF8-2F3DFE421EDD}.Debug|Mixed Platforms.Build.0 = Debug|x86

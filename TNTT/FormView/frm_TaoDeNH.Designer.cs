@@ -31,6 +31,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.txt_made = new System.Windows.Forms.GroupBox();
+            this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txt_madethi = new DevExpress.XtraEditors.TextEdit();
             this.cmd_Taolai = new DevExpress.XtraEditors.SimpleButton();
@@ -72,7 +73,6 @@
             this.cmd_delete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -106,7 +106,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(1168, 134);
+            this.groupControl1.Size = new System.Drawing.Size(1020, 134);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tùy chọn";
             // 
@@ -116,7 +116,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(209, 2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(957, 130);
+            this.groupControl4.Size = new System.Drawing.Size(809, 130);
             this.groupControl4.TabIndex = 11;
             this.groupControl4.Text = "Thêm câu hỏi";
             // 
@@ -141,9 +141,19 @@
             this.txt_made.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_made.Location = new System.Drawing.Point(2, 21);
             this.txt_made.Name = "txt_made";
-            this.txt_made.Size = new System.Drawing.Size(953, 107);
+            this.txt_made.Size = new System.Drawing.Size(805, 107);
             this.txt_made.TabIndex = 9;
             this.txt_made.TabStop = false;
+            // 
+            // cmd_Print
+            // 
+            this.cmd_Print.Image = global::TNTT.Properties.Resources.printer;
+            this.cmd_Print.Location = new System.Drawing.Point(710, 40);
+            this.cmd_Print.Name = "cmd_Print";
+            this.cmd_Print.Size = new System.Drawing.Size(100, 51);
+            this.cmd_Print.TabIndex = 17;
+            this.cmd_Print.Text = "In đề thi";
+            this.cmd_Print.Click += new System.EventHandler(this.cmd_Print_Click);
             // 
             // labelControl8
             // 
@@ -202,7 +212,7 @@
             this.trb_Socaungaunhien.Name = "trb_Socaungaunhien";
             this.trb_Socaungaunhien.Properties.Maximum = 100;
             this.trb_Socaungaunhien.Properties.Minimum = 1;
-            this.trb_Socaungaunhien.Size = new System.Drawing.Size(284, 45);
+            this.trb_Socaungaunhien.Size = new System.Drawing.Size(284, 42);
             this.trb_Socaungaunhien.TabIndex = 12;
             this.trb_Socaungaunhien.Value = 1;
             // 
@@ -374,7 +384,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 134);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1168, 429);
+            this.groupControl2.Size = new System.Drawing.Size(1020, 429);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Danh sách";
             // 
@@ -391,7 +401,7 @@
             this.repositoryItemPictureEdit1,
             this.repositoryItemButtonEdit1,
             this.xem});
-            this.grd_Dethi.Size = new System.Drawing.Size(1164, 406);
+            this.grd_Dethi.Size = new System.Drawing.Size(1016, 406);
             this.grd_Dethi.TabIndex = 0;
             this.grd_Dethi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -430,7 +440,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 22;
+            this.gridColumn2.Width = 21;
             // 
             // b
             // 
@@ -474,7 +484,7 @@
             this.col_cauhoi.OptionsColumn.AllowFocus = false;
             this.col_cauhoi.Visible = true;
             this.col_cauhoi.VisibleIndex = 2;
-            this.col_cauhoi.Width = 370;
+            this.col_cauhoi.Width = 367;
             // 
             // col_chuong
             // 
@@ -486,7 +496,7 @@
             this.col_chuong.OptionsColumn.AllowFocus = false;
             this.col_chuong.Visible = true;
             this.col_chuong.VisibleIndex = 3;
-            this.col_chuong.Width = 50;
+            this.col_chuong.Width = 48;
             // 
             // col_phan
             // 
@@ -498,7 +508,7 @@
             this.col_phan.OptionsColumn.AllowFocus = false;
             this.col_phan.Visible = true;
             this.col_phan.VisibleIndex = 4;
-            this.col_phan.Width = 50;
+            this.col_phan.Width = 48;
             // 
             // col_mucdo
             // 
@@ -510,7 +520,7 @@
             this.col_mucdo.OptionsColumn.AllowFocus = false;
             this.col_mucdo.Visible = true;
             this.col_mucdo.VisibleIndex = 5;
-            this.col_mucdo.Width = 53;
+            this.col_mucdo.Width = 56;
             // 
             // col_ngaytao
             // 
@@ -572,21 +582,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
-            // cmd_Print
-            // 
-            this.cmd_Print.Image = global::TNTT.Properties.Resources.printer;
-            this.cmd_Print.Location = new System.Drawing.Point(710, 40);
-            this.cmd_Print.Name = "cmd_Print";
-            this.cmd_Print.Size = new System.Drawing.Size(100, 51);
-            this.cmd_Print.TabIndex = 17;
-            this.cmd_Print.Text = "In đề thi";
-            this.cmd_Print.Click += new System.EventHandler(this.cmd_Print_Click);
-            // 
             // frm_TaoDeNH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 563);
+            this.ClientSize = new System.Drawing.Size(1020, 563);
             this.ControlBox = false;
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);

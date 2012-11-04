@@ -45,9 +45,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_dethi);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 65);
+            this.groupControl1.Location = new System.Drawing.Point(0, 61);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(787, 348);
+            this.groupControl1.Size = new System.Drawing.Size(787, 352);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Danh sách";
             // 
@@ -57,7 +57,7 @@
             this.grd_dethi.Location = new System.Drawing.Point(2, 21);
             this.grd_dethi.MainView = this.gridView1;
             this.grd_dethi.Name = "grd_dethi";
-            this.grd_dethi.Size = new System.Drawing.Size(783, 325);
+            this.grd_dethi.Size = new System.Drawing.Size(783, 329);
             this.grd_dethi.TabIndex = 0;
             this.grd_dethi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

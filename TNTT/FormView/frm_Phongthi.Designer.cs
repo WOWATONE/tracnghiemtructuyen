@@ -96,9 +96,9 @@
             this.grp_nhaplieu.Controls.Add(this.labelControl1);
             this.grp_nhaplieu.Controls.Add(this.txt_TenPhong);
             this.grp_nhaplieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grp_nhaplieu.Location = new System.Drawing.Point(0, 63);
+            this.grp_nhaplieu.Location = new System.Drawing.Point(0, 65);
             this.grp_nhaplieu.Name = "grp_nhaplieu";
-            this.grp_nhaplieu.Size = new System.Drawing.Size(1173, 121);
+            this.grp_nhaplieu.Size = new System.Drawing.Size(1020, 121);
             this.grp_nhaplieu.TabIndex = 4;
             this.grp_nhaplieu.Text = "Lớp:";
             // 
@@ -271,9 +271,9 @@
             // 
             this.groupControl2.Controls.Add(this.grd_pt);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 184);
+            this.groupControl2.Location = new System.Drawing.Point(0, 186);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1173, 265);
+            this.groupControl2.Size = new System.Drawing.Size(1020, 263);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Danh sách phòng thi";
             // 
@@ -283,7 +283,7 @@
             this.grd_pt.Location = new System.Drawing.Point(2, 21);
             this.grd_pt.MainView = this.gridView1;
             this.grd_pt.Name = "grd_pt";
-            this.grd_pt.Size = new System.Drawing.Size(1169, 242);
+            this.grd_pt.Size = new System.Drawing.Size(1016, 240);
             this.grd_pt.TabIndex = 0;
             this.grd_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -379,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 449);
+            this.ClientSize = new System.Drawing.Size(1020, 449);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.grp_nhaplieu);
             this.Name = "frm_Phongthi";

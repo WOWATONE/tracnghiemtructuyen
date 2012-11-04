@@ -166,7 +166,7 @@ namespace TNTT
 
         private void btn_TaoDeTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowDiaLog<FormView.frm_TaoDeThuCong>(this);
+            PreBase.ShowForm<FormView.frm_TaoDeTC>(this);
         }
 
         private void btn_Backup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

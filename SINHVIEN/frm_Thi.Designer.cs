@@ -279,7 +279,7 @@
             this.panel13.Controls.Add(this.panel15);
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(2, 486);
+            this.panel13.Location = new System.Drawing.Point(2, 479);
             this.panel13.MinimumSize = new System.Drawing.Size(0, 80);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(726, 80);
@@ -322,9 +322,9 @@
             // splitterControl7
             // 
             this.splitterControl7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl7.Location = new System.Drawing.Point(2, 480);
+            this.splitterControl7.Location = new System.Drawing.Point(2, 474);
             this.splitterControl7.Name = "splitterControl7";
-            this.splitterControl7.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl7.Size = new System.Drawing.Size(726, 5);
             this.splitterControl7.TabIndex = 35;
             this.splitterControl7.TabStop = false;
             // 
@@ -333,7 +333,7 @@
             this.panel11.Controls.Add(this.richEditControl7);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(2, 427);
+            this.panel11.Location = new System.Drawing.Point(2, 421);
             this.panel11.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(726, 53);
@@ -371,9 +371,9 @@
             // splitterControl6
             // 
             this.splitterControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl6.Location = new System.Drawing.Point(2, 421);
+            this.splitterControl6.Location = new System.Drawing.Point(2, 416);
             this.splitterControl6.Name = "splitterControl6";
-            this.splitterControl6.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl6.Size = new System.Drawing.Size(726, 5);
             this.splitterControl6.TabIndex = 33;
             this.splitterControl6.TabStop = false;
             // 
@@ -382,7 +382,7 @@
             this.panel9.Controls.Add(this.richEditControl6);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(2, 368);
+            this.panel9.Location = new System.Drawing.Point(2, 363);
             this.panel9.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(726, 53);
@@ -420,9 +420,9 @@
             // splitterControl5
             // 
             this.splitterControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl5.Location = new System.Drawing.Point(2, 362);
+            this.splitterControl5.Location = new System.Drawing.Point(2, 358);
             this.splitterControl5.Name = "splitterControl5";
-            this.splitterControl5.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl5.Size = new System.Drawing.Size(726, 5);
             this.splitterControl5.TabIndex = 31;
             this.splitterControl5.TabStop = false;
             // 
@@ -431,7 +431,7 @@
             this.panel7.Controls.Add(this.richEditControl5);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(2, 309);
+            this.panel7.Location = new System.Drawing.Point(2, 305);
             this.panel7.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(726, 53);
@@ -469,9 +469,9 @@
             // splitterControl4
             // 
             this.splitterControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl4.Location = new System.Drawing.Point(2, 303);
+            this.splitterControl4.Location = new System.Drawing.Point(2, 300);
             this.splitterControl4.Name = "splitterControl4";
-            this.splitterControl4.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl4.Size = new System.Drawing.Size(726, 5);
             this.splitterControl4.TabIndex = 29;
             this.splitterControl4.TabStop = false;
             // 
@@ -480,7 +480,7 @@
             this.panel5.Controls.Add(this.richEditControl4);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(2, 250);
+            this.panel5.Location = new System.Drawing.Point(2, 247);
             this.panel5.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(726, 53);
@@ -518,9 +518,9 @@
             // splitterControl3
             // 
             this.splitterControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl3.Location = new System.Drawing.Point(2, 244);
+            this.splitterControl3.Location = new System.Drawing.Point(2, 242);
             this.splitterControl3.Name = "splitterControl3";
-            this.splitterControl3.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl3.Size = new System.Drawing.Size(726, 5);
             this.splitterControl3.TabIndex = 27;
             this.splitterControl3.TabStop = false;
             // 
@@ -529,7 +529,7 @@
             this.panel3.Controls.Add(this.richEditControl3);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(2, 191);
+            this.panel3.Location = new System.Drawing.Point(2, 189);
             this.panel3.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(726, 53);
@@ -566,9 +566,9 @@
             // splitterControl2
             // 
             this.splitterControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl2.Location = new System.Drawing.Point(2, 185);
+            this.splitterControl2.Location = new System.Drawing.Point(2, 184);
             this.splitterControl2.Name = "splitterControl2";
-            this.splitterControl2.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl2.Size = new System.Drawing.Size(726, 5);
             this.splitterControl2.TabIndex = 25;
             this.splitterControl2.TabStop = false;
             // 
@@ -577,7 +577,7 @@
             this.panel1.Controls.Add(this.richEditControl2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(2, 132);
+            this.panel1.Location = new System.Drawing.Point(2, 131);
             this.panel1.MinimumSize = new System.Drawing.Size(0, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(726, 53);
@@ -616,7 +616,7 @@
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitterControl1.Location = new System.Drawing.Point(2, 126);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(726, 6);
+            this.splitterControl1.Size = new System.Drawing.Size(726, 5);
             this.splitterControl1.TabIndex = 23;
             this.splitterControl1.TabStop = false;
             // 

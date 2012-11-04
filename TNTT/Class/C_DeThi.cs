@@ -14,13 +14,23 @@ namespace TNTT.Class
                            WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc " + condition;
             return db.GetData(sql);
         }
+
         public DataTable GetListByIdMon(string idmon)
         {
             string sql = "select iddethi,madethi,monhoc_idmonhoc,ngaytao from dethi where monhoc_idmonhoc = "+idmon;
             return db.GetData(sql);
         }
-        public void Add(string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
+
+        public DataTable GetListBybomon(string idbomon)
         {
+            string sql = string.Format(@"SELECT iddethi,madethi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien
+FROM DETHI,giangvien
+WHERE giangvien.idgiangvien = DETHI.giangvien_idgiangvien and monhoc_idmonhoc in (SELECT idmonhoc FROM MONHOC WHERE bomon_idbomon = {0})", idbomon);
+            return db.GetData(sql);
+        }
+
+        public void Add(string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
+        {          
             string sql = string.Format(@"SET DATEFORMAT dmy 
                         INSERT INTO DETHI(madethi,listidcauhoi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien)
                         VALUES('{0}','{1}',{2},'{3}',{4})", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien);
@@ -42,11 +52,20 @@ namespace TNTT.Class
                         WHERE iddethi = {5}", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien, idmadethi);
             db.ExcuteNonQuery(sql);
         }
+
         public DataTable GetDeThi()
         {
             string sql = @"SELECT TOP 1000 [tieude]
                           ,[cautraloi]
                            FROM [QLCHAMDIEMTRACNGHIEM].[dbo].[View_Cauhoi]";
+            return db.GetData(sql);
+        }
+
+        public DataTable GetListmadethi(string madethi)
+        {
+            string sql = @" select iddethi,madethi,tenmonhoc,listidcauhoi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien FROM dethi,giangvien,monhoc 
+                            WHERE giangvien.idgiangvien = dethi.giangvien_idgiangvien AND monhoc.idmonhoc = dethi.monhoc_idmonhoc 
+                            and madethi = '" + madethi + "'";
             return db.GetData(sql);
         }
     }
