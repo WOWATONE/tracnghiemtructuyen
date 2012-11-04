@@ -15,7 +15,7 @@ namespace SINHVIEN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Thi());
+            Application.Run(new frm_DangNhap());
         }
     }
 }
