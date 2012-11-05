@@ -198,5 +198,10 @@ namespace TNTT
         {
             PreBase.ShowForm<FormView.cbo_Phongthi>(this);
         }
+
+        private void btn_Hoclai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PreBase.ShowForm<FormView.frm_SVHocLai>(this);
+        }
     }
 }

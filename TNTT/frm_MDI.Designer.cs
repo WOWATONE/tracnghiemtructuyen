@@ -419,6 +419,7 @@
             this.btn_Hoclai.Id = 77;
             this.btn_Hoclai.LargeGlyph = global::TNTT.Properties.Resources.dshocsinh;
             this.btn_Hoclai.Name = "btn_Hoclai";
+            this.btn_Hoclai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Hoclai_ItemClick);
             // 
             // btn_khoa
             // 

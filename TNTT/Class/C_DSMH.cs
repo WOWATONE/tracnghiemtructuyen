@@ -40,5 +40,13 @@ namespace TNTT.Class
             string sql = "Delete from DSMH where idddsmh = " + idddsmh;
             db.ExcuteNonQuery(sql);
         }
+
+        public DataTable GetListbyidmonhocandidlop(string idmonhoc,string idlop)
+        {
+            string sql = string.Format(@"SELECT * FROM DSMH where monhoc_idmonhoc = {0} and lop_idlop = {1}",idmonhoc,idlop);
+            DataTable dt = new DataTable();
+            dt = db.GetData(sql);
+            return dt;
+        }
     }
 }
