@@ -24,8 +24,8 @@ namespace TNTT.Class
         public DataTable GetListBybomon(string idbomon)
         {
             string sql = string.Format(@"SELECT iddethi,madethi,monhoc_idmonhoc,ngaytao,giangvien_idgiangvien,tengiangvien
-FROM DETHI,giangvien
-WHERE giangvien.idgiangvien = DETHI.giangvien_idgiangvien and monhoc_idmonhoc in (SELECT idmonhoc FROM MONHOC WHERE bomon_idbomon = {0})", idbomon);
+            FROM DETHI,giangvien
+            WHERE giangvien.idgiangvien = DETHI.giangvien_idgiangvien and monhoc_idmonhoc in (SELECT idmonhoc FROM MONHOC WHERE bomon_idbomon = {0})", idbomon);
             return db.GetData(sql);
         }
 
@@ -75,7 +75,7 @@ WHERE giangvien.idgiangvien = DETHI.giangvien_idgiangvien and monhoc_idmonhoc in
         }
         public DataTable GetListAns(string condition)
         {
-            string sql = "SELECT * from cautraloi WHERE nhch_idnganhangcauhoi in "+condition;
+            string sql = "SELECT tieude,cautraloi,dapan,troncau,nhch_idnganhangcauhoi from cautraloi,nganhangcauhoi WHERE cautraloi.nhch_idnganhangcauhoi = nganhangcauhoi.idnganhangcauhoi AND nhch_idnganhangcauhoi in " + condition;
             return db.GetData(sql);
         }
     }
