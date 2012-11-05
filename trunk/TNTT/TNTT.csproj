@@ -231,6 +231,7 @@
     <Compile Include="Class\C_Random.cs" />
     <Compile Include="Class\C_Session.cs" />
     <Compile Include="Class\C_SinhVien.cs" />
+    <Compile Include="Class\C_SinhVienHocLai.cs" />
     <Compile Include="Class\C_TaoDe.cs" />
     <Compile Include="Class\C_Time.cs" />
     <Compile Include="Class\C_TraLoi.cs" />
@@ -376,6 +377,12 @@
     <Compile Include="FormView\frm_SinhVien.designer.cs">
       <DependentUpon>frm_SinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormView\frm_SVHocLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView\frm_SVHocLai.Designer.cs">
+      <DependentUpon>frm_SVHocLai.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormView\frm_TaoCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -483,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_SinhVien.resx">
       <DependentUpon>frm_SinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView\frm_SVHocLai.resx">
+      <DependentUpon>frm_SVHocLai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView\frm_TaoCauHoi.resx">
       <DependentUpon>frm_TaoCauHoi.cs</DependentUpon>
