@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace SINHVIEN
 {
     static class Program
@@ -15,7 +15,12 @@ namespace SINHVIEN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_DangNhap());
+            Process[] pname = Process.GetProcessesByName("SINHVIEN.EXE");
+            if (pname.Length == 0)
+                Application.Run(new frm_DangNhap());
+            else
+                MessageBox.Show("run");
+          
         }
     }
 }

@@ -10,8 +10,10 @@ using DevExpress.XtraEditors;
 using System.Net.Sockets;
 using System.Net;
 using FirstConnectDB;
-
+using DevExpress.XtraNavBar;
 using TNTT.Class;
+using System.IO;
+using Settings = SINHVIEN.Properties.Settings;
 namespace SINHVIEN
 {
     public partial class frm_MDI : DevExpress.XtraEditors.XtraForm
@@ -31,7 +33,30 @@ namespace SINHVIEN
         {
             InitializeComponent();
         }
-
+        public void LoadImage()
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream((byte[])C_Base.obj.Avatar);
+                pictureBox1.Image = Image.FromStream(ms);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Refresh();
+            }
+            catch
+            {
+                pictureBox1.Image = Image.FromFile(@"Avatar/1.jpg");
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Refresh();
+            }
+        }
+        void LoadInfo()
+        {
+            LoadImage();
+            lb_TenSinhVien.Text = C_Base.obj.Tensinhvien;
+            lb_Lop.Text = C_Base.obj.Lop;
+            lb_MaSinhVien.Text = C_Base.obj.Masinhvien;
+            lb_NgayThi.Text = DateTime.Now.ToShortDateString();
+        }
         private void frm_Thi_Load(object sender, EventArgs e)
         {
             //ConnectToServer();
@@ -39,30 +64,29 @@ namespace SINHVIEN
             //if (frm.ShowDialog() == DialogResult.OK)
             //{
             //    MessageBox.Show(@"Đã lưu cấu hình của chương trình!\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
-            //     Application.Restart();
+            //    Application.Restart();
             //}
             //frm.Show();
-            TachDeThi();
-            TronDeThi();
-            LoadDapAn();
-            LoadCauHoiThu(current);
+            LoadInfo();
+           
+          //  LoadNav();
             
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            panel3.Visible = false;
-            panel5.Visible = false;
-            panel7.Visible = false;
-            panel9.Visible = false;
+            pnl_daB.Visible = false;
+            pnl_daC.Visible = false;
+            pnl_daD.Visible = false;
+            pnl_daE.Visible = false;
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            panel3.Visible = true;
-            panel5.Visible = true;
-            panel7.Visible = true;
-            panel9.Visible = true;
+            pnl_daB.Visible = true;
+            pnl_daC.Visible = true;
+            pnl_daD.Visible = true;
+            pnl_daE.Visible = true;
         }
 
 
@@ -149,7 +173,7 @@ namespace SINHVIEN
                 string straa = szData;
                 if (straa == "123454321")
                 {
-                    cmd_Nopbai.Enabled = true;
+                   // cmd_Nopbai.Enabled = true;
                     //MessageBox.Show("1");
                 }
                 else
@@ -159,9 +183,11 @@ namespace SINHVIEN
                     //notifyIcon1.Icon = Properties.Resources._ws;
                     //notifyIcon1.ShowBalloonTip(5000, "Tin nhắn", straa, ToolTipIcon.Info);
                     //MessageBox.Show("2");
-                    richEditControl1.Text = szData;
+                    //rich_Cauhoi.Text = szData;
+                    MessageBox.Show(szData);
                 }
-                    WaitForData();
+                //cmd_LamBai.Image = Properties.Resources.newMessages48;
+                WaitForData();
                 
             }
             catch (ObjectDisposedException)
@@ -209,18 +235,18 @@ namespace SINHVIEN
             {
                 ds[index] = new Class.C_Aquestion();
                 ds[index].Id = a[i];
-               
+                
                 for (int j = dt_ans.Rows.Count - 1; j >= 0; j--)
                 {
                     if (dt_ans.Rows[j]["nhch_idnganhangcauhoi"].ToString() == ds[index].Id)
                     {
-                        ds[index].Question = "111!";
-                       
+                        //có tồn tại đáp án mới lấy
+                        ds[index].Question = dt_ans.Rows[j]["tieude"].ToString();
                         //Câu thứ index có đáp án thứ hiện tại =  câu trả lới
                         //Trạng thái đúng sai = dapan trong csdl
                         ds[index].ListAns[ds[index].NumberAns] = new DA();
                         ds[index].ListAns[ds[index].NumberAns].answer = dt_ans.Rows[j]["cautraloi"].ToString();
-                        ds[index].ListAns[ds[index].NumberAns].status = dt_ans.Rows[j]["dapan"].ToString();
+                        ds[index].ListAns[ds[index].NumberAns].status =Convert.ToBoolean(dt_ans.Rows[j]["dapan"].ToString());
                         dt_ans.Rows.RemoveAt(j);
                         ds[index].NumberAns++; //so dap án hien tai
                     }
@@ -228,6 +254,16 @@ namespace SINHVIEN
                 index++;
             }
 
+        }
+        void ResetRich()
+        {
+            r1.ResetText();
+            r2.ResetText();
+            r3.ResetText();
+            r4.ResetText();
+            r5.ResetText();
+            r6.ResetText();
+            rich_Cauhoi.ResetText();
         }
         public void TronDeThi()
         { 
@@ -245,35 +281,272 @@ namespace SINHVIEN
         {
            
         }
+        void AnRichText(int i)
+        {
+            if (i < 6)
+            {
+                pnl_daF.Visible = false;
+                splitterControl7.Visible = false;
+            }
+            if (i < 5)
+            {
+                pnl_daE.Visible = false;
+                splitterControl6.Visible = false;
+            }
+            if (i < 4)
+            {
+                pnl_daD.Visible = false;
+                splitterControl5.Visible = false;
+            }
+            if (i < 3)
+            {
+                pnl_daC.Visible = false;
+                splitterControl4.Visible = false;
+            }
+            chkAA.Checked = chkB.Checked = chkC.Checked = chkD.Checked = chkE.Checked = chkF.Checked = false;
+
+        }
         void LoadCauHoiThu(int x)
         {
-            //int index = ds[x];
-            richEditControl1.Text = ds[x].Question;
-            //if (index > 0)
-            //    r1.Text = ds[x].ListAns[0].Answer.ToString();
-            //if (index > 1)
-            //    r2.Text = ds[x].ListAns[1].Answer.ToString();
-            //if (index > 2)
-            //    r3.Text = ds[x].ListAns[2].Answer.ToString();
-            //if (index > 3)
-            //    r4.Text = ds[x].ListAns[3].Answer.ToString();
-            //if (index > 4)
-            //    r5.Text = ds[x].ListAns[4].Answer.ToString();
-            //if (index > 5)
-            //    r6.Text = ds[x].ListAns[5].Answer.ToString();
+
+            lb_cauhientai.Text = x+1 < 10 ? "0" + (x + 1).ToString() : (x + 1).ToString();
+            int i = ds[x].NumberAns;
+            AnRichText(i);
+            rich_Cauhoi.Text = ds[x].Question;
+            if (i > 0)
+            {
+                r1.Text = ds[x].ListAns[0].answer;
+                pnl_daA.Visible = true;
+                chkAA.Checked = ds[x].ListAns[0].isCheck;
+            }
+            if (i > 1)
+            {
+                r2.Text = ds[x].ListAns[1].answer;
+                pnl_daB.Visible = true;
+                chkB.Checked = ds[x].ListAns[1].isCheck;
+            }
+            if (i > 2)
+            {
+                r3.Text = ds[x].ListAns[2].answer;
+                pnl_daC.Visible = true;
+                splitterControl4.Visible = true;
+                chkC.Checked = ds[x].ListAns[2].isCheck;
+            }
+            if (i > 3)
+            {
+                r4.Text = ds[x].ListAns[3].answer;
+                pnl_daD.Visible = true;
+                splitterControl4.Visible = true;
+                chkD.Checked = ds[x].ListAns[3].isCheck;
+            }
+            if (i > 4)
+            {
+                r5.Text = ds[x].ListAns[4].answer;
+                pnl_daE.Visible = true;
+                splitterControl4.Visible = true;
+                chkE.Checked = ds[x].ListAns[4].isCheck;
+            }
+            if (i > 5)
+            {
+                r6.Text = ds[x].ListAns[5].answer;
+                pnl_daF.Visible = true;
+                splitterControl4.Visible = true;
+                chkF.Checked = ds[x].ListAns[5].isCheck;
+                    
+            }
+            
             
         }
 
         private void cmd_Next_Click(object sender, EventArgs e)
         {
+            UpdateNav(current);
+           // LoadNaViGroup();
+            ResetRich();
+            if (current == n - 1)
+                current = -1;
             LoadCauHoiThu(++current);
         }
 
         private void simpleButton3_Click_1(object sender, EventArgs e)
         {
+            UpdateNav(current);
+           // LoadNaViGroup();
+            ResetRich();
+            if (current == 0)
+                current = n ;
             LoadCauHoiThu(--current);
         }
+        bool KiemTraDuocChon(Class.C_Aquestion x)
+        {
+            if (chkAA.Checked)
+                return true;
+            if (chkB.Checked)
+                return true;
+            if (chkC.Checked)
+                return true;
+            if (chkD.Checked)
+                return true;
+            if (chkE.Checked)
+                return true;
+            if (chkF.Checked)
+                return true;
+            return false;
+        }
+        void UpdateNav(int i)
+        {
+            if (KiemTraDuocChon(ds[i]))
+                navBarGroup.ItemLinks[i].Item.SmallImage = Properties.Resources.ok;
+            else
+                navBarGroup.ItemLinks[i].Item.SmallImage = Properties.Resources.no;
+        }
+        void LoadNaViGroup()
+        {
+            navBarGroup.ItemLinks.Clear();
+            for (int i = 0; i < n; i++)
+            {
+                NavBarItem item = new NavBarItem("Câu hỏi " + (i+1).ToString());
+               // if (KiemTraDuocChon(ds[i]))
+                    item.SmallImage = Properties.Resources.no;
+                item.Tag = i.ToString();
+                navBarGroup.ItemLinks.Add(item);
+            }
+            navBar_Cauhoi.LinkClicked += new NavBarLinkEventHandler(navBar_Cauhoi_LinkClicked);
+        }
 
+        void navBar_Cauhoi_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            UpdateNav(current);
+            current = int.Parse(e.Link.Item.Tag.ToString());
+            LoadCauHoiThu(int.Parse(e.Link.Item.Tag.ToString()));
+     
+        }
+
+       
+        private void chkAA_CheckedChanged(object sender, EventArgs e)
+        {
+            ds[current].ListAns[0].isCheck = chkAA.Checked;
+        }
+
+        private void chkB_CheckedChanged(object sender, EventArgs e)
+        {
+            ds[current].ListAns[1].isCheck = chkB.Checked;
+        }
+
+        private void chkC_CheckedChanged(object sender, EventArgs e)
+        {
+            ds[current].ListAns[2].isCheck = chkC.Checked;
+        }
+
+        private void chkD_CheckedChanged(object sender, EventArgs e)
+        {
+            ds[current].ListAns[3].isCheck = chkD.Checked;
+        }
+
+        private void chkE_CheckedChanged(object sender, EventArgs e)
+        {
+            ds[current].ListAns[4].isCheck = chkE.Checked;
+        }
+
+        private void chkF_CheckedChanged(object sender, EventArgs e)
+        {
+            ds[current].ListAns[5].isCheck = chkF.Checked;
+        }
+
+        private void navBar_Cauhoi_DoubleClick(object sender, EventArgs e)
+        {
+            return;
+        }
+
+        private void frm_MDI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+
+        }
+
+        private void frm_MDI_KeyDown(object sender, KeyEventArgs e)
+        {
+            UpdateNav(current);
+            switch (e.KeyCode)
+            { 
+                case Keys.Right:
+                case Keys.Enter:
+                        ResetRich();
+                        if (current == 0)
+                            current = n;
+                        LoadCauHoiThu(--current);
+                        break;
+
+                case Keys.Left:
+                         ResetRich();
+                        if (current == 0)
+                            current = n ;
+                        LoadCauHoiThu(--current);
+                        break;
+                default: break;
+            }
+        }
+
+        private void cmd_LamBai_Click(object sender, EventArgs e)
+        {
+            cmd_LamBai.Enabled = false;
+            cmd_nop.Enabled = true;
+            cmd_mess.Enabled = true;
+            group_cauhoi.Enabled = true;
+            navBar_Cauhoi.Enabled = true;
+            TachDeThi();
+            TronDeThi();
+            LoadDapAn();
+            LoadCauHoiThu(current);
+            LoadNaViGroup();
+            Settings.Default.Thoigianlambai = int.Parse(C_Base.tt.Thoigian)*60;
+            timer1.Interval = 1000;
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Start();
+        }
+        void ConvertToSec(int time)
+        {
+            int h = time / 3600;
+            int m = time % 3600 / 60;
+            int s = time % 60;
+          
+            lb_ThoiGianThi.Text = h + " : " + m + " : " + s;
+        }
+        void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Settings.Default.Thoigianlambai > 0)
+            {
+                Settings.Default.Thoigianlambai--;
+                ConvertToSec(Settings.Default.Thoigianlambai);
+            }
+            else
+            {
+                Nopbai();
+                timer1.Stop();
+            }
+                //throw new NotImplementedException();
+        }
+        void Nopbai()
+        {
+            XtraMessageBox.Show("Hết thời gian làm bài");
+        }
+
+        private void cmd_mess_DragOver(object sender, DragEventArgs e)
+        {
+            cmd_mess.Image = Properties.Resources.Messages48;
+        }
+
+        private void cmd_Connect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConnectToServer();
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể kết nối với máy chủ. Vui lòng thử lại");
+            }
+        }
 
 
 

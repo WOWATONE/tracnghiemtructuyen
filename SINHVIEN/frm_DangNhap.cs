@@ -31,12 +31,13 @@ namespace SINHVIEN
         }
         private void frm_DangNhap_Load(object sender, EventArgs e)
         {
-            Init();
             
-#if !debug 
-            txt_Masv.Text = "1100021";
-            txt_Matkhau.Text= "123456";
-            if (CheckLogin())
+                Init();
+
+#if !debug
+                txt_Masv.Text = "1100021";
+                txt_Matkhau.Text = "123456";
+                if (CheckLogin())
                 {
                     Hide();
                     frm_MDI frm = new frm_MDI();
@@ -73,14 +74,22 @@ namespace SINHVIEN
                 SINHVIEN.C_Base.obj.Masinhvien = txt_Masv.Text;
                 DataTable dt_info = new DataTable();
                 dt_info = sv.GetInfoById(txt_Masv.Text);
+
+                C_Base.obj.Tensinhvien = dt_info.Rows[0]["tensinhvien"].ToString();
                 C_Base.obj.Ngaysinh = dt_info.Rows[0]["ngaysinh_sinhvien"].ToString();
                 C_Base.obj.Lop = dt_info.Rows[0]["lop_idlop"].ToString();
+                C_Base.obj.Avatar = (byte[])dt_info.Rows[0]["avartar_sinhvien"];
+
+
                 //lay thong tin phong thi
                 dt_info = new DataTable();
                 dt_info = pt.GetInfo(txt_Masv.Text);
+
+
                 C_Base.tt.Idphong = dt_info.Rows[0]["idphongthi"].ToString();
                 C_Base.tt.Matkhau=dt_info.Rows[0]["Matkhau"].ToString();
                 C_Base.tt.Dethi = dt_info.Rows[0]["dethi_iddethi"].ToString();
+                C_Base.tt.Thoigian = dt_info.Rows[0]["tongthoigianthi"].ToString();
                 return true;
             }
             XtraMessageBox.Show("Đăng nhập không thành công");

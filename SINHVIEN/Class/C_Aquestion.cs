@@ -16,7 +16,6 @@ namespace SINHVIEN.Class
             set { id = value; }
         }
 
-        
         /// <summary>
         /// Số lượng câu trả lời
         /// </summary>
@@ -36,9 +35,6 @@ namespace SINHVIEN.Class
             get { return listAns; }
             set { listAns = value; }
         }
-
-        
-       
       
         /// <summary>
         /// câu hỏi
@@ -63,15 +59,13 @@ namespace SINHVIEN.Class
             get { return isMix; }
             set { isMix = value; }
         }
-      
-       
-
     }
 }
 
 public struct DA
 {
-    public char frefix;
-    public string answer;
-    public string status;
+    public  char frefix;
+    public  string answer;
+    public  bool status;
+    public  bool isCheck;
 };
