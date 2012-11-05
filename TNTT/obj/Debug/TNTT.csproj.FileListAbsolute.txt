@@ -444,3 +444,4 @@ C:\Users\Administrator\Desktop\QLTNTT\TNTT\bin\Debug\AxInterop.DSOFramer.dll
 C:\Users\Administrator\Desktop\QLTNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeTC.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Database\QLCHAMDIEMTRACNGHIEM.mdf
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeTC.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_SVHocLai.resources

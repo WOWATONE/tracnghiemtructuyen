@@ -74,6 +74,8 @@ namespace TNTT.FormView
             C_DeThi dthi = new C_DeThi();
             DataTable dt_thi =  new DataTable();
             dt_thi = dthi.GetDeThi();
+            Report.C_Export word = new Report.C_Export();
+            word.ExportToWord(dt_thi);
         }
         public override void Init()
         {
