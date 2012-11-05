@@ -46,9 +46,6 @@ namespace SINHVIEN.Class
             get { return question; }
             set { question = value; }
         }
-
-        
-
         /// <summary>
         /// câu này có được trộn hay k o
         /// </summary>
@@ -61,7 +58,6 @@ namespace SINHVIEN.Class
         }
     }
 }
-
 public struct DA
 {
     public  char frefix;
