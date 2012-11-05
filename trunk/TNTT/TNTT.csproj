@@ -223,6 +223,7 @@
     <Compile Include="Class\C_CauTraLoi.cs" />
     <Compile Include="Class\C_DeThi.cs" />
     <Compile Include="Class\C_DSMH.cs" />
+    <Compile Include="Class\C_Export.cs" />
     <Compile Include="Class\C_GiangVien.cs" />
     <Compile Include="Class\C_Khoa.cs" />
     <Compile Include="Class\C_Lop.cs" />
@@ -554,6 +555,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Avatar\" />
+    <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
