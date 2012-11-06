@@ -59,18 +59,14 @@ namespace SINHVIEN
         }
         private void frm_Thi_Load(object sender, EventArgs e)
         {
-            //ConnectToServer();
+           
             //var frm = new FrmAddConnection();
             //if (frm.ShowDialog() == DialogResult.OK)
             //{
             //    MessageBox.Show(@"Đã lưu cấu hình của chương trình!\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
             //    Application.Restart();
             //}
-            //frm.Show();
             LoadInfo();
-           
-          //  LoadNav();
-            
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -88,11 +84,6 @@ namespace SINHVIEN
             pnl_daD.Visible = true;
             pnl_daE.Visible = true;
         }
-
-
-
-
-
 
 
         #region SOCKET
@@ -361,7 +352,6 @@ namespace SINHVIEN
         private void cmd_Next_Click(object sender, EventArgs e)
         {
             UpdateNav(current);
-           // LoadNaViGroup();
             ResetRich();
             if (current == n - 1)
                 current = -1;
@@ -371,7 +361,6 @@ namespace SINHVIEN
         private void simpleButton3_Click_1(object sender, EventArgs e)
         {
             UpdateNav(current);
-           // LoadNaViGroup();
             ResetRich();
             if (current == 0)
                 current = n ;

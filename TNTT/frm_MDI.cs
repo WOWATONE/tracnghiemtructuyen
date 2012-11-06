@@ -203,5 +203,10 @@ namespace TNTT
         {
             PreBase.ShowForm<FormView.frm_SVHocLai>(this);
         }
+
+        private void cmd_Thongtin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show("Phần mềm quản lý trắc nghiệm V 1.0");
+        }
     }
 }

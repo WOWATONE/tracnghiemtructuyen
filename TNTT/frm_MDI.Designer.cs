@@ -103,6 +103,10 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_TroGiup = new DevExpress.XtraBars.BarButtonItem();
+            this.cmd_Thongtin = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
@@ -161,9 +165,12 @@
             this.barButtonGroup1,
             this.ribbonGalleryBarItem1,
             this.btn_ChangePass,
-            this.btn_MoPhong});
+            this.btn_MoPhong,
+            this.btn_TroGiup,
+            this.cmd_Thongtin,
+            this.barButtonItem4});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 102;
+            this.ribbonControl.MaxItemId = 105;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.btn_Introdue);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -697,6 +704,8 @@
             // 
             // tab_help
             // 
+            this.tab_help.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5});
             this.tab_help.Name = "tab_help";
             this.tab_help.Text = "Trợ giúp";
             // 
@@ -770,6 +779,35 @@
             // helpRibbonPageGroup
             // 
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_TroGiup);
+            this.ribbonPageGroup5.ItemLinks.Add(this.cmd_Thongtin);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Thông tin trợ giúp";
+            // 
+            // btn_TroGiup
+            // 
+            this.btn_TroGiup.Caption = "Trợ giúp";
+            this.btn_TroGiup.Id = 102;
+            this.btn_TroGiup.LargeGlyph = global::TNTT.Properties.Resources.help;
+            this.btn_TroGiup.Name = "btn_TroGiup";
+            // 
+            // cmd_Thongtin
+            // 
+            this.cmd_Thongtin.Caption = "Thông tin";
+            this.cmd_Thongtin.Glyph = global::TNTT.Properties.Resources.Ribbon_Info_32x32;
+            this.cmd_Thongtin.Id = 103;
+            this.cmd_Thongtin.Name = "cmd_Thongtin";
+            this.cmd_Thongtin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_Thongtin_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "About Us";
+            this.barButtonItem4.Id = 104;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // frm_MDI
             // 
@@ -868,6 +906,10 @@
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarButtonItem btn_ChangePass;
         private DevExpress.XtraBars.BarButtonItem btn_MoPhong;
+        private DevExpress.XtraBars.BarButtonItem btn_TroGiup;
+        private DevExpress.XtraBars.BarButtonItem cmd_Thongtin;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
 
     }
 }

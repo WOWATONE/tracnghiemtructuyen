@@ -238,6 +238,12 @@
     <Compile Include="Class\C_TraLoi.cs" />
     <Compile Include="Class\C_Valid.cs" />
     <Compile Include="Component\Com_Base.cs" />
+    <Compile Include="Component\frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\frm_ChangePwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -423,6 +429,9 @@
     <Compile Include="PreBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Component\frm_About.resx">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_ChangePwd.resx">
       <DependentUpon>frm_ChangePwd.cs</DependentUpon>
     </EmbeddedResource>
@@ -662,6 +671,7 @@
     </Content>
     <Content Include="Database\ThucHanh-CNPM.sql" />
     <Content Include="Images\changepass.png" />
+    <None Include="Resources\about_us.png" />
     <Content Include="Resources\avt.png" />
     <None Include="Resources\Eye-icon.png" />
     <None Include="Resources\eyes.png" />
