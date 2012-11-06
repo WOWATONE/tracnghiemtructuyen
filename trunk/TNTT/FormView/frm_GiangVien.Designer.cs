@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.components = new System.ComponentModel.Container();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dock_NhapLieu = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.cmd_eyes = new DevExpress.XtraEditors.SimpleButton();
@@ -137,6 +138,7 @@
             this.cmd_eyes.Name = "cmd_eyes";
             this.cmd_eyes.Size = new System.Drawing.Size(30, 19);
             this.cmd_eyes.TabIndex = 20;
+            this.cmd_eyes.Click += new System.EventHandler(this.cmd_eyes_Click);
             this.cmd_eyes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmd_eyes_MouseDown);
             this.cmd_eyes.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cmd_eyes_MouseUp);
             // 

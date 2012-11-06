@@ -161,7 +161,7 @@ namespace TNTT
 
         private void btn_TaoDeNH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowDiaLog<FormView.frm_TaoDeNH>(this);
+            PreBase.ShowForm<FormView.frm_TaoDeNH>(this);
         }
 
         private void btn_TaoDeTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -207,6 +207,11 @@ namespace TNTT
         private void cmd_Thongtin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             XtraMessageBox.Show("Phần mềm quản lý trắc nghiệm V 1.0");
+        }
+
+        private void btn_About_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PreBase.ShowDiaLog<Component.frm_About>(this);
         }
     }
 }

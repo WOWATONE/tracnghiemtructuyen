@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MDI));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.iNew = new DevExpress.XtraBars.BarButtonItem();
             this.iOpen = new DevExpress.XtraBars.BarButtonItem();
@@ -76,6 +76,9 @@
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.btn_ChangePass = new DevExpress.XtraBars.BarButtonItem();
             this.btn_MoPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_TroGiup = new DevExpress.XtraBars.BarButtonItem();
+            this.cmd_Thongtin = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_About = new DevExpress.XtraBars.BarButtonItem();
             this.tab_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpg_system = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbp_Theme = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -93,6 +96,7 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_help = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -103,10 +107,6 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_TroGiup = new DevExpress.XtraBars.BarButtonItem();
-            this.cmd_Thongtin = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
@@ -168,7 +168,7 @@
             this.btn_MoPhong,
             this.btn_TroGiup,
             this.cmd_Thongtin,
-            this.barButtonItem4});
+            this.btn_About});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 105;
             this.ribbonControl.Name = "ribbonControl";
@@ -548,15 +548,15 @@
             // ribbonGalleryBarItem1
             // 
             this.ribbonGalleryBarItem1.Gallery.AllowHoverImages = true;
-            galleryItemGroup1.Caption = "Group1";
-            galleryItem1.Caption = "Item1";
-            galleryItem1.Checked = true;
-            galleryItem1.HoverImage = global::TNTT.Properties.Resources.user;
-            galleryItem1.Image = global::TNTT.Properties.Resources.user;
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1});
+            galleryItemGroup2.Caption = "Group1";
+            galleryItem2.Caption = "Item1";
+            galleryItem2.Checked = true;
+            galleryItem2.HoverImage = global::TNTT.Properties.Resources.user;
+            galleryItem2.Image = global::TNTT.Properties.Resources.user;
+            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem2});
             this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
+            galleryItemGroup2});
             this.ribbonGalleryBarItem1.Id = 99;
             this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             this.ribbonGalleryBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ribbonGalleryBarItem1_ItemClick);
@@ -576,6 +576,28 @@
             this.btn_MoPhong.LargeGlyph = global::TNTT.Properties.Resources.exam;
             this.btn_MoPhong.Name = "btn_MoPhong";
             this.btn_MoPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_MoPhong_ItemClick);
+            // 
+            // btn_TroGiup
+            // 
+            this.btn_TroGiup.Caption = "Trợ giúp";
+            this.btn_TroGiup.Id = 102;
+            this.btn_TroGiup.LargeGlyph = global::TNTT.Properties.Resources.help;
+            this.btn_TroGiup.Name = "btn_TroGiup";
+            // 
+            // cmd_Thongtin
+            // 
+            this.cmd_Thongtin.Caption = "Thông tin";
+            this.cmd_Thongtin.Glyph = global::TNTT.Properties.Resources.Ribbon_Info_32x32;
+            this.cmd_Thongtin.Id = 103;
+            this.cmd_Thongtin.Name = "cmd_Thongtin";
+            this.cmd_Thongtin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_Thongtin_ItemClick);
+            // 
+            // btn_About
+            // 
+            this.btn_About.Caption = "About Us";
+            this.btn_About.Id = 104;
+            this.btn_About.Name = "btn_About";
+            this.btn_About.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_About_ItemClick);
             // 
             // tab_Home
             // 
@@ -709,6 +731,14 @@
             this.tab_help.Name = "tab_help";
             this.tab_help.Text = "Trợ giúp";
             // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_TroGiup);
+            this.ribbonPageGroup5.ItemLinks.Add(this.cmd_Thongtin);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_About);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Thông tin trợ giúp";
+            // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
@@ -779,35 +809,6 @@
             // helpRibbonPageGroup
             // 
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btn_TroGiup);
-            this.ribbonPageGroup5.ItemLinks.Add(this.cmd_Thongtin);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Thông tin trợ giúp";
-            // 
-            // btn_TroGiup
-            // 
-            this.btn_TroGiup.Caption = "Trợ giúp";
-            this.btn_TroGiup.Id = 102;
-            this.btn_TroGiup.LargeGlyph = global::TNTT.Properties.Resources.help;
-            this.btn_TroGiup.Name = "btn_TroGiup";
-            // 
-            // cmd_Thongtin
-            // 
-            this.cmd_Thongtin.Caption = "Thông tin";
-            this.cmd_Thongtin.Glyph = global::TNTT.Properties.Resources.Ribbon_Info_32x32;
-            this.cmd_Thongtin.Id = 103;
-            this.cmd_Thongtin.Name = "cmd_Thongtin";
-            this.cmd_Thongtin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_Thongtin_ItemClick);
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "About Us";
-            this.barButtonItem4.Id = 104;
-            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // frm_MDI
             // 
@@ -908,7 +909,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_MoPhong;
         private DevExpress.XtraBars.BarButtonItem btn_TroGiup;
         private DevExpress.XtraBars.BarButtonItem cmd_Thongtin;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btn_About;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
 
     }
