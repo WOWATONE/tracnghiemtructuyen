@@ -42,7 +42,7 @@ namespace TNTT.FormView
             if (made.Trim() != "")
             {
                 txtMaDe.Text = made;
-                loaddulieu = td.GetListiddethi(made);
+                loaddulieu = td.GetListmadethi(made);
                 cbo_monhoc.SelectedValue = loaddulieu.Rows[0]["monhoc_idmonhoc"].ToString();
                 LoadCauhoidaco();
             }
@@ -262,8 +262,12 @@ namespace TNTT.FormView
                 XtraMessageBox.Show("Vui lòng điền đầy đủ thông tin !");
                 return;
             }
-
-            TaoDe();
+            if (made == "")
+                TaoDe();
+            else
+                SuaDe();
+            
+                
         }
 
         void TaoDe()
@@ -293,6 +297,23 @@ namespace TNTT.FormView
             {
                 XtraMessageBox.Show("Tạo đề thi không thành công !");
             }
+        }
+
+        void SuaDe()
+        {
+            DataTable kt = new DataTable();
+            kt = td.GetListmadethi(txtMaDe.Text);
+            string chuoiidde = "";
+            int dem = 0;
+            for (int i = 0; i < gridView2.RowCount; i++)
+            {
+                chuoiidde += gridView2.GetRowCellValue(i, "idnganhangcauhoi").ToString() + "|||";
+                dem++;
+            }
+            if (chuoiidde != "")
+                chuoiidde = chuoiidde.Substring(0, chuoiidde.Length - 3);
+            td.edit(made, txtMaDe.Text, chuoiidde, cbo_monhoc.SelectedValue.ToString(), time.GetNowTime(), PreBase.obj_user.Idgiangvien);
+            XtraMessageBox.Show(string.Format("Thêm thành công ! với số câu hỏi là : {0} .", dem));
         }
     }
 
