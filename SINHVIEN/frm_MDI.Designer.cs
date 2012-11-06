@@ -386,7 +386,7 @@
             this.chkF.Properties.Caption = "F -";
             this.chkF.Size = new System.Drawing.Size(44, 19);
             this.chkF.TabIndex = 25;
-            this.chkF.CheckedChanged += new System.EventHandler(this.chkF_CheckedChanged);
+            //this.chkF.CheckedChanged += new System.EventHandler(this.chkF_CheckedChanged);
             // 
             // splitterControl6
             // 
@@ -435,7 +435,7 @@
             this.chkE.Properties.Caption = "E -";
             this.chkE.Size = new System.Drawing.Size(44, 19);
             this.chkE.TabIndex = 25;
-            this.chkE.CheckedChanged += new System.EventHandler(this.chkE_CheckedChanged);
+           // this.chkE.CheckedChanged += new System.EventHandler(this.chkE_CheckedChanged);
             // 
             // splitterControl5
             // 
@@ -484,7 +484,7 @@
             this.chkD.Properties.Caption = "D -";
             this.chkD.Size = new System.Drawing.Size(44, 19);
             this.chkD.TabIndex = 25;
-            this.chkD.CheckedChanged += new System.EventHandler(this.chkD_CheckedChanged);
+            //this.chkD.CheckedChanged += new System.EventHandler(this.chkD_CheckedChanged);
             // 
             // splitterControl4
             // 
@@ -533,7 +533,7 @@
             this.chkC.Properties.Caption = "C -";
             this.chkC.Size = new System.Drawing.Size(44, 19);
             this.chkC.TabIndex = 25;
-            this.chkC.CheckedChanged += new System.EventHandler(this.chkC_CheckedChanged);
+           // this.chkC.CheckedChanged += new System.EventHandler(this.chkC_CheckedChanged);
             // 
             // splitterControl3
             // 
@@ -582,7 +582,7 @@
             this.chkB.Properties.Caption = "B -";
             this.chkB.Size = new System.Drawing.Size(44, 19);
             this.chkB.TabIndex = 25;
-            this.chkB.CheckedChanged += new System.EventHandler(this.chkB_CheckedChanged);
+            //this.chkB.CheckedChanged += new System.EventHandler(this.chkB_CheckedChanged);
             // 
             // splitterControl2
             // 
@@ -631,7 +631,7 @@
             this.chkAA.Properties.Caption = "A -";
             this.chkAA.Size = new System.Drawing.Size(44, 19);
             this.chkAA.TabIndex = 25;
-            this.chkAA.CheckedChanged += new System.EventHandler(this.chkAA_CheckedChanged);
+           // this.chkAA.CheckedChanged += new System.EventHandler(this.chkAA_CheckedChanged);
             // 
             // splitterControl1
             // 
@@ -687,7 +687,7 @@
             this.cmd_mess.TabIndex = 1;
             this.cmd_mess.Text = "Tin nhắn ";
             this.toolTip1.SetToolTip(this.cmd_mess, "aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            this.cmd_mess.DragOver += new System.Windows.Forms.DragEventHandler(this.cmd_mess_DragOver);
+           // this.cmd_mess.DragOver += new System.Windows.Forms.DragEventHandler(this.cmd_mess_DragOver);
             // 
             // cmd_LamBai
             // 
@@ -698,7 +698,7 @@
             this.cmd_LamBai.Size = new System.Drawing.Size(75, 72);
             this.cmd_LamBai.TabIndex = 0;
             this.cmd_LamBai.Text = "Làm bài";
-            this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click);
+            //this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click);
             // 
             // cmd_Connect
             // 
@@ -709,7 +709,7 @@
             this.cmd_Connect.Size = new System.Drawing.Size(75, 72);
             this.cmd_Connect.TabIndex = 0;
             this.cmd_Connect.Text = "Kết nối ";
-            this.cmd_Connect.Click += new System.EventHandler(this.cmd_Connect_Click);
+           // this.cmd_Connect.Click += new System.EventHandler(this.cmd_Connect_Click);
             // 
             // cmd_nop
             // 
@@ -783,7 +783,7 @@
             this.navBar_Cauhoi.Size = new System.Drawing.Size(133, 563);
             this.navBar_Cauhoi.TabIndex = 0;
             this.navBar_Cauhoi.Text = "Câu hỏi";
-            this.navBar_Cauhoi.DoubleClick += new System.EventHandler(this.navBar_Cauhoi_DoubleClick);
+            //this.navBar_Cauhoi.DoubleClick += new System.EventHandler(this.navBar_Cauhoi_DoubleClick);
             // 
             // navBarGroup
             // 
@@ -820,8 +820,8 @@
             this.Text = "Thi cử";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Thi_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_MDI_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frm_MDI_KeyPress);
+            //this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_MDI_KeyDown);
+            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frm_MDI_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

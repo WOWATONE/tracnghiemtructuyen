@@ -57,7 +57,7 @@ namespace TNTT.FormView
         {
             if (gridView1.RowCount > 0)
             {
-                frm_TaoDeTC tdtc = new frm_TaoDeTC(gridView1.GetFocusedRowCellValue("iddethi").ToString());
+                frm_TaoDeTC tdtc = new frm_TaoDeTC(gridView1.GetFocusedRowCellValue("madethi").ToString());
                 tdtc.ShowDialog();
             }
             //base.Edit();

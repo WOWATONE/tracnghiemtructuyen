@@ -17,7 +17,7 @@ namespace SINHVIEN
             Application.SetCompatibleTextRenderingDefault(false);
             Process[] pname = Process.GetProcessesByName("SINHVIEN.EXE");
             if (pname.Length == 0)
-                Application.Run(new frm_DangNhap());
+                Application.Run(new frm_MDI());
             else
                 MessageBox.Show("run");
           

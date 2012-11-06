@@ -45,11 +45,11 @@ namespace TNTT.Class
             return db.GetData(sql);
         }
 
-        public void edit(string idmadethi, string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
+        public void edit(string madecu, string madethi, string listidcauhoi, string monhoc_idmonhoc, string ngaytao, string giangvien_idgiangvien)
         {
             string sql = string.Format(@"SET DATEFORMAT dmy 
                         UPDATE DETHI set madethi = '{0}',listidcauhoi = N'{1}',monhoc_idmonhoc = {2},ngaytao = '{3}' ,giangvien_idgiangvien = {4}
-                        WHERE iddethi = {5}", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien, idmadethi);
+                        WHERE madethi = {5}", madethi, listidcauhoi, monhoc_idmonhoc, ngaytao, giangvien_idgiangvien, madecu);
             db.ExcuteNonQuery(sql);
         }
 
