@@ -9,7 +9,7 @@ using DevExpress.XtraEditors;
 //soc ket
 using System.Net.Sockets;
 using System.Net;
-using FirstConnectDB;
+//using FirstConnectDB;
 using DevExpress.XtraNavBar;
 using TNTT.Class;
 using System.IO;
@@ -44,7 +44,7 @@ namespace SINHVIEN
             }
             catch
             {
-                pictureBox1.Image = Image.FromFile(@"Avatar/1.jpg");
+               // pictureBox1.Image = Image.FromFile(@"Avatar/1.jpg");
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Refresh();
             }

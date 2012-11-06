@@ -112,7 +112,7 @@
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Options.ShowCloseButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 98);
-            this.dockPanel1.Size = new System.Drawing.Size(851, 98);
+            this.dockPanel1.Size = new System.Drawing.Size(991, 98);
             this.dockPanel1.Text = "Nội Dung :";
             // 
             // dockPanel1_Container
@@ -128,9 +128,9 @@
             this.dockPanel1_Container.Controls.Add(this.label1);
             this.dockPanel1_Container.Controls.Add(this.cmd_thoat);
             this.dockPanel1_Container.Controls.Add(this.cmd_luu);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(843, 71);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(983, 69);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // lb_SoCauDaChon
@@ -238,7 +238,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 98);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(460, 380);
+            this.groupControl1.Size = new System.Drawing.Size(657, 380);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Ngân hàng câu hỏi";
             // 
@@ -251,7 +251,7 @@
             this.grd_NHCH.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.xem,
             this.chon});
-            this.grd_NHCH.Size = new System.Drawing.Size(456, 357);
+            this.grd_NHCH.Size = new System.Drawing.Size(653, 357);
             this.grd_NHCH.TabIndex = 0;
             this.grd_NHCH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -290,7 +290,7 @@
             // 
             this.chon.AccessibleRole = System.Windows.Forms.AccessibleRole.Link;
             this.chon.AutoHeight = false;
-            this.chon.Image = global::TNTT.Properties.Resources.ok;
+            this.chon.Image = global::TNTT.Properties.Resources.Ok16;
             this.chon.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.chon.Name = "chon";
             this.chon.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -393,9 +393,9 @@
             // 
             // splitterControl1
             // 
-            this.splitterControl1.Location = new System.Drawing.Point(460, 98);
+            this.splitterControl1.Location = new System.Drawing.Point(657, 98);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(5, 380);
+            this.splitterControl1.Size = new System.Drawing.Size(6, 380);
             this.splitterControl1.TabIndex = 2;
             this.splitterControl1.TabStop = false;
             // 
@@ -403,9 +403,9 @@
             // 
             this.groupControl2.Controls.Add(this.grd_dethi);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(465, 98);
+            this.groupControl2.Location = new System.Drawing.Point(663, 98);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(386, 380);
+            this.groupControl2.Size = new System.Drawing.Size(328, 380);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Câu hỏi trong đề thi";
             // 
@@ -418,7 +418,7 @@
             this.grd_dethi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.view,
             this.xoa});
-            this.grd_dethi.Size = new System.Drawing.Size(382, 357);
+            this.grd_dethi.Size = new System.Drawing.Size(324, 357);
             this.grd_dethi.TabIndex = 0;
             this.grd_dethi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -536,7 +536,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 478);
+            this.ClientSize = new System.Drawing.Size(991, 478);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.groupControl1);

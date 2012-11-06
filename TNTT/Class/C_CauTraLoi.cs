@@ -25,6 +25,12 @@ namespace TNTT.Class
             dt = db.GetData(sql);
             return dt;
         }
+        public DataTable GetListToPrint(string condition)
+        {
+            string sql = @"select tieude,cautraloi from NGANHANGCAUHOI,CAUTRALOI where NGANHANGCAUHOI.idnganhangcauhoi = cautraloi.nhch_idnganhangcauhoi  
+"+condition;
+            return db.GetData(sql);
+        }
         public void Add(string idnganhangcauhoi, string cautraloi, string loaidapan)
         {
             string sql = string.Format(@"INSERT INTO CAUTRALOI VALUES ({0},N'{1}',{2})",idnganhangcauhoi,cautraloi,loaidapan);

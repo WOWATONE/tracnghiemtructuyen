@@ -79,10 +79,11 @@ namespace TNTT.Report
                 Word.Range wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                 wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                 wrdRng.InsertParagraphAfter();
+              //  wrdRng.
                 wrdRng.InsertAfter("THE END.");
 
-                oWord.ActiveWindow.Selection.TypeText("Plaintiff's Attorney's Initals");
-                oWord.ActiveWindow.Selection.TypeText("\t");
+               // oWord.ActiveWindow.Selection.TypeText("Plaintiff's Attorney's Initals");
+//                oWord.ActiveWindow.Selection.TypeText("\t");
 
 
                 //set foooter
@@ -90,25 +91,33 @@ namespace TNTT.Report
                 {
                     wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
                         .Range.Font.ColorIndex = Word.WdColorIndex.wdDarkRed;
-
+                    wordSection.Range.Font.Name = "Times New Roman";
                     wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
                         .Range.Font.Size = 13;
                     wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
-                .Range.Text = "Confidential";
+                .Range.Text = "Đề thi trắc nghiệm";
                 }
 
                 foreach (Word.Section section in this.oDoc.Sections)
                 {
                     object fieldEmpty = Word.WdFieldType.wdFieldEmpty;
-                    object autoText = "AUTOTEXT  \"Page X of Y\" ";
+                    object autoText = "Đề thi trắc nghiệm";
                     object preserveFormatting = true;
 
                     section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Fields.Add(
                         section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range,
                         ref fieldEmpty, ref autoText, ref preserveFormatting);
-                    section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Text = "Đề thi trắc nghiệm";
+                    section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Text = autoText.ToString();
                 }
+                String docNumber = "1";
+                String revisionNumber = "0";
 
+                //INSERTING THE PAGE NUMBERS CENTRALLY ALIGNED IN THE PAGE FOOTER
+                oWord.Selection.Paragraphs.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                oWord.ActiveWindow.Selection.Font.Name = "Arial";
+                oWord.ActiveWindow.Selection.Font.Size = 8;
+                oWord.ActiveWindow.Selection.TypeText("Document #: " + docNumber + " - Revision #: " + revisionNumber);
+ 
             }
             catch { }
         }

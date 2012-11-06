@@ -563,7 +563,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Avatar\" />
     <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>
@@ -666,6 +665,7 @@
     <None Include="Images\Ribbon_Info_32x32.png" />
     <None Include="Images\Ribbon_Close_32x32.png" />
     <None Include="Resources\Resource\avarta.png" />
+    <Content Include="Avatar\1.jpg" />
     <Content Include="Database\QLCHAMDIEMTRACNGHIEM.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -703,6 +703,7 @@
     <Content Include="Resources\khoa.png" />
     <Content Include="Resources\monhoc.png" />
     <None Include="Resources\Select.png" />
+    <None Include="Resources\Ok16.png" />
     <Content Include="Resources\student.png" />
     <Content Include="_ws.ico" />
   </ItemGroup>

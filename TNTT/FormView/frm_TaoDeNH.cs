@@ -356,10 +356,28 @@ namespace TNTT.FormView
             }
             catch { }
         }
-
+        string GetCondition()
+        {
+            string condition = " and idnganhangcauhoi in (";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                condition += dt.Rows[i]["idnganhangcauhoi"].ToString() + ",";
+            }
+            condition = condition.Substring(0, condition.Length - 1);
+            return condition + ")";
+        }
         private void cmd_Print_Click(object sender, EventArgs e)
         {
+            DataTable temp = new DataTable();
+            C_CauTraLoi tl = new C_CauTraLoi();
+            if (dt.Rows.Count > 0)
+            {
+                temp = tl.GetListToPrint(GetCondition());
+                Report.C_Export rpt = new Report.C_Export();
+                rpt.ExportToWord(temp);
+            }
         }
+       
 
     }
 }

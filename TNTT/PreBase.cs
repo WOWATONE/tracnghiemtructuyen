@@ -13,7 +13,6 @@ using System.Drawing;
 using DevExpress.XtraEditors;
 using TNTT.Class;
 using System.Configuration;
-
 namespace TNTT.Class
 {
     public static class PreBase
@@ -37,6 +36,10 @@ namespace TNTT.Class
         {
             var frm = new T();
             frm.ShowDialog();
+        }
+        public static void ShowFormSpecial(Form frm)
+        { 
+            
         }
         //static Timer t;
         public static void ShowForm<T>(Form parent) where T : Form, new()
