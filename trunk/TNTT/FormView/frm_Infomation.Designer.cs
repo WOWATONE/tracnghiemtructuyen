@@ -34,20 +34,20 @@
             this.lb_chucvu = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmd_Sua = new DevExpress.XtraEditors.SimpleButton();
+            this.lb_address = new DevExpress.XtraEditors.LabelControl();
+            this.lb_email = new DevExpress.XtraEditors.LabelControl();
+            this.lb_cv = new DevExpress.XtraEditors.LabelControl();
+            this.lb_bomon = new DevExpress.XtraEditors.LabelControl();
+            this.lb_name = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lb_time = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.lb_name = new DevExpress.XtraEditors.LabelControl();
-            this.lb_bomon = new DevExpress.XtraEditors.LabelControl();
-            this.lb_cv = new DevExpress.XtraEditors.LabelControl();
-            this.lb_email = new DevExpress.XtraEditors.LabelControl();
-            this.lb_address = new DevExpress.XtraEditors.LabelControl();
-            this.cmd_Sua = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -106,20 +106,6 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 7;
             // 
-            // lb_time
-            // 
-            this.lb_time.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_time.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lb_time.Location = new System.Drawing.Point(27, 33);
-            this.lb_time.Name = "lb_time";
-            this.lb_time.Size = new System.Drawing.Size(95, 25);
-            this.lb_time.TabIndex = 6;
-            this.lb_time.Text = "Thời gian:";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.cmd_Sua);
@@ -138,77 +124,14 @@
             this.panelControl1.Size = new System.Drawing.Size(520, 182);
             this.panelControl1.TabIndex = 7;
             // 
-            // labelControl1
+            // cmd_Sua
             // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 19);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(54, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Họ và tên :";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(22, 42);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(32, 13);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Địa chỉ";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(21, 68);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(39, 13);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Bộ môn:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(21, 95);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(44, 13);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "Chức vụ:";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(23, 120);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(28, 13);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Email:";
-            // 
-            // lb_name
-            // 
-            this.lb_name.Location = new System.Drawing.Point(82, 18);
-            this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(54, 13);
-            this.lb_name.TabIndex = 5;
-            this.lb_name.Text = "Họ và tên :";
-            // 
-            // lb_bomon
-            // 
-            this.lb_bomon.Location = new System.Drawing.Point(66, 68);
-            this.lb_bomon.Name = "lb_bomon";
-            this.lb_bomon.Size = new System.Drawing.Size(54, 13);
-            this.lb_bomon.TabIndex = 7;
-            this.lb_bomon.Text = "Họ và tên :";
-            // 
-            // lb_cv
-            // 
-            this.lb_cv.Location = new System.Drawing.Point(71, 95);
-            this.lb_cv.Name = "lb_cv";
-            this.lb_cv.Size = new System.Drawing.Size(54, 13);
-            this.lb_cv.TabIndex = 8;
-            this.lb_cv.Text = "Họ và tên :";
-            // 
-            // lb_email
-            // 
-            this.lb_email.Location = new System.Drawing.Point(57, 120);
-            this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(54, 13);
-            this.lb_email.TabIndex = 10;
-            this.lb_email.Text = "Họ và tên :";
+            this.cmd_Sua.Location = new System.Drawing.Point(21, 143);
+            this.cmd_Sua.Name = "cmd_Sua";
+            this.cmd_Sua.Size = new System.Drawing.Size(75, 23);
+            this.cmd_Sua.TabIndex = 8;
+            this.cmd_Sua.Text = "Sửa thông tin";
+            this.cmd_Sua.Click += new System.EventHandler(this.cmd_Sua_Click);
             // 
             // lb_address
             // 
@@ -218,14 +141,91 @@
             this.lb_address.TabIndex = 11;
             this.lb_address.Text = "Họ và tên :";
             // 
-            // cmd_Sua
+            // lb_email
             // 
-            this.cmd_Sua.Location = new System.Drawing.Point(21, 143);
-            this.cmd_Sua.Name = "cmd_Sua";
-            this.cmd_Sua.Size = new System.Drawing.Size(75, 23);
-            this.cmd_Sua.TabIndex = 8;
-            this.cmd_Sua.Text = "Sửa thông tin";
-            this.cmd_Sua.Click += new System.EventHandler(this.cmd_Sua_Click);
+            this.lb_email.Location = new System.Drawing.Point(57, 120);
+            this.lb_email.Name = "lb_email";
+            this.lb_email.Size = new System.Drawing.Size(54, 13);
+            this.lb_email.TabIndex = 10;
+            this.lb_email.Text = "Họ và tên :";
+            // 
+            // lb_cv
+            // 
+            this.lb_cv.Location = new System.Drawing.Point(71, 95);
+            this.lb_cv.Name = "lb_cv";
+            this.lb_cv.Size = new System.Drawing.Size(54, 13);
+            this.lb_cv.TabIndex = 8;
+            this.lb_cv.Text = "Họ và tên :";
+            // 
+            // lb_bomon
+            // 
+            this.lb_bomon.Location = new System.Drawing.Point(66, 68);
+            this.lb_bomon.Name = "lb_bomon";
+            this.lb_bomon.Size = new System.Drawing.Size(54, 13);
+            this.lb_bomon.TabIndex = 7;
+            this.lb_bomon.Text = "Họ và tên :";
+            // 
+            // lb_name
+            // 
+            this.lb_name.Location = new System.Drawing.Point(82, 18);
+            this.lb_name.Name = "lb_name";
+            this.lb_name.Size = new System.Drawing.Size(54, 13);
+            this.lb_name.TabIndex = 5;
+            this.lb_name.Text = "Họ và tên :";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(23, 120);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(28, 13);
+            this.labelControl5.TabIndex = 4;
+            this.labelControl5.Text = "Email:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(21, 95);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(44, 13);
+            this.labelControl4.TabIndex = 3;
+            this.labelControl4.Text = "Chức vụ:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(21, 68);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(39, 13);
+            this.labelControl3.TabIndex = 2;
+            this.labelControl3.Text = "Bộ môn:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(22, 42);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(32, 13);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "Địa chỉ";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(22, 19);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(54, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Họ và tên :";
+            // 
+            // lb_time
+            // 
+            this.lb_time.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_time.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lb_time.Location = new System.Drawing.Point(27, 33);
+            this.lb_time.Name = "lb_time";
+            this.lb_time.Size = new System.Drawing.Size(95, 25);
+            this.lb_time.TabIndex = 6;
+            this.lb_time.Text = "Thời gian:";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox1
             // 

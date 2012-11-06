@@ -445,3 +445,4 @@ C:\Users\Administrator\Desktop\QLTNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeTC.r
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Database\QLCHAMDIEMTRACNGHIEM.mdf
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_TaoDeTC.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.FormView.frm_SVHocLai.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_About.resources
