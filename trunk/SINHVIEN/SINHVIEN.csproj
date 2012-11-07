@@ -162,13 +162,13 @@
     <None Include="Resources\_ws.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FirstConnectDB\FirstConnectDB.csproj">
+      <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
+      <Name>FirstConnectDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TNTT\TNTT.csproj">
       <Project>{E0248D1C-4E86-4C15-A728-03381606F772}</Project>
       <Name>TNTT</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\Trung Toan\Desktop\New folder\FirstConnectDB\FirstConnectDB.csproj">
-      <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
-      <Name>FirstConnectDB</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
