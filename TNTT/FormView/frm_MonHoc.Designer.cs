@@ -79,7 +79,7 @@
             this.dpn_content.Controls.Add(this.dockPanel1_Container);
             this.dpn_content.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dpn_content.ID = new System.Guid("ce957706-760e-4fd9-8b48-7825674ce838");
-            this.dpn_content.Location = new System.Drawing.Point(0, 59);
+            this.dpn_content.Location = new System.Drawing.Point(0, 65);
             this.dpn_content.Name = "dpn_content";
             this.dpn_content.OriginalSize = new System.Drawing.Size(200, 96);
             this.dpn_content.Size = new System.Drawing.Size(764, 96);
@@ -95,9 +95,9 @@
             this.dockPanel1_Container.Controls.Add(this.txt_GhiChu);
             this.dockPanel1_Container.Controls.Add(this.txt_TenMonHoc);
             this.dockPanel1_Container.Controls.Add(this.txt_MaMonHoc);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(758, 69);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(756, 69);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // labelControl3
@@ -167,9 +167,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_Monhoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 155);
+            this.groupControl1.Location = new System.Drawing.Point(0, 161);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(764, 274);
+            this.groupControl1.Size = new System.Drawing.Size(764, 268);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Danh sách";
             // 
@@ -179,7 +179,7 @@
             this.grd_Monhoc.Location = new System.Drawing.Point(2, 21);
             this.grd_Monhoc.MainView = this.gridView1;
             this.grd_Monhoc.Name = "grd_Monhoc";
-            this.grd_Monhoc.Size = new System.Drawing.Size(760, 251);
+            this.grd_Monhoc.Size = new System.Drawing.Size(760, 245);
             this.grd_Monhoc.TabIndex = 0;
             this.grd_Monhoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

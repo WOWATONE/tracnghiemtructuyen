@@ -138,7 +138,7 @@ namespace TNTT.FormView
             }
             catch
             {
-                XtraMessageBox.Show("Lỗi xóa DSMH");
+                XtraMessageBox.Show("Không thể xóa Danh sách môn học !\nvì trong Danh sách môn học này còn phòng thi và đề thi  !! ");
             }
         }
         public override void Save()
