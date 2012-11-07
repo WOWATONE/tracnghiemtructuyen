@@ -5,6 +5,9 @@ using System.Text;
 using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.Data;
+using TNTT.Class;
+using Microsoft.Office.Interop.Word;
+
 namespace TNTT.Report
 {
     class C_Export
@@ -15,30 +18,28 @@ namespace TNTT.Report
         {
             try
             {
+
                 //Init the file
                 object oMissing = System.Reflection.Missing.Value;
                 object oEndOfDoc = "\\endofdoc"; /* \endofdoc is a predefined bookmark */
 
                 //Start Word and create a new document.
                 oWord = new Word.Application();
-                oWord.Visible = true;
+                //Word.Document doc = oWord.Documents.Add(@"F:\De Tai Mon Hoc\TNTT\TNTT\template_cntt.dotm");
+               // Word.Document doc = oWord.Documents.Add(@"F:\De Tai Mon Hoc\TNTT\TNTT\template_cntt.dotm");
+
+                
+                
                 oDoc = oWord.Documents.Add(ref oMissing, ref oMissing,
                     ref oMissing, ref oMissing);
+                Word.Range rng = oDoc.Content;
+                rng.InsertFile(FileName: @"F:\De Tai Mon Hoc\TNTT\TNTT\template_cntt.dotm");
+                oWord.Visible = true;
 
-                Word.Paragraph oPara1;
-                oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
-                oPara1.Range.Font.Size = 15;
-                //oPara1.Range.
-
-                oPara1.Range.Text = "Trường Cao Đẳng CNTT Tp HCM\t\t\tĐề Thi Hết môn\n";
-                oPara1.Range.Text += "Khoa CNTT \t\t\t\t Thời gia: 90 phút";
-                oPara1.Format.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
-
-                oPara1.Range.Font.Bold = 1;
-                oPara1.Format.SpaceAfter = 24;    //24 pt spacing after paragraph.
-                oPara1.Range.InsertParagraphAfter();
-
-
+                Word.Paragraph oPara0;
+                oPara0 = oDoc.Content.Paragraphs.Add(ref oMissing);
+                oPara0.Range.Font.Size = 15;
+               // oPara0.Range.Text = rng.Text;
                 string[] result = { "A", "B", "C", "D", "E", "F" };
                 int d = 0, stt = 1;
 
@@ -79,45 +80,34 @@ namespace TNTT.Report
                 Word.Range wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                 wrdRng = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;
                 wrdRng.InsertParagraphAfter();
-              //  wrdRng.
                 wrdRng.InsertAfter("THE END.");
-
-               // oWord.ActiveWindow.Selection.TypeText("Plaintiff's Attorney's Initals");
-//                oWord.ActiveWindow.Selection.TypeText("\t");
 
 
                 //set foooter
-                foreach (Microsoft.Office.Interop.Word.Section wordSection in this.oDoc.Sections)
-                {
-                    wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
-                        .Range.Font.ColorIndex = Word.WdColorIndex.wdDarkRed;
-                    wordSection.Range.Font.Name = "Times New Roman";
-                    wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
-                        .Range.Font.Size = 13;
-                    wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
-                .Range.Text = "Đề thi trắc nghiệm";
-                }
+                //foreach (Microsoft.Office.Interop.Word.Section wordSection in this.oDoc.Sections)
+                //{
+                //    wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
+                //        .Range.Font.ColorIndex = Word.WdColorIndex.wdDarkRed;
+                //    wordSection.Range.Font.Name = "Times New Roman";
+                //    wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
+                //        .Range.Font.Size = 13;
+                //    wordSection.Footers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary]
+                //.Range.Text = "Đề thi trắc nghiệm";
+                //}
 
-                foreach (Word.Section section in this.oDoc.Sections)
-                {
-                    object fieldEmpty = Word.WdFieldType.wdFieldEmpty;
-                    object autoText = "Đề thi trắc nghiệm";
-                    object preserveFormatting = true;
+                //foreach (Word.Section section in this.oDoc.Sections)
+                //{
+                //    object fieldEmpty = Word.WdFieldType.wdFieldEmpty;
+                //    object autoText = "Đề thi trắc nghiệm";
+                //    object preserveFormatting = true;
 
-                    section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Fields.Add(
-                        section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range,
-                        ref fieldEmpty, ref autoText, ref preserveFormatting);
-                    section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Text = autoText.ToString();
-                }
-                String docNumber = "1";
-                String revisionNumber = "0";
+                //    section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Fields.Add(
+                //        section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range,
+                //        ref fieldEmpty, ref autoText, ref preserveFormatting);
+                //    section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range.Text = autoText.ToString();
+                //}
 
-                //INSERTING THE PAGE NUMBERS CENTRALLY ALIGNED IN THE PAGE FOOTER
-                oWord.Selection.Paragraphs.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
-                oWord.ActiveWindow.Selection.Font.Name = "Arial";
-                oWord.ActiveWindow.Selection.Font.Size = 8;
-                oWord.ActiveWindow.Selection.TypeText("Document #: " + docNumber + " - Revision #: " + revisionNumber);
- 
+
             }
             catch { }
         }
