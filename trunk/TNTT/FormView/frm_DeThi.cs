@@ -65,11 +65,18 @@ namespace TNTT.FormView
 
         public override void Delete()
         {
-            var a = XtraMessageBox.Show("Bạn muốn xóa","",MessageBoxButtons.YesNo);
-            if (a == System.Windows.Forms.DialogResult.Yes)
+            try
             {
-                dth.delete(gridView1.GetFocusedRowCellValue("iddethi").ToString());
-                Init();
+                var a = XtraMessageBox.Show("Bạn muốn xóa", "", MessageBoxButtons.YesNo);
+                if (a == System.Windows.Forms.DialogResult.Yes)
+                {
+                    dth.delete(gridView1.GetFocusedRowCellValue("iddethi").ToString());
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể xóa đề thi !\nvì trong đề thi này còn môn học hoặc giảng viên  !! ");
             }
         }
     }

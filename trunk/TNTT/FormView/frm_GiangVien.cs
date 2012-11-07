@@ -200,13 +200,20 @@ namespace TNTT.FormView
         }
         public override void Delete()
         {
-            base.Delete();
-            DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (Result == DialogResult.OK)
+            try
             {
-                string id = grd_Giangvien.GetFocusedRowCellValue("idgiangvien").ToString();
-                gv.Delete(id);
-                Init();
+                base.Delete();
+                DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Result == DialogResult.OK)
+                {
+                    string id = grd_Giangvien.GetFocusedRowCellValue("idgiangvien").ToString();
+                    gv.Delete(id);
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể xóa giảng viên !\nvì trong giảng viên này còn Đề thi , Ngân hàng câu hỏi hoặc Danh mục môn học !! ");
             }
         }
         public override void Encode()

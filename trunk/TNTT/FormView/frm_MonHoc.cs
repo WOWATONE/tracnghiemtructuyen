@@ -110,13 +110,20 @@ namespace TNTT.FormView
 
         public override void Delete()
         {
-            base.Delete();
-            DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (Result == DialogResult.OK)
+            try
             {
-                string id = gridView1.GetFocusedRowCellValue("idmonhoc").ToString();
-                bm.Delete(id);
-                Init();
+                base.Delete();
+                DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Result == DialogResult.OK)
+                {
+                    string id = gridView1.GetFocusedRowCellValue("idmonhoc").ToString();
+                    bm.Delete(id);
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể xóa môn học !\nvì trong môn học này còn danh mục môn học,đề thi hoặc ngân hàng câu hỏi !! ");
             }
         }
 

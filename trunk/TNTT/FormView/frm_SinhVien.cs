@@ -187,7 +187,7 @@ namespace TNTT.FormView
             }
             catch
             {
-                XtraMessageBox.Show("Không thể xóa !");
+                XtraMessageBox.Show("Không thể xóa sinh viên !\nvì trong sinh viên này còn danh sách thi hoặc danh sách môn học lại  !! ");
             }
         }
         public override bool ValidInput()
