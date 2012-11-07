@@ -109,13 +109,20 @@ namespace TNTT.FormView
 
         public override void Delete()
         {
-            base.Delete();
-            DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (Result == DialogResult.OK)
+            try
             {
-                string id = gridView1.GetFocusedRowCellValue("idlop").ToString();
-                bm.Delete(id);
-                Init();
+                base.Delete();
+                DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Result == DialogResult.OK)
+                {
+                    string id = gridView1.GetFocusedRowCellValue("idlop").ToString();
+                    bm.Delete(id);
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể xóa lớp vì trong lớp này vẫn còn Sinh viên và DSMH");
             }
         }
 
