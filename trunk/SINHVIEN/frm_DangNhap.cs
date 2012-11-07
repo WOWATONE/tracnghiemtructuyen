@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using TNTT;
 using TNTT.Class;
+using FirstConnectDB;
 namespace SINHVIEN
 {
     public partial class frm_DangNhap : DevExpress.XtraEditors.XtraForm
@@ -29,22 +30,22 @@ namespace SINHVIEN
             cbo_Phong.DisplayMember = "tenphongthi";
             cbo_Phong.ValueMember = "idphongthi";
         }
+        
         private void frm_DangNhap_Load(object sender, EventArgs e)
         {
-            
-                Init();
+            if (!FrmAddConnection.TestConnect())
+            {
+                var frm = new FrmAddConnection();
 
-//#if !debug
-                txt_Masv.Text = "1100021";
-                txt_Matkhau.Text = "123456";
-                //if (CheckLogin())
-               // {
-                   // Hide();
-                   // frm_MDI frm = new frm_MDI();
-                   // frm.ShowDialog();
-                  //  Close();
-               // }
-//#endif
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Đã lưu cấu hình của chương trình!");
+                    Application.Restart();
+                }
+            }
+            Init();
+            txt_Masv.Text = "1100021";
+            txt_Matkhau.Text = "123456";
         }
         bool ValidInput()
         {

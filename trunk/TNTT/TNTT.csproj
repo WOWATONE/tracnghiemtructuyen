@@ -263,6 +263,12 @@
     <Compile Include="Component\frm_EditInformation.Designer.cs">
       <DependentUpon>frm_EditInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\frm_Thongbao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\frm_Thongbao.Designer.cs">
+      <DependentUpon>frm_Thongbao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\frm_TuyChonCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_EditInformation.resx">
       <DependentUpon>frm_EditInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\frm_Thongbao.resx">
+      <DependentUpon>frm_Thongbao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_TuyChonCauHoi.resx">
       <DependentUpon>frm_TuyChonCauHoi.cs</DependentUpon>
@@ -738,6 +747,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Trung Toan\Desktop\New folder\FirstConnectDB\FirstConnectDB.csproj">
+      <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
+      <Name>FirstConnectDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

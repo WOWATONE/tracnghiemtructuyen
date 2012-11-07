@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MDI));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
@@ -83,11 +84,11 @@
             this.chkAA = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.rich_Cauhoi = new DevExpress.XtraRichEdit.RichEditControl();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.chkA = new DevExpress.XtraEditors.GroupControl();
+            this.cmdConnect = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_mess = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_LamBai = new DevExpress.XtraEditors.SimpleButton();
-            this.cmd_Connect = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_nop = new DevExpress.XtraEditors.SimpleButton();
             this.lb_cauhientai = new System.Windows.Forms.Label();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -96,8 +97,8 @@
             this.navBar_Cauhoi = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
-            this.timer1 = new System.Windows.Forms.Timer();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -656,9 +657,9 @@
             // 
             // chkA
             // 
+            this.chkA.Controls.Add(this.cmdConnect);
             this.chkA.Controls.Add(this.cmd_mess);
             this.chkA.Controls.Add(this.cmd_LamBai);
-            this.chkA.Controls.Add(this.cmd_Connect);
             this.chkA.Controls.Add(this.cmd_nop);
             this.chkA.Dock = System.Windows.Forms.DockStyle.Top;
             this.chkA.Location = new System.Drawing.Point(200, 0);
@@ -667,12 +668,21 @@
             this.chkA.TabIndex = 3;
             this.chkA.Text = "Chức năng";
             // 
+            // cmdConnect
+            // 
+            this.cmdConnect.Location = new System.Drawing.Point(11, 29);
+            this.cmdConnect.Name = "cmdConnect";
+            this.cmdConnect.Size = new System.Drawing.Size(75, 72);
+            this.cmdConnect.TabIndex = 2;
+            this.cmdConnect.Text = "Kết nối ";
+            this.cmdConnect.Click += new System.EventHandler(this.cmdConnect_Click);
+            // 
             // cmd_mess
             // 
             this.cmd_mess.Enabled = false;
             this.cmd_mess.Image = ((System.Drawing.Image)(resources.GetObject("cmd_mess.Image")));
             this.cmd_mess.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.cmd_mess.Location = new System.Drawing.Point(194, 29);
+            this.cmd_mess.Location = new System.Drawing.Point(192, 29);
             this.cmd_mess.Name = "cmd_mess";
             this.cmd_mess.Size = new System.Drawing.Size(75, 72);
             toolTipItem1.Text = "tin nhắn từ giám thị";
@@ -681,9 +691,11 @@
             this.cmd_mess.TabIndex = 1;
             this.cmd_mess.Text = "Tin nhắn ";
             this.toolTip1.SetToolTip(this.cmd_mess, "aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            this.cmd_mess.Click += new System.EventHandler(this.cmd_mess_Click);
             // 
             // cmd_LamBai
             // 
+            this.cmd_LamBai.Enabled = false;
             this.cmd_LamBai.Image = ((System.Drawing.Image)(resources.GetObject("cmd_LamBai.Image")));
             this.cmd_LamBai.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.cmd_LamBai.Location = new System.Drawing.Point(101, 29);
@@ -693,22 +705,12 @@
             this.cmd_LamBai.Text = "Làm bài";
             this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click_1);
             // 
-            // cmd_Connect
-            // 
-            this.cmd_Connect.Image = ((System.Drawing.Image)(resources.GetObject("cmd_Connect.Image")));
-            this.cmd_Connect.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.cmd_Connect.Location = new System.Drawing.Point(13, 28);
-            this.cmd_Connect.Name = "cmd_Connect";
-            this.cmd_Connect.Size = new System.Drawing.Size(75, 72);
-            this.cmd_Connect.TabIndex = 0;
-            this.cmd_Connect.Text = "Kết nối ";
-            // 
             // cmd_nop
             // 
             this.cmd_nop.Enabled = false;
             this.cmd_nop.Image = ((System.Drawing.Image)(resources.GetObject("cmd_nop.Image")));
             this.cmd_nop.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.cmd_nop.Location = new System.Drawing.Point(293, 29);
+            this.cmd_nop.Location = new System.Drawing.Point(286, 29);
             this.cmd_nop.Name = "cmd_nop";
             this.cmd_nop.Size = new System.Drawing.Size(75, 72);
             this.cmd_nop.TabIndex = 0;
@@ -717,11 +719,11 @@
             // lb_cauhientai
             // 
             this.lb_cauhientai.AutoSize = true;
-            this.lb_cauhientai.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cauhientai.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cauhientai.ForeColor = System.Drawing.Color.Red;
             this.lb_cauhientai.Location = new System.Drawing.Point(1, -4);
             this.lb_cauhientai.Name = "lb_cauhientai";
-            this.lb_cauhientai.Size = new System.Drawing.Size(43, 29);
+            this.lb_cauhientai.Size = new System.Drawing.Size(34, 23);
             this.lb_cauhientai.TabIndex = 2;
             this.lb_cauhientai.Text = "01";
             // 
@@ -920,6 +922,6 @@
         private DevExpress.XtraEditors.SimpleButton cmd_LamBai;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private DevExpress.XtraEditors.SimpleButton cmd_Connect;
+        private DevExpress.XtraEditors.SimpleButton cmdConnect;
     }
 }

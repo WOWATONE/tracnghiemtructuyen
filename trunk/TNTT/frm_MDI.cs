@@ -12,6 +12,7 @@ using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
 using TNTT.FormView;
 using TNTT.Class;
+using FirstConnectDB;
 namespace TNTT
 {
     public partial class frm_MDI : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -29,6 +30,16 @@ namespace TNTT
 
         private void frm_MDI_Load(object sender, EventArgs e)
         {
+            if (!FrmAddConnection.TestConnect())
+            {
+                var frm = new FrmAddConnection();
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Đã lưu cấu hình của chương trình!");
+                    Application.Restart();
+                }
+            }
             //PreBase.CheckBeforeLoad(this);
             Login();
         }
