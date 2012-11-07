@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
             this.lb_SoCauDaChon = new DevExpress.XtraEditors.LabelControl();
             this.trb_Socau = new DevExpress.XtraEditors.TrackBarControl();
             this.cbo_monhoc = new System.Windows.Forms.ComboBox();
@@ -70,7 +70,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -134,6 +133,16 @@
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(983, 69);
             this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // cmd_Print
+            // 
+            this.cmd_Print.Image = global::TNTT.Properties.Resources.printer;
+            this.cmd_Print.Location = new System.Drawing.Point(875, 8);
+            this.cmd_Print.Name = "cmd_Print";
+            this.cmd_Print.Size = new System.Drawing.Size(100, 51);
+            this.cmd_Print.TabIndex = 18;
+            this.cmd_Print.Text = "In đề thi";
+            this.cmd_Print.Click += new System.EventHandler(this.cmd_Print_Click);
             // 
             // lb_SoCauDaChon
             // 
@@ -533,16 +542,6 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
             this.gridColumn8.Width = 46;
-            // 
-            // cmd_Print
-            // 
-            this.cmd_Print.Image = global::TNTT.Properties.Resources.printer;
-            this.cmd_Print.Location = new System.Drawing.Point(875, 8);
-            this.cmd_Print.Name = "cmd_Print";
-            this.cmd_Print.Size = new System.Drawing.Size(100, 51);
-            this.cmd_Print.TabIndex = 18;
-            this.cmd_Print.Text = "In đề thi";
-            this.cmd_Print.Click += new System.EventHandler(this.cmd_Print_Click);
             // 
             // frm_TaoDeTC
             // 

@@ -162,7 +162,7 @@ namespace SINHVIEN
                 int charLen = d.GetChars(theSockId.dataBuffer, 0, iRx, chars, 0);
                 System.String szData = new System.String(chars);
                 string straa = szData;
-                if (straa == "123454321")
+                if (straa.Equals("123454321"))
                 {
                    // cmd_Nopbai.Enabled = true;
                     //MessageBox.Show("1");
