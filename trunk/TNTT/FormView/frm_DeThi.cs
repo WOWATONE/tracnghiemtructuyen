@@ -62,5 +62,15 @@ namespace TNTT.FormView
             }
             //base.Edit();
         }
+
+        public override void Delete()
+        {
+            var a = XtraMessageBox.Show("Bạn muốn xóa","",MessageBoxButtons.YesNo);
+            if (a == System.Windows.Forms.DialogResult.Yes)
+            {
+                dth.delete(gridView1.GetFocusedRowCellValue("iddethi").ToString());
+                Init();
+            }
+        }
     }
 }
