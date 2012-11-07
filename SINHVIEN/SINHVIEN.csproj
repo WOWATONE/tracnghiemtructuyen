@@ -66,6 +66,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -115,6 +116,12 @@
     <Compile Include="frm_MDI.Designer.cs">
       <DependentUpon>frm_MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Message.Designer.cs">
+      <DependentUpon>frm_Message.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_DangNhap.resx">
@@ -122,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MDI.resx">
       <DependentUpon>frm_MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Message.resx">
+      <DependentUpon>frm_Message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -155,6 +165,10 @@
     <ProjectReference Include="..\TNTT\TNTT.csproj">
       <Project>{E0248D1C-4E86-4C15-A728-03381606F772}</Project>
       <Name>TNTT</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Trung Toan\Desktop\New folder\FirstConnectDB\FirstConnectDB.csproj">
+      <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
+      <Name>FirstConnectDB</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

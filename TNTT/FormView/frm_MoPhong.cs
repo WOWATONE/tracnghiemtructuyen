@@ -12,7 +12,6 @@ using System.Net;
 using System.Threading;
 using System.Collections;
 using System.Data.OleDb;
-
 //image
 using System.IO;
 
@@ -46,8 +45,7 @@ namespace TNTT.FormView
             cmd_thubaithi.Enabled = false;
             lst_Log.Enabled = false;
             Loaddata();
-            if (Class.PreBase.obj_user.IsConnect == false)
-                OpenConnection();
+           
             lb_tengv.Text = Class.PreBase.obj_user.Hoten_giangvien;
             LoadImage();
 
@@ -75,13 +73,7 @@ namespace TNTT.FormView
                 lb_maphong.Text = dt.Rows[index]["maphongthi"].ToString();
                 cbo_DsPhong.Text = dt.Rows[index]["tenphongthi"].ToString();
                 lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
-                try
-                {
-                    //btn_TaoMK_Click(sender, e);
-                }
-                catch { }
-
-            }
+           }
         }
 
 
@@ -101,32 +93,6 @@ namespace TNTT.FormView
 
 
         int port = 8000;
-        void Connect()
-        {
-            try
-            {
-                string msg = "123454321";
-                byte[] byData = System.Text.Encoding.ASCII.GetBytes(msg);
-                Socket workerSocket = null;
-                for (int i = 0; i < m_workerSocketList.Count; i++)
-                {
-                    workerSocket = (Socket)m_workerSocketList[i];
-                    if (workerSocket != null)
-                    {
-                        if (workerSocket.Connected)
-                        {
-                            workerSocket.Send(byData);
-                        }
-                    }
-                }
-                Class.PreBase.obj_user.IsConnect = true;
-            }
-            catch (SocketException se)
-            {
-
-                MessageBox.Show(se.Message);
-            }
-        }
         void ChangeStatus(bool flag)
         {
             cmd_thubaithi.Enabled = flag;
@@ -136,7 +102,7 @@ namespace TNTT.FormView
         private void cmd_Mophongthi_Click(object sender, EventArgs e)
         {
             if (Class.PreBase.obj_user.IsConnect == false)
-                Connect();
+                OpenConnection();
             ChangeStatus(true);
             if (cbo_DsPhong.SelectedIndex != -1)
                 pt.OpenRoom(cbo_DsPhong.SelectedValue.ToString());
@@ -148,7 +114,7 @@ namespace TNTT.FormView
             try
             {
                 ConnectToClient();
-                string msg = "1111";
+                string msg="";// = "aaaaaaaa";
                 msg = "Server Msg: " + msg + "\n";
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(msg);
                 Socket workerSocket = null;
@@ -448,12 +414,11 @@ namespace TNTT.FormView
             }
             return IPStr;
         }
-
-        private void btn_Tinnhan_Click(object sender, EventArgs e)
+        void SendMessage(string message)
         {
             try
             {
-                string msg = "aaaa";// rich_mess.Text;
+                string msg = message;// rich_mess.Text;
                 msg = "Tin nhan tu giam thi:" + msg + "\n";
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(msg);
                 Socket workerSocket = null;
@@ -473,6 +438,10 @@ namespace TNTT.FormView
             {
                 MessageBox.Show(se.Message);
             }
+        }
+        private void btn_Tinnhan_Click(object sender, EventArgs e)
+        {
+            
         }
 
 
@@ -514,6 +483,20 @@ namespace TNTT.FormView
             {
                pt.CloseRoom(cbo_DsPhong.SelectedValue.ToString());
             }
+        }
+
+        private void cmd_Thongbao_Click(object sender, EventArgs e)
+        {
+            Component.frm_Thongbao frm = new Component.frm_Thongbao();
+            frm.passControl = new Component.frm_Thongbao.PassControl(PassData);
+            frm.ShowDialog();
+        }
+        //Passing data
+        private void PassData(object sender)
+        {
+            // Set de text of the textbox to the value of the textbox of form 2
+            string data = ((DevExpress.XtraRichEdit.RichEditControl)sender).Text;
+            SendMessage(data);
         }
 
     }

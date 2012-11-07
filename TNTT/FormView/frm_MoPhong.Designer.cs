@@ -55,10 +55,11 @@
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.lst_Log = new System.Windows.Forms.ListBox();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmd_thubaithi = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Mophongthi = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_Thongbao = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Help = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -327,8 +328,9 @@
             // 
             // groupControl5
             // 
+            this.groupControl5.Controls.Add(this.labelControl6);
             this.groupControl5.Controls.Add(this.panel1);
-            this.groupControl5.Controls.Add(this.simpleButton1);
+            this.groupControl5.Controls.Add(this.cmd_Thongbao);
             this.groupControl5.Controls.Add(this.cmd_Help);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl5.Location = new System.Drawing.Point(2, 369);
@@ -337,6 +339,14 @@
             this.groupControl5.Size = new System.Drawing.Size(717, 222);
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "Chức năng:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(283, 39);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(63, 13);
+            this.labelControl6.TabIndex = 2;
+            this.labelControl6.Text = "labelControl6";
             // 
             // panel1
             // 
@@ -368,15 +378,15 @@
             this.cmd_Mophongthi.Text = "Mở phòng";
             this.cmd_Mophongthi.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
             // 
-            // simpleButton1
+            // cmd_Thongbao
             // 
-            this.simpleButton1.Image = global::TNTT.Properties.Resources.help;
-            this.simpleButton1.Location = new System.Drawing.Point(125, 13);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(98, 40);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Thông báo";
-            this.simpleButton1.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
+            this.cmd_Thongbao.Image = global::TNTT.Properties.Resources.help;
+            this.cmd_Thongbao.Location = new System.Drawing.Point(125, 13);
+            this.cmd_Thongbao.Name = "cmd_Thongbao";
+            this.cmd_Thongbao.Size = new System.Drawing.Size(98, 40);
+            this.cmd_Thongbao.TabIndex = 0;
+            this.cmd_Thongbao.Text = "Thông báo";
+            this.cmd_Thongbao.Click += new System.EventHandler(this.cmd_Thongbao_Click);
             // 
             // cmd_Help
             // 
@@ -415,6 +425,7 @@
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            this.groupControl5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -453,6 +464,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton cmd_Thongbao;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

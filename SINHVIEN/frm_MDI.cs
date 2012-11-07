@@ -14,6 +14,7 @@ using DevExpress.XtraNavBar;
 using TNTT.Class;
 using System.IO;
 using Settings = SINHVIEN.Properties.Settings;
+using FirstConnectDB;
 namespace SINHVIEN
 {
     public partial class frm_MDI : DevExpress.XtraEditors.XtraForm
@@ -59,13 +60,8 @@ namespace SINHVIEN
         }
         private void frm_Thi_Load(object sender, EventArgs e)
         {
+
            
-            //var frm = new FrmAddConnection();
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    MessageBox.Show(@"Đã lưu cấu hình của chương trình!\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
-            //    Application.Restart();
-            //}
             LoadInfo();
         }
 
@@ -105,7 +101,7 @@ namespace SINHVIEN
                 m_clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
                 // Cet the remote IP address
-                IPAddress ip = IPAddress.Parse("192.168.1.100");
+                IPAddress ip = IPAddress.Parse("10.0.0.25");
                 int iPortNo = port;
                 // Create the end point 
                 IPEndPoint ipEnd = new IPEndPoint(ip, iPortNo);
@@ -150,6 +146,7 @@ namespace SINHVIEN
             }
 
         }
+        string message = "";
         public void OnDataReceived(IAsyncResult asyn)
         {
             try
@@ -161,23 +158,9 @@ namespace SINHVIEN
                 System.Text.Decoder d = System.Text.Encoding.UTF8.GetDecoder();
                 int charLen = d.GetChars(theSockId.dataBuffer, 0, iRx, chars, 0);
                 System.String szData = new System.String(chars);
-                string straa = szData;
-                if (straa.Equals("123454321"))
-                {
-                   // cmd_Nopbai.Enabled = true;
-                    //MessageBox.Show("1");
-                }
-                else
-                {
-                    //notifyIcon1.BalloonTipTitle = "Tin nhắn từ giám thị";
-                    //notifyIcon1.BalloonTipText = straa;
-                    //notifyIcon1.Icon = Properties.Resources._ws;
-                    //notifyIcon1.ShowBalloonTip(5000, "Tin nhắn", straa, ToolTipIcon.Info);
-                    //MessageBox.Show("2");
-                    //rich_Cauhoi.Text = szData;
-                    MessageBox.Show(szData);
-                }
-                //cmd_LamBai.Image = Properties.Resources.newMessages48;
+                message = szData;
+                cmd_mess.Image = Properties.Resources.newMessages48;
+                cmd_mess.Enabled = true;
                 WaitForData();
                 
             }
@@ -540,6 +523,28 @@ namespace SINHVIEN
             timer1.Interval = 1000;
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Start();
+        }
+
+        private void cmd_Connect_Click_1(object sender, EventArgs e)
+        {
+            //ConnectToServer();
+            MessageBox.Show("Kết nối thành công");
+        }
+
+        private void cmdConnect_Click(object sender, EventArgs e)
+        {
+           
+                ConnectToServer();
+                cmdConnect.Enabled = false;
+                cmd_LamBai.Enabled = true;
+        }
+
+        private void cmd_mess_Click(object sender, EventArgs e)
+        {
+            cmd_mess.Image = Properties.Resources.Messages48;
+            cmd_mess.Enabled = false;
+            frm_Message frm = new frm_Message(message);
+            frm.Show();
         }
 
 

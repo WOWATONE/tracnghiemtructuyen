@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-
+using FirstConnectDB;
 namespace TNTT.Database
 {
     using System.Configuration;
@@ -13,7 +13,7 @@ namespace TNTT.Database
     {
        
         SqlConnection sqlcnn;
-        public string connstr =  "Data source =.;database=QLCHAMDIEMTRACNGHIEM;Integrated Security = True";//ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+        public string connstr = FirstConnectDB.FrmAddConnection.BuildConnectString(); //"Data source =.;database=QLCHAMDIEMTRACNGHIEM;Integrated Security = True";//ConfigurationManager.ConnectionStrings["database"].ConnectionString;
         public Database()
         {
             sqlcnn = new SqlConnection(connstr);
