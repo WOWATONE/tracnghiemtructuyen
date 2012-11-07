@@ -54,13 +54,11 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.lst_Log = new System.Windows.Forms.ListBox();
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.btn_Tinnhan = new DevExpress.XtraEditors.SimpleButton();
-            this.rich_mess = new DevExpress.XtraRichEdit.RichEditControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmd_thubaithi = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Mophongthi = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Help = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -74,8 +72,6 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
-            this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -299,6 +295,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl1.Controls.Add(this.groupControl4);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(235, 0);
@@ -311,65 +308,33 @@
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.lst_Log);
-            this.groupControl4.Controls.Add(this.groupControl6);
             this.groupControl4.Controls.Add(this.groupControl5);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(2, 2);
+            this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.ShowCaption = false;
-            this.groupControl4.Size = new System.Drawing.Size(717, 589);
+            this.groupControl4.Size = new System.Drawing.Size(721, 593);
             this.groupControl4.TabIndex = 8;
             // 
             // lst_Log
             // 
             this.lst_Log.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lst_Log.FormattingEnabled = true;
-            this.lst_Log.Location = new System.Drawing.Point(291, 2);
+            this.lst_Log.Location = new System.Drawing.Point(2, 2);
             this.lst_Log.Name = "lst_Log";
-            this.lst_Log.Size = new System.Drawing.Size(424, 523);
+            this.lst_Log.Size = new System.Drawing.Size(717, 367);
             this.lst_Log.TabIndex = 3;
-            // 
-            // groupControl6
-            // 
-            this.groupControl6.Controls.Add(this.btn_Tinnhan);
-            this.groupControl6.Controls.Add(this.rich_mess);
-            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl6.Location = new System.Drawing.Point(2, 2);
-            this.groupControl6.Name = "groupControl6";
-            this.groupControl6.ShowCaption = false;
-            this.groupControl6.Size = new System.Drawing.Size(289, 523);
-            this.groupControl6.TabIndex = 2;
-            this.groupControl6.Text = "groupControl6";
-            // 
-            // btn_Tinnhan
-            // 
-            this.btn_Tinnhan.Image = global::TNTT.Properties.Resources.chuyenlop;
-            this.btn_Tinnhan.Location = new System.Drawing.Point(219, 208);
-            this.btn_Tinnhan.Name = "btn_Tinnhan";
-            this.btn_Tinnhan.Size = new System.Drawing.Size(64, 31);
-            this.btn_Tinnhan.TabIndex = 2;
-            this.btn_Tinnhan.Text = "Gửi";
-            this.btn_Tinnhan.Click += new System.EventHandler(this.btn_Tinnhan_Click);
-            // 
-            // rich_mess
-            // 
-            this.rich_mess.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.rich_mess.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rich_mess.Location = new System.Drawing.Point(2, 2);
-            this.rich_mess.Name = "rich_mess";
-            this.rich_mess.Size = new System.Drawing.Size(285, 200);
-            this.rich_mess.TabIndex = 1;
-            this.rich_mess.Text = "123";
             // 
             // groupControl5
             // 
             this.groupControl5.Controls.Add(this.panel1);
+            this.groupControl5.Controls.Add(this.simpleButton1);
             this.groupControl5.Controls.Add(this.cmd_Help);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl5.Location = new System.Drawing.Point(2, 525);
+            this.groupControl5.Location = new System.Drawing.Point(2, 369);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.ShowCaption = false;
-            this.groupControl5.Size = new System.Drawing.Size(713, 62);
+            this.groupControl5.Size = new System.Drawing.Size(717, 222);
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "Chức năng:";
             // 
@@ -378,9 +343,9 @@
             this.panel1.Controls.Add(this.cmd_thubaithi);
             this.panel1.Controls.Add(this.cmd_Mophongthi);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(468, 2);
+            this.panel1.Location = new System.Drawing.Point(473, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 58);
+            this.panel1.Size = new System.Drawing.Size(242, 218);
             this.panel1.TabIndex = 1;
             // 
             // cmd_thubaithi
@@ -403,6 +368,16 @@
             this.cmd_Mophongthi.Text = "Mở phòng";
             this.cmd_Mophongthi.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::TNTT.Properties.Resources.help;
+            this.simpleButton1.Location = new System.Drawing.Point(125, 13);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(98, 40);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Thông báo";
+            this.simpleButton1.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
+            // 
             // cmd_Help
             // 
             this.cmd_Help.Image = global::TNTT.Properties.Resources.help;
@@ -422,6 +397,7 @@
             this.Controls.Add(this.groupControl2);
             this.Name = "cbo_Phongthi";
             this.Text = "Mở phòng thi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cbo_Phongthi_FormClosing);
             this.Load += new System.EventHandler(this.frm_MoPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -437,8 +413,6 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
-            this.groupControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -461,9 +435,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_TaoMK;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private System.Windows.Forms.ListBox lst_Log;
-        private DevExpress.XtraEditors.GroupControl groupControl6;
-        private DevExpress.XtraEditors.SimpleButton btn_Tinnhan;
-        private DevExpress.XtraRichEdit.RichEditControl rich_mess;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.LabelControl lb_ip;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -482,5 +453,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

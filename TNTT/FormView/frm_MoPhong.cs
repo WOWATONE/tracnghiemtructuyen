@@ -22,8 +22,8 @@ namespace TNTT.FormView
     {
         DataTable dt = new DataTable();
         Class.C_PhongThi pt = new Class.C_PhongThi();
-        string strimg="";
-        int index=-1;
+        string strimg = "";
+        int index = -1;
         public cbo_Phongthi()
         {
             InitializeComponent();
@@ -35,21 +35,22 @@ namespace TNTT.FormView
             cbo_DsPhong.DataSource = dt;
             cbo_DsPhong.ValueMember = "idphongthi";
             cbo_DsPhong.DisplayMember = "tenphongthi";
-            //cbo_DsPhong.SelectedIndex = 0;
+            if(cbo_DsPhong.Items.Count>0)
+                cbo_DsPhong.SelectedIndex = 0;
         }
 
         private void frm_MoPhong_Load(object sender, EventArgs e)
         {
             lb_ip.Text = GetIP();
-            rich_mess.Enabled = false;
+            // rich_mess.Enabled = false;
             cmd_thubaithi.Enabled = false;
             lst_Log.Enabled = false;
             Loaddata();
-            if(Class.PreBase.obj_user.IsConnect==false)
+            if (Class.PreBase.obj_user.IsConnect == false)
                 OpenConnection();
             lb_tengv.Text = Class.PreBase.obj_user.Hoten_giangvien;
             LoadImage();
-            
+
         }
 
         private void btn_TaoMK_Click(object sender, EventArgs e)
@@ -71,15 +72,15 @@ namespace TNTT.FormView
             if (cbo_DsPhong.SelectedIndex != -1)
             {
                 index = cbo_DsPhong.SelectedIndex;
-            lb_maphong.Text = dt.Rows[index]["maphongthi"].ToString();
-            cbo_DsPhong.Text = dt.Rows[index]["tenphongthi"].ToString();
-            lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
-            try
-            {
-                //btn_TaoMK_Click(sender, e);
-            }
-            catch { }
-        
+                lb_maphong.Text = dt.Rows[index]["maphongthi"].ToString();
+                cbo_DsPhong.Text = dt.Rows[index]["tenphongthi"].ToString();
+                lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
+                try
+                {
+                    //btn_TaoMK_Click(sender, e);
+                }
+                catch { }
+
             }
         }
 
@@ -122,20 +123,24 @@ namespace TNTT.FormView
             }
             catch (SocketException se)
             {
-                
+
                 MessageBox.Show(se.Message);
             }
         }
+        void ChangeStatus(bool flag)
+        {
+            cmd_thubaithi.Enabled = flag;
+            cmd_Mophongthi.Enabled = !flag;
+            lst_Log.Enabled = !flag;
+        }
         private void cmd_Mophongthi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Class.PreBase.obj_user.IsConnect.ToString());
             if (Class.PreBase.obj_user.IsConnect == false)
-             Connect();
-            rich_mess.Enabled = true;
-            cmd_thubaithi.Enabled = true;
-            cmd_Mophongthi.Enabled = false;
-            lst_Log.Enabled = true;
-            
+                Connect();
+            ChangeStatus(true);
+            if (cbo_DsPhong.SelectedIndex != -1)
+                pt.OpenRoom(cbo_DsPhong.SelectedValue.ToString());
+
         }
 
         void OpenConnection()
@@ -158,7 +163,7 @@ namespace TNTT.FormView
                         }
                     }
                 }
-                
+
             }
             catch (SocketException se)
             {
@@ -169,7 +174,7 @@ namespace TNTT.FormView
         {
             try
             {
-  
+
                 // Create the listening socket...
                 m_mainSocket = new Socket(AddressFamily.InterNetwork,
                     SocketType.Stream,
@@ -415,10 +420,17 @@ namespace TNTT.FormView
                 }
             }
         }
-
+        void ThuBaiThi()
+        {
+            XtraMessageBox.Show("Đã thu bài thi");
+        }
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(IPAddress.Any.ToString());
+            ChangeStatus(false);
+            if (cbo_DsPhong.SelectedIndex != -1)
+                pt.CloseRoom(cbo_DsPhong.SelectedValue.ToString());
+            ThuBaiThi();
+
         }
         string GetIP()
         {
@@ -441,7 +453,7 @@ namespace TNTT.FormView
         {
             try
             {
-                string msg = rich_mess.Text;
+                string msg = "aaaa";// rich_mess.Text;
                 msg = "Tin nhan tu giam thi:" + msg + "\n";
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(msg);
                 Socket workerSocket = null;
@@ -491,10 +503,18 @@ namespace TNTT.FormView
             index = cbo_DsPhong.SelectedIndex;
             if (index != -1)
             {
-                lb_maphong.Text = cbo_DsPhong.Text;
+                lb_maphong.Text = cbo_DsPhong.SelectedText;
                 lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
             }
         }
-        
+
+        private void cbo_Phongthi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thực sự muốn thoát chức năng này không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+               pt.CloseRoom(cbo_DsPhong.SelectedValue.ToString());
+            }
+        }
+
     }
 }

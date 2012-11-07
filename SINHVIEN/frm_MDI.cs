@@ -44,7 +44,7 @@ namespace SINHVIEN
             }
             catch
             {
-               // pictureBox1.Image = Image.FromFile(@"Avatar/1.jpg");
+                pictureBox1.Image = Image.FromFile(@"Avatar/1.jpg");
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Refresh();
             }
@@ -478,20 +478,7 @@ namespace SINHVIEN
 
         private void cmd_LamBai_Click(object sender, EventArgs e)
         {
-            cmd_LamBai.Enabled = false;
-            cmd_nop.Enabled = true;
-            cmd_mess.Enabled = true;
-            group_cauhoi.Enabled = true;
-            navBar_Cauhoi.Enabled = true;
-            TachDeThi();
-            TronDeThi();
-            LoadDapAn();
-            LoadCauHoiThu(current);
-            LoadNaViGroup();
-            Settings.Default.Thoigianlambai = int.Parse(C_Base.tt.Thoigian)*60;
-            timer1.Interval = 1000;
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Start();
+            
         }
         void ConvertToSec(int time)
         {
@@ -499,7 +486,7 @@ namespace SINHVIEN
             int m = time % 3600 / 60;
             int s = time % 60;
           
-            lb_ThoiGianThi.Text = h + " : " + m + " : " + s;
+            lb_ThoiGianThi.Text = h + ":" + m + ":" + s;
         }
         void timer1_Tick(object sender, EventArgs e)
         {
@@ -535,6 +522,24 @@ namespace SINHVIEN
             {
                 XtraMessageBox.Show("Không thể kết nối với máy chủ. Vui lòng thử lại");
             }
+        }
+
+        private void cmd_LamBai_Click_1(object sender, EventArgs e)
+        {
+            cmd_LamBai.Enabled = false;
+            cmd_nop.Enabled = true;
+            cmd_mess.Enabled = true;
+            group_cauhoi.Enabled = true;
+            navBar_Cauhoi.Enabled = true;
+            TachDeThi();
+            TronDeThi();
+            LoadDapAn();
+            LoadCauHoiThu(current);
+            LoadNaViGroup();
+            Settings.Default.Thoigianlambai = int.Parse(C_Base.tt.Thoigian) * 60;
+            timer1.Interval = 1000;
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Start();
         }
 
 

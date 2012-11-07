@@ -34,17 +34,17 @@ namespace SINHVIEN
             
                 Init();
 
-#if !debug
+//#if !debug
                 txt_Masv.Text = "1100021";
                 txt_Matkhau.Text = "123456";
-                if (CheckLogin())
-                {
-                    Hide();
-                    frm_MDI frm = new frm_MDI();
-                    frm.ShowDialog();
-                    Close();
-                }
-#endif
+                //if (CheckLogin())
+               // {
+                   // Hide();
+                   // frm_MDI frm = new frm_MDI();
+                   // frm.ShowDialog();
+                  //  Close();
+               // }
+//#endif
         }
         bool ValidInput()
         {
