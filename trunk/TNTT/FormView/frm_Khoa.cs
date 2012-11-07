@@ -81,7 +81,7 @@ namespace TNTT.FormView
             }
             catch
             {
-                XtraMessageBox.Show("Bạn không thể xóa khoa này !! khoa này đã có dữ liệu trong đó !");
+                XtraMessageBox.Show("Bạn không thể xóa khoa này !! khoa này Lớp và Bộ Môn trong khoa này vẫn còn !");
             }
         }
         public override void Save()
