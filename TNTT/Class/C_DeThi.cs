@@ -78,5 +78,11 @@ namespace TNTT.Class
             string sql = "SELECT tieude,cautraloi,dapan,troncau,nhch_idnganhangcauhoi from cautraloi,nganhangcauhoi WHERE cautraloi.nhch_idnganhangcauhoi = nganhangcauhoi.idnganhangcauhoi AND nhch_idnganhangcauhoi in " + condition;
             return db.GetData(sql);
         }
+
+        public void delete(string iddethi)
+        {
+            string sql = @"DELETE FROM DETHI WHERE iddethi = " + iddethi;
+            db.ExcuteNonQuery(sql);
+        }
     }
 }

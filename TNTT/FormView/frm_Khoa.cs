@@ -68,13 +68,20 @@ namespace TNTT.FormView
         }
         public override void Delete()
         {
-            base.Delete();
-            DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?","Xác nhận",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-            if (Result == DialogResult.OK)
+            try
             {
-                string id = gridView1.GetFocusedRowCellValue("idkhoa").ToString();
-                khoa.Delete(id);
-                Init();
+                base.Delete();
+                DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Result == DialogResult.OK)
+                {
+                    string id = gridView1.GetFocusedRowCellValue("idkhoa").ToString();
+                    khoa.Delete(id);
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Bạn không thể xóa khoa này !! khoa này đã có dữ liệu trong đó !");
             }
         }
         public override void Save()
