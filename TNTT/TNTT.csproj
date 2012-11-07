@@ -218,6 +218,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Applica.cs" />
     <Compile Include="Class\C_BoMon.cs" />
     <Compile Include="Class\C_CauHoi.cs" />
     <Compile Include="Class\C_CauTraLoi.cs" />
