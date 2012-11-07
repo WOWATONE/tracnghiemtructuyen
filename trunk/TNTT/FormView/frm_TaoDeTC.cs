@@ -315,6 +315,42 @@ namespace TNTT.FormView
             td.edit(made, txtMaDe.Text, chuoiidde, cbo_monhoc.SelectedValue.ToString(), time.GetNowTime(), PreBase.obj_user.Idgiangvien);
             XtraMessageBox.Show(string.Format("Thêm thành công ! với số câu hỏi là : {0} .", dem));
         }
+        void Mix(DataTable dt)
+        {
+            Random rd = new Random();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int index = rd.Next(0, dt.Rows.Count);
+                string temp = dt.Rows[i]["idnganhangcauhoi"].ToString();
+                dt.Rows[i]["idnganhangcauhoi"] = dt.Rows[i][index].ToString();
+                dt.Rows[i][index] = temp;
+            }
+
+        }
+        string GetCondition()
+        {
+            DataTable dt_temp = new DataTable();
+            dt_temp = dt_taode;
+            Mix(dt_temp);
+            string condition = " and idnganhangcauhoi in (";
+            for (int i = 0; i < dt_temp.Rows.Count; i++)
+            {
+                condition += dt_temp.Rows[i]["idnganhangcauhoi"].ToString() + ",";
+            }
+            condition = condition.Substring(0, condition.Length - 1);
+            return condition + ")";
+        }
+        private void cmd_Print_Click(object sender, EventArgs e)
+        {
+            DataTable temp = new DataTable();
+            C_CauTraLoi tl = new C_CauTraLoi();
+            if (dt_taode.Rows.Count > 0)
+            {
+                temp = tl.GetListToPrint(GetCondition());
+                Report.C_Export rpt = new Report.C_Export();
+                rpt.ExportToWord(temp);
+            }
+        }
     }
 
 }

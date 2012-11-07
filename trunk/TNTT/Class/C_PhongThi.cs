@@ -59,5 +59,15 @@ namespace TNTT.Class
 and lop_idlop in (select lop_idlop from SINHVIEN where masinhvien='"+masv+"')";
             return db.GetData(sql);
         }
+        public void OpenRoom(string id)
+        {
+            string sql = "update PHONGTHI set tinhtrang = 1 where idphongthi = "+id;
+            db.ExcuteNonQuery(sql);
+        }
+        public void CloseRoom(string id)
+        {
+            string sql = "update PHONGTHI set tinhtrang = 0 where idphongthi = " + id;
+            db.ExcuteNonQuery(sql);
+        }
     }
 }

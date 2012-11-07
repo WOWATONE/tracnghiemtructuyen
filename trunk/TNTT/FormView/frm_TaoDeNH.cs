@@ -356,12 +356,29 @@ namespace TNTT.FormView
             }
             catch { }
         }
-        string GetCondition()
-        {
-            string condition = " and idnganhangcauhoi in (";
+
+
+        void Mix(DataTable dt)
+        { 
+            Random rd = new Random();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                condition += dt.Rows[i]["idnganhangcauhoi"].ToString() + ",";
+                int index =rd.Next(0, dt.Rows.Count);
+                string temp = dt.Rows[i]["idnganhangcauhoi"].ToString();
+                dt.Rows[i]["idnganhangcauhoi"] = dt.Rows[index]["idnganhangcauhoi"].ToString();
+                dt.Rows[index]["idnganhangcauhoi"] = temp;
+            }
+
+        }
+        string GetCondition()
+        {
+            DataTable dt_temp = new DataTable();
+            dt_temp = dt;
+            Mix(dt_temp);
+            string condition = " and idnganhangcauhoi in (";
+            for (int i = 0; i < dt_temp.Rows.Count; i++)
+            {
+                condition += dt_temp.Rows[i]["idnganhangcauhoi"].ToString() + ",";
             }
             condition = condition.Substring(0, condition.Length - 1);
             return condition + ")";

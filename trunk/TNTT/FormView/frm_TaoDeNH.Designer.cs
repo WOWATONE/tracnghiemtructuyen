@@ -212,7 +212,7 @@
             this.trb_Socaungaunhien.Name = "trb_Socaungaunhien";
             this.trb_Socaungaunhien.Properties.Maximum = 100;
             this.trb_Socaungaunhien.Properties.Minimum = 1;
-            this.trb_Socaungaunhien.Size = new System.Drawing.Size(284, 42);
+            this.trb_Socaungaunhien.Size = new System.Drawing.Size(284, 45);
             this.trb_Socaungaunhien.TabIndex = 12;
             this.trb_Socaungaunhien.Value = 1;
             // 

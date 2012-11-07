@@ -70,6 +70,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -117,6 +118,7 @@
             // 
             // dockPanel1_Container
             // 
+            this.dockPanel1_Container.Controls.Add(this.cmd_Print);
             this.dockPanel1_Container.Controls.Add(this.lb_SoCauDaChon);
             this.dockPanel1_Container.Controls.Add(this.trb_Socau);
             this.dockPanel1_Container.Controls.Add(this.cbo_monhoc);
@@ -186,7 +188,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 13);
             this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Mã dề :";
+            this.labelControl2.Text = "Mã đề :";
             // 
             // txtSoCauDaChon
             // 
@@ -532,6 +534,16 @@
             this.gridColumn8.VisibleIndex = 6;
             this.gridColumn8.Width = 46;
             // 
+            // cmd_Print
+            // 
+            this.cmd_Print.Image = global::TNTT.Properties.Resources.printer;
+            this.cmd_Print.Location = new System.Drawing.Point(875, 8);
+            this.cmd_Print.Name = "cmd_Print";
+            this.cmd_Print.Size = new System.Drawing.Size(100, 51);
+            this.cmd_Print.TabIndex = 18;
+            this.cmd_Print.Text = "In đề thi";
+            this.cmd_Print.Click += new System.EventHandler(this.cmd_Print_Click);
+            // 
             // frm_TaoDeTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,5 +626,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.LabelControl lb_SoCauDaChon;
         private DevExpress.XtraEditors.TrackBarControl trb_Socau;
+        private DevExpress.XtraEditors.SimpleButton cmd_Print;
     }
 }
