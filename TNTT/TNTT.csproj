@@ -749,7 +749,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Trung Toan\Desktop\New folder\FirstConnectDB\FirstConnectDB.csproj">
+    <ProjectReference Include="..\FirstConnectDB\FirstConnectDB.csproj">
       <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
       <Name>FirstConnectDB</Name>
     </ProjectReference>
