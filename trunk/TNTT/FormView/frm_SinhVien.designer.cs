@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.components = new System.ComponentModel.Container();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dpn_content = new DevExpress.XtraBars.Docking.DockPanel();
             this.N = new DevExpress.XtraBars.Docking.ControlContainer();
             this.cmd_changeAvt = new DevExpress.XtraEditors.SimpleButton();

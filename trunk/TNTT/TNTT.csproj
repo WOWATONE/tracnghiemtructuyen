@@ -710,6 +710,7 @@
     <Content Include="Resources\calendar.png" />
     <Content Include="Resources\class.png" />
     <Content Include="Resources\closeall.png" />
+    <None Include="Resources\INRP1.png" />
     <Content Include="Resources\khoa.png" />
     <Content Include="Resources\monhoc.png" />
     <None Include="Resources\Select.png" />

@@ -84,17 +84,15 @@ namespace TNTT.FormView
                 cmd_Edit.Visibility =cmd_Save.Visibility= BarItemVisibility.Never;
             }
         }
-        public virtual void Expand(bool flag)
-        { 
-            
-        }
-        public virtual void isReadOnly(bool flag)
-        { }
+        public virtual void Expand(bool flag) {  }
+        public virtual void isReadOnly(bool flag) { }
         public virtual void Click_Perform(bool flag)
         {
             cmd_Add.Enabled = cmd_Delete.Enabled = cmd_Edit.Enabled = cmd_Refresh.Enabled= cmd_Print.Enabled=cmd_Search.Enabled= flag;
             cmd_Save.Enabled = cmd_Cancel.Enabled = !flag;
         }
+        public virtual void LayDuLieu(){ }
+        public virtual void InDuLieu() { }
         #endregion
         private void cmd_Add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -263,6 +261,50 @@ namespace TNTT.FormView
                     cmd_Print.Visibility = BarItemVisibility.Never;
                 else cmd_Print.Visibility = BarItemVisibility.Always;
             }
+        }
+
+        private bool laydulieu = true;
+        /// <summary>
+        /// Hiện nút lấy Dữ liệu
+        /// </summary>
+        [DefaultValue(false)]
+        public bool Laydulieu
+        {
+            get { return laydulieu; }
+            set
+            {
+                laydulieu = value;
+                if (!laydulieu)
+                    Cmd_LayDuLieu.Visibility = BarItemVisibility.Never;
+                else Cmd_LayDuLieu.Visibility = BarItemVisibility.Always;
+            }
+        }
+
+        private void Cmd_LayDuLieu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LayDuLieu();
+        }
+
+        private bool indulieu = true;
+        /// <summary>
+        /// Hiện nút In Dữ liệu
+        /// </summary>
+        [DefaultValue(false)]
+        public bool Indulieu
+        {
+            get { return indulieu; }
+            set
+            {
+                indulieu = value;
+                if (!indulieu)
+                    cmd_InDuLieu.Visibility = BarItemVisibility.Never;
+                else cmd_InDuLieu.Visibility = BarItemVisibility.Always;
+            }
+        }
+
+        private void cmd_InDuLieu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
 
         

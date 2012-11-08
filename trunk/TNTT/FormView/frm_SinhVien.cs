@@ -33,6 +33,7 @@ namespace TNTT.FormView
 
         private void frm_SinhVien_Load(object sender, EventArgs e)
         {
+            UserAccessFunction();
             ResetInput();
             LoadTLDanhSachLop();
             Init();
@@ -84,6 +85,13 @@ namespace TNTT.FormView
         }
 
         #region override
+
+        public override void UserAccessFunction()
+        {
+            Laydulieu = Indulieu = true;
+            base.UserAccessFunction();
+        }
+
         public override void Exit()
         {
             this.Close();

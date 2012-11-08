@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.components = new System.ComponentModel.Container();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.cmd_Print = new DevExpress.XtraEditors.SimpleButton();
@@ -129,9 +130,9 @@
             this.dockPanel1_Container.Controls.Add(this.label1);
             this.dockPanel1_Container.Controls.Add(this.cmd_thoat);
             this.dockPanel1_Container.Controls.Add(this.cmd_luu);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(983, 69);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(983, 71);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // cmd_Print
@@ -406,7 +407,7 @@
             // 
             this.splitterControl1.Location = new System.Drawing.Point(657, 98);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(6, 380);
+            this.splitterControl1.Size = new System.Drawing.Size(5, 380);
             this.splitterControl1.TabIndex = 2;
             this.splitterControl1.TabStop = false;
             // 
@@ -414,9 +415,9 @@
             // 
             this.groupControl2.Controls.Add(this.grd_dethi);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(663, 98);
+            this.groupControl2.Location = new System.Drawing.Point(662, 98);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(328, 380);
+            this.groupControl2.Size = new System.Drawing.Size(329, 380);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Câu hỏi trong đề thi";
             // 
@@ -429,7 +430,7 @@
             this.grd_dethi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.view,
             this.xoa});
-            this.grd_dethi.Size = new System.Drawing.Size(324, 357);
+            this.grd_dethi.Size = new System.Drawing.Size(325, 357);
             this.grd_dethi.TabIndex = 0;
             this.grd_dethi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

@@ -30,10 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.rec_NoiDung = new DevExpress.XtraRichEdit.RichEditControl();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.grd_NHCauHoi = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,21 +51,40 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.rec_NoiDung);
+            this.groupControl1.Controls.Add(this.splitterControl1);
             this.groupControl1.Controls.Add(this.grd_NHCauHoi);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 63);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1020, 365);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Danh Sách";
             // 
+            // rec_NoiDung
+            // 
+            this.rec_NoiDung.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.rec_NoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rec_NoiDung.Location = new System.Drawing.Point(603, 21);
+            this.rec_NoiDung.Name = "rec_NoiDung";
+            this.rec_NoiDung.Size = new System.Drawing.Size(415, 342);
+            this.rec_NoiDung.TabIndex = 2;
+            // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Location = new System.Drawing.Point(597, 21);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(6, 342);
+            this.splitterControl1.TabIndex = 1;
+            this.splitterControl1.TabStop = false;
+            // 
             // grd_NHCauHoi
             // 
-            this.grd_NHCauHoi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_NHCauHoi.Dock = System.Windows.Forms.DockStyle.Left;
             this.grd_NHCauHoi.Location = new System.Drawing.Point(2, 21);
             this.grd_NHCauHoi.MainView = this.gridView1;
             this.grd_NHCauHoi.Name = "grd_NHCauHoi";
-            this.grd_NHCauHoi.Size = new System.Drawing.Size(1016, 342);
+            this.grd_NHCauHoi.Size = new System.Drawing.Size(595, 342);
             this.grd_NHCauHoi.TabIndex = 0;
             this.grd_NHCauHoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -73,7 +93,6 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
@@ -86,6 +105,7 @@
             this.gridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // gridColumn1
             // 
@@ -95,18 +115,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tiêu đề";
-            this.gridColumn2.FieldName = "tieude";
-            this.gridColumn2.MinWidth = 300;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowFocus = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 300;
+            this.gridColumn1.Width = 102;
             // 
             // gridColumn3
             // 
@@ -116,7 +125,7 @@
             this.gridColumn3.MinWidth = 10;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 50;
             // 
             // gridColumn4
@@ -126,7 +135,7 @@
             this.gridColumn4.MaxWidth = 50;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
             this.gridColumn4.Width = 50;
             // 
             // gridColumn5
@@ -136,7 +145,7 @@
             this.gridColumn5.MaxWidth = 50;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 3;
             this.gridColumn5.Width = 50;
             // 
             // gridColumn6
@@ -146,7 +155,8 @@
             this.gridColumn6.MaxWidth = 100;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 100;
             // 
             // gridColumn7
             // 
@@ -155,8 +165,8 @@
             this.gridColumn7.MaxWidth = 80;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 50;
+            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.Width = 80;
             // 
             // gridColumn8
             // 
@@ -165,7 +175,8 @@
             this.gridColumn8.MaxWidth = 150;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.Width = 147;
             // 
             // dockManager1
             // 
@@ -203,12 +214,13 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraRichEdit.RichEditControl rec_NoiDung;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
     }
 }
