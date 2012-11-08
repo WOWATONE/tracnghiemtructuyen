@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dpn_containt = new DevExpress.XtraBars.Docking.DockPanel();
             this.dpn_status = new DevExpress.XtraBars.Docking.ControlContainer();
             this.LK_MaKhoa = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -77,7 +76,7 @@
             this.dpn_containt.Controls.Add(this.dpn_status);
             this.dpn_containt.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dpn_containt.ID = new System.Guid("745364bd-942b-4468-a15f-4509be299b66");
-            this.dpn_containt.Location = new System.Drawing.Point(0, 65);
+            this.dpn_containt.Location = new System.Drawing.Point(0, 63);
             this.dpn_containt.Name = "dpn_containt";
             this.dpn_containt.Options.ShowCloseButton = false;
             this.dpn_containt.OriginalSize = new System.Drawing.Size(200, 98);
@@ -92,9 +91,9 @@
             this.dpn_status.Controls.Add(this.labelControl2);
             this.dpn_status.Controls.Add(this.txt_TenLop);
             this.dpn_status.Controls.Add(this.labelControl1);
-            this.dpn_status.Location = new System.Drawing.Point(4, 23);
+            this.dpn_status.Location = new System.Drawing.Point(4, 25);
             this.dpn_status.Name = "dpn_status";
-            this.dpn_status.Size = new System.Drawing.Size(740, 71);
+            this.dpn_status.Size = new System.Drawing.Size(740, 69);
             this.dpn_status.TabIndex = 0;
             // 
             // LK_MaKhoa
@@ -158,9 +157,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_Lop);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 163);
+            this.groupControl1.Location = new System.Drawing.Point(0, 161);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(748, 268);
+            this.groupControl1.Size = new System.Drawing.Size(748, 270);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -170,7 +169,7 @@
             this.grd_Lop.Location = new System.Drawing.Point(2, 21);
             this.grd_Lop.MainView = this.gridView1;
             this.grd_Lop.Name = "grd_Lop";
-            this.grd_Lop.Size = new System.Drawing.Size(744, 245);
+            this.grd_Lop.Size = new System.Drawing.Size(744, 247);
             this.grd_Lop.TabIndex = 6;
             this.grd_Lop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

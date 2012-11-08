@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dpn_content = new DevExpress.XtraBars.Docking.DockPanel();
             this.N = new DevExpress.XtraBars.Docking.ControlContainer();
             this.cmd_changeAvt = new DevExpress.XtraEditors.SimpleButton();
@@ -105,7 +104,7 @@
             this.dpn_content.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dpn_content.FloatVertical = true;
             this.dpn_content.ID = new System.Guid("a6cbc7ec-b0dd-40f8-a74d-4826ad24cc29");
-            this.dpn_content.Location = new System.Drawing.Point(0, 65);
+            this.dpn_content.Location = new System.Drawing.Point(0, 63);
             this.dpn_content.Name = "dpn_content";
             this.dpn_content.Options.ShowCloseButton = false;
             this.dpn_content.OriginalSize = new System.Drawing.Size(200, 161);
@@ -130,9 +129,9 @@
             this.N.Controls.Add(this.labelControl6);
             this.N.Controls.Add(this.labelControl3);
             this.N.Controls.Add(this.labelControl1);
-            this.N.Location = new System.Drawing.Point(4, 23);
+            this.N.Location = new System.Drawing.Point(4, 25);
             this.N.Name = "N";
-            this.N.Size = new System.Drawing.Size(929, 134);
+            this.N.Size = new System.Drawing.Size(929, 132);
             this.N.TabIndex = 0;
             // 
             // cmd_changeAvt
@@ -278,17 +277,17 @@
             this.dpnDanhSachLop.Controls.Add(this.dockPanel1_Container);
             this.dpnDanhSachLop.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dpnDanhSachLop.ID = new System.Guid("5599b643-8200-4604-a0f2-ce7c02516462");
-            this.dpnDanhSachLop.Location = new System.Drawing.Point(0, 226);
+            this.dpnDanhSachLop.Location = new System.Drawing.Point(0, 224);
             this.dpnDanhSachLop.Name = "dpnDanhSachLop";
             this.dpnDanhSachLop.Options.ShowCloseButton = false;
             this.dpnDanhSachLop.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dpnDanhSachLop.Size = new System.Drawing.Size(200, 229);
+            this.dpnDanhSachLop.Size = new System.Drawing.Size(200, 231);
             this.dpnDanhSachLop.Text = "Danh sách lớp";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.tlDanhSachLop);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(192, 202);
             this.dockPanel1_Container.TabIndex = 0;
@@ -339,9 +338,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_DanhSach);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(200, 226);
+            this.groupControl1.Location = new System.Drawing.Point(200, 224);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(737, 229);
+            this.groupControl1.Size = new System.Drawing.Size(737, 231);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Danh sách";
             // 
@@ -351,7 +350,7 @@
             this.grd_DanhSach.Location = new System.Drawing.Point(2, 21);
             this.grd_DanhSach.MainView = this.gv_DanhSach;
             this.grd_DanhSach.Name = "grd_DanhSach";
-            this.grd_DanhSach.Size = new System.Drawing.Size(733, 206);
+            this.grd_DanhSach.Size = new System.Drawing.Size(733, 208);
             this.grd_DanhSach.TabIndex = 0;
             this.grd_DanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_DanhSach});

@@ -127,7 +127,7 @@ namespace TNTT
 
         private void btn_Setup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowDiaLog<Component.frm_Config>(this);
+            PreBase.ShowDiaLog<FrmAddConnection>(this);
         }
 
         private void btn_Monhoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

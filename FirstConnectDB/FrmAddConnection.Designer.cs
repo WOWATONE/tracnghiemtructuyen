@@ -56,6 +56,7 @@
             this.cbo_Type.Name = "cbo_Type";
             this.cbo_Type.Size = new System.Drawing.Size(268, 21);
             this.cbo_Type.TabIndex = 2;
+            this.cbo_Type.SelectedIndexChanged += new System.EventHandler(this.cbo_Type_SelectedIndexChanged);
             // 
             // txtPassword
             // 

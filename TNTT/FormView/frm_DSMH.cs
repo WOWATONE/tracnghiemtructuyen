@@ -138,7 +138,7 @@ namespace TNTT.FormView
             }
             catch
             {
-                XtraMessageBox.Show("Không thể xóa Danh sách môn học !\nvì trong Danh sách môn học này còn phòng thi và đề thi  !! ");
+                XtraMessageBox.Show("Không thể xóa Danh sách môn học !\nvì trong Danh sách môn học này còn danh sách môn học lại và phòng thi !! ");
             }
         }
         public override void Save()

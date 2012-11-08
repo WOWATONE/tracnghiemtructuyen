@@ -67,7 +67,7 @@
             this.groupControl1.Controls.Add(this.txt_tenbomon);
             this.groupControl1.Controls.Add(this.txt_mabomon);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(0, 65);
+            this.groupControl1.Location = new System.Drawing.Point(0, 63);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(897, 100);
             this.groupControl1.TabIndex = 4;
@@ -139,9 +139,9 @@
             // 
             this.groupControl2.Controls.Add(this.grd_bomon);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 165);
+            this.groupControl2.Location = new System.Drawing.Point(0, 163);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(897, 305);
+            this.groupControl2.Size = new System.Drawing.Size(897, 307);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Danh Sách";
             // 
@@ -151,7 +151,7 @@
             this.grd_bomon.Location = new System.Drawing.Point(2, 21);
             this.grd_bomon.MainView = this.gridView1;
             this.grd_bomon.Name = "grd_bomon";
-            this.grd_bomon.Size = new System.Drawing.Size(893, 282);
+            this.grd_bomon.Size = new System.Drawing.Size(893, 284);
             this.grd_bomon.TabIndex = 0;
             this.grd_bomon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
