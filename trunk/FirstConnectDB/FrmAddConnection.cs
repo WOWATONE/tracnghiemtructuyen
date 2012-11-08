@@ -228,5 +228,19 @@ namespace FirstConnectDB
                 cbo_Type.SelectedIndex = 0;
 
         }
+
+        private void cbo_Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbo_Type.Text == "Đăng nhập Windows")
+            {
+                txtPassword.Enabled = false;
+                txtUserName.Enabled = false;
+            }
+            else
+            {
+                txtPassword.Enabled = true;
+                txtUserName.Enabled = true;
+            }
+        }
     }
 }

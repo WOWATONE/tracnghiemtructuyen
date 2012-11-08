@@ -188,6 +188,21 @@ namespace TNTT.FormView
         /// </summary>
         public override void Delete()
         {
+            try
+            {
+                base.Delete();
+                DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Result == DialogResult.OK)
+                {
+                    string id = gridView1.GetFocusedRowCellValue("idphongthi").ToString();
+                    pt.Delete(id);
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Bạn không thể xóa phòng thi này !\n Vì trong phòng thi còn có danh sách thi");
+            }
             base.Delete();
         }
         /// <summary>

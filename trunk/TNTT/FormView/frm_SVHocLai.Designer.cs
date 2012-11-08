@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grd_SinhVien = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.cbo_sinhvien = new System.Windows.Forms.ComboBox();
@@ -57,9 +56,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_SinhVien);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 178);
+            this.groupControl1.Location = new System.Drawing.Point(0, 176);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(705, 181);
+            this.groupControl1.Size = new System.Drawing.Size(705, 183);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Sinh viên";
             // 
@@ -69,7 +68,7 @@
             this.grd_SinhVien.Location = new System.Drawing.Point(2, 21);
             this.grd_SinhVien.MainView = this.gridView1;
             this.grd_SinhVien.Name = "grd_SinhVien";
-            this.grd_SinhVien.Size = new System.Drawing.Size(701, 158);
+            this.grd_SinhVien.Size = new System.Drawing.Size(701, 160);
             this.grd_SinhVien.TabIndex = 0;
             this.grd_SinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -133,7 +132,7 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dockPanel1.ID = new System.Guid("9bb71881-c62f-4dc0-b34e-d44374c6ca6a");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 65);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 63);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Options.ShowCloseButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 113);
@@ -148,9 +147,9 @@
             this.dockPanel1_Container.Controls.Add(this.labelControl3);
             this.dockPanel1_Container.Controls.Add(this.labelControl2);
             this.dockPanel1_Container.Controls.Add(this.labelControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(697, 86);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(697, 84);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // cbo_sinhvien

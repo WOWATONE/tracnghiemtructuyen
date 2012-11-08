@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dcpNoiDung = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dat_ngayhoc = new DevExpress.XtraEditors.DateEdit();
@@ -86,7 +85,7 @@
             this.dcpNoiDung.Controls.Add(this.dockPanel1_Container);
             this.dcpNoiDung.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dcpNoiDung.ID = new System.Guid("cfe0d7ed-a69f-4230-82fb-c4cfb8bb30be");
-            this.dcpNoiDung.Location = new System.Drawing.Point(0, 65);
+            this.dcpNoiDung.Location = new System.Drawing.Point(0, 63);
             this.dcpNoiDung.Name = "dcpNoiDung";
             this.dcpNoiDung.Options.ShowCloseButton = false;
             this.dcpNoiDung.OriginalSize = new System.Drawing.Size(200, 99);
@@ -103,9 +102,9 @@
             this.dockPanel1_Container.Controls.Add(this.labelControl4);
             this.dockPanel1_Container.Controls.Add(this.labelControl3);
             this.dockPanel1_Container.Controls.Add(this.labelControl2);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(703, 72);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(703, 70);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // dat_ngayhoc
@@ -214,9 +213,9 @@
             // 
             this.groupControl1.Controls.Add(this.grd_DanhSachMonHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 164);
+            this.groupControl1.Location = new System.Drawing.Point(0, 162);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(711, 182);
+            this.groupControl1.Size = new System.Drawing.Size(711, 184);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Danh sách môn học";
             // 
@@ -226,7 +225,7 @@
             this.grd_DanhSachMonHoc.Location = new System.Drawing.Point(2, 21);
             this.grd_DanhSachMonHoc.MainView = this.gridView1;
             this.grd_DanhSachMonHoc.Name = "grd_DanhSachMonHoc";
-            this.grd_DanhSachMonHoc.Size = new System.Drawing.Size(707, 159);
+            this.grd_DanhSachMonHoc.Size = new System.Drawing.Size(707, 161);
             this.grd_DanhSachMonHoc.TabIndex = 0;
             this.grd_DanhSachMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

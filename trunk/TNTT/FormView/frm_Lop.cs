@@ -122,7 +122,7 @@ namespace TNTT.FormView
             }
             catch
             {
-                XtraMessageBox.Show("Không thể xóa lớp vì trong lớp này vẫn còn Sinh viên và DSMH");
+                XtraMessageBox.Show("Không thể xóa lớp !\n vì trong lớp này vẫn còn Sinh viên và Danh mục môn học");
             }
         }
 

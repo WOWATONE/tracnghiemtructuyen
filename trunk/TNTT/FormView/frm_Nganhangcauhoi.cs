@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TNTT.Class;
+using DevExpress.XtraEditors;
 namespace TNTT.FormView
 {
     public partial class frm_Nganhangcauhoi : frm_tool
@@ -66,13 +67,20 @@ namespace TNTT.FormView
         }
         public override void Delete()
         {
-            base.Delete();
-            DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (Result == DialogResult.OK)
+            try
             {
-                string id = gridView1.GetFocusedRowCellValue("idnganhangcauhoi").ToString();
-                ch.Delete(id);
-                Init();
+                base.Delete();
+                DialogResult Result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Result == DialogResult.OK)
+                {
+                    string id = gridView1.GetFocusedRowCellValue("idnganhangcauhoi").ToString();
+                    ch.Delete(id);
+                    Init();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể xóa câu hỏi này !\n Vì trong nó còn có câu trả lời !");
             }
         }
         public override void Save()
