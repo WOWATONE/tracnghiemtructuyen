@@ -14,6 +14,7 @@ namespace TNTT.FormView
     {
         C_CauHoi ch = new C_CauHoi();
         DataTable dt = new DataTable();
+        C_CauTraLoi tl = new C_CauTraLoi();
         string _state = "";
         public frm_Nganhangcauhoi()
         {
@@ -129,5 +130,34 @@ namespace TNTT.FormView
             base.Exit();
         }
         #endregion
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            try
+            {
+                int i = (int)gridView1.GetFocusedRowCellValue("idnganhangcauhoi");
+                if (i > 0)
+                {
+                    DataTable dttemp = ch.GetListbyidnganhangcauhoi("", i.ToString());
+                    rec_NoiDung.Text = dttemp.Rows[0]["tieude"].ToString();
+                    int socau = 65;
+                    string dapandung = "";
+                    DataTable dttempcautraloi = tl.GetListbyidnganhangcauhoi(i.ToString());
+                    for (int k = 0; k < dttempcautraloi.Rows.Count; k++)
+                    {
+                        rec_NoiDung.Text += "\n " + (char)socau + " :" + dttempcautraloi.Rows[k]["cautraloi"].ToString();
+                        if (dttempcautraloi.Rows[k]["dapan"].ToString().ToLower() == "true")
+                            dapandung += (char)socau + ",";
+                        socau++;
+                    }
+                    dapandung = dapandung.Substring(0, dapandung.Length - 1);
+                    rec_NoiDung.Text += "\n\n\n Đáp án đúng : " + dapandung;
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Lỗi load câu hỏi !");
+            }
+        }
     }
 }

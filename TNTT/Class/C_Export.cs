@@ -33,7 +33,7 @@ namespace TNTT.Report
                 oDoc = oWord.Documents.Add(ref oMissing, ref oMissing,
                     ref oMissing, ref oMissing);
                 Word.Range rng = oDoc.Content;
-                rng.InsertFile(FileName: @"F:\De Tai Mon Hoc\TNTT\TNTT\template_cntt.dotm");
+                rng.InsertFile(FileName: @"E:\template_cntt.dotm");
                 oWord.Visible = true;
 
                 Word.Paragraph oPara0;

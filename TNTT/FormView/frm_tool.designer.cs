@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_tool));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.cmd_Add = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -39,7 +40,9 @@
             this.cmd_Cancel = new DevExpress.XtraBars.BarLargeButtonItem();
             this.cmd_Print = new DevExpress.XtraBars.BarLargeButtonItem();
             this.cmd_Refresh = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.cmd_Close = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.cmd_In = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.Cmd_LayDuLieu = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.cmd_InDuLieu = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -63,10 +66,12 @@
             this.cmd_Save,
             this.cmd_Cancel,
             this.cmd_Print,
-            this.cmd_Close,
+            this.cmd_In,
             this.cmd_Search,
-            this.cmd_Refresh});
-            this.barManager1.MaxItemId = 10;
+            this.cmd_Refresh,
+            this.Cmd_LayDuLieu,
+            this.cmd_InDuLieu});
+            this.barManager1.MaxItemId = 14;
             // 
             // bar1
             // 
@@ -83,7 +88,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.cmd_Cancel),
             new DevExpress.XtraBars.LinkPersistInfo(this.cmd_Print, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.cmd_Refresh, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.cmd_Close)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.cmd_In),
+            new DevExpress.XtraBars.LinkPersistInfo(this.Cmd_LayDuLieu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.cmd_InDuLieu)});
             this.bar1.OptionsBar.AllowCollapse = true;
             this.bar1.OptionsBar.DisableClose = true;
             this.bar1.Text = "Tools";
@@ -152,27 +159,45 @@
             this.cmd_Refresh.Name = "cmd_Refresh";
             this.cmd_Refresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_Refresh_ItemClick);
             // 
-            // cmd_Close
+            // cmd_In
             // 
-            this.cmd_Close.Caption = "Thoát";
-            this.cmd_Close.Id = 6;
-            this.cmd_Close.LargeGlyph = global::TNTT.Properties.Resources.close;
-            this.cmd_Close.Name = "cmd_Close";
-            this.cmd_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_Close_ItemClick);
+            this.cmd_In.Caption = "Thoát";
+            this.cmd_In.Id = 6;
+            this.cmd_In.LargeGlyph = global::TNTT.Properties.Resources.close;
+            this.cmd_In.Name = "cmd_In";
+            this.cmd_In.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_Close_ItemClick);
+            // 
+            // Cmd_LayDuLieu
+            // 
+            this.Cmd_LayDuLieu.Caption = "Lấy Dữ Liệu";
+            this.Cmd_LayDuLieu.Id = 12;
+            this.Cmd_LayDuLieu.LargeGlyph = global::TNTT.Properties.Resources.INRP;
+            this.Cmd_LayDuLieu.Name = "Cmd_LayDuLieu";
+            this.Cmd_LayDuLieu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.Cmd_LayDuLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Cmd_LayDuLieu_ItemClick);
+            // 
+            // cmd_InDuLieu
+            // 
+            this.cmd_InDuLieu.Caption = "In Dữ Liệu";
+            this.cmd_InDuLieu.Id = 13;
+            this.cmd_InDuLieu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("cmd_InDuLieu.LargeGlyph")));
+            this.cmd_InDuLieu.Name = "cmd_InDuLieu";
+            this.cmd_InDuLieu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.cmd_InDuLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cmd_InDuLieu_ItemClick);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(484, 63);
+            this.barDockControlTop.Size = new System.Drawing.Size(605, 63);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 69);
-            this.barDockControlBottom.Size = new System.Drawing.Size(484, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(605, 0);
             // 
             // barDockControlLeft
             // 
@@ -185,14 +210,14 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(484, 63);
+            this.barDockControlRight.Location = new System.Drawing.Point(605, 63);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 6);
             // 
             // frm_tool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 69);
+            this.ClientSize = new System.Drawing.Size(605, 69);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -221,6 +246,8 @@
         private DevExpress.XtraBars.BarLargeButtonItem cmd_Print;
         private DevExpress.XtraBars.BarLargeButtonItem cmd_Search;
         private DevExpress.XtraBars.BarLargeButtonItem cmd_Refresh;
-        private DevExpress.XtraBars.BarLargeButtonItem cmd_Close;
+        private DevExpress.XtraBars.BarLargeButtonItem cmd_In;
+        private DevExpress.XtraBars.BarLargeButtonItem Cmd_LayDuLieu;
+        private DevExpress.XtraBars.BarLargeButtonItem cmd_InDuLieu;
     }
 }
