@@ -675,7 +675,7 @@
             this.cmdConnect.Size = new System.Drawing.Size(75, 72);
             this.cmdConnect.TabIndex = 2;
             this.cmdConnect.Text = "Kết nối ";
-            this.cmdConnect.Click += new System.EventHandler(this.cmdConnect_Click);
+//            this.cmdConnect.Click += new System.EventHandler(this.cmdConnect_Click);
             // 
             // cmd_mess
             // 
@@ -691,7 +691,7 @@
             this.cmd_mess.TabIndex = 1;
             this.cmd_mess.Text = "Tin nhắn ";
             this.toolTip1.SetToolTip(this.cmd_mess, "aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            this.cmd_mess.Click += new System.EventHandler(this.cmd_mess_Click);
+            //this.cmd_mess.Click += new System.EventHandler(this.cmd_mess_Click);
             // 
             // cmd_LamBai
             // 
@@ -703,7 +703,7 @@
             this.cmd_LamBai.Size = new System.Drawing.Size(75, 72);
             this.cmd_LamBai.TabIndex = 0;
             this.cmd_LamBai.Text = "Làm bài";
-            this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click_1);
+            //this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click_1);
             // 
             // cmd_nop
             // 
