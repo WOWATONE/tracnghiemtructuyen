@@ -65,7 +65,7 @@
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.White;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.labelControl1.Location = new System.Drawing.Point(377, 98);
+            this.labelControl1.Location = new System.Drawing.Point(381, 98);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(119, 29);
             this.labelControl1.TabIndex = 4;
@@ -82,8 +82,8 @@
             // 
             // img1
             // 
-            this.img1.EditValue = global::TNTT.Properties.Resources._login;
-            this.img1.Location = new System.Drawing.Point(264, 95);
+            this.img1.EditValue = global::TNTT.Properties.Resources.login;
+            this.img1.Location = new System.Drawing.Point(262, 98);
             this.img1.Name = "img1";
             this.img1.Size = new System.Drawing.Size(345, 191);
             this.img1.TabIndex = 0;
