@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNTT", "TNTT\TNTT.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SINHVIEN", "SINHVIEN\SINHVIEN.csproj", "{E6BF937E-4513-4F2D-BDF8-2F3DFE421EDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstConnectDB", "FirstConnectDB\FirstConnectDB.csproj", "{82C3749C-81E4-4B71-AED0-523D2A08D8D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstConnectDB", "..\TNTT10\FirstConnectDB\FirstConnectDB.csproj", "{82C3749C-81E4-4B71-AED0-523D2A08D8D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

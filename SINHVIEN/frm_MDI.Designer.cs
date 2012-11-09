@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MDI));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
@@ -84,7 +83,7 @@
             this.chkAA = new DevExpress.XtraEditors.CheckEdit();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.rich_Cauhoi = new DevExpress.XtraRichEdit.RichEditControl();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon();
             this.chkA = new DevExpress.XtraEditors.GroupControl();
             this.cmdConnect = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_mess = new DevExpress.XtraEditors.SimpleButton();
@@ -97,8 +96,8 @@
             this.navBar_Cauhoi = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -387,6 +386,7 @@
             this.chkF.Properties.Caption = "F -";
             this.chkF.Size = new System.Drawing.Size(44, 19);
             this.chkF.TabIndex = 25;
+            this.chkF.CheckedChanged += new System.EventHandler(this.chkF_CheckedChanged);
             // 
             // splitterControl6
             // 
@@ -435,6 +435,7 @@
             this.chkE.Properties.Caption = "E -";
             this.chkE.Size = new System.Drawing.Size(44, 19);
             this.chkE.TabIndex = 25;
+            this.chkE.CheckedChanged += new System.EventHandler(this.chkE_CheckedChanged);
             // 
             // splitterControl5
             // 
@@ -483,6 +484,7 @@
             this.chkD.Properties.Caption = "D -";
             this.chkD.Size = new System.Drawing.Size(44, 19);
             this.chkD.TabIndex = 25;
+            this.chkD.CheckedChanged += new System.EventHandler(this.chkD_CheckedChanged);
             // 
             // splitterControl4
             // 
@@ -531,6 +533,7 @@
             this.chkC.Properties.Caption = "C -";
             this.chkC.Size = new System.Drawing.Size(44, 19);
             this.chkC.TabIndex = 25;
+            this.chkC.CheckedChanged += new System.EventHandler(this.chkC_CheckedChanged);
             // 
             // splitterControl3
             // 
@@ -579,6 +582,7 @@
             this.chkB.Properties.Caption = "B -";
             this.chkB.Size = new System.Drawing.Size(44, 19);
             this.chkB.TabIndex = 25;
+            this.chkB.CheckedChanged += new System.EventHandler(this.chkB_CheckedChanged);
             // 
             // splitterControl2
             // 
@@ -627,6 +631,7 @@
             this.chkAA.Properties.Caption = "A -";
             this.chkAA.Size = new System.Drawing.Size(44, 19);
             this.chkAA.TabIndex = 25;
+            this.chkAA.CheckedChanged += new System.EventHandler(this.chkAA_CheckedChanged);
             // 
             // splitterControl1
             // 
@@ -675,7 +680,7 @@
             this.cmdConnect.Size = new System.Drawing.Size(75, 72);
             this.cmdConnect.TabIndex = 2;
             this.cmdConnect.Text = "Kết nối ";
-//            this.cmdConnect.Click += new System.EventHandler(this.cmdConnect_Click);
+            this.cmdConnect.Click += new System.EventHandler(this.cmdConnect_Click_1);
             // 
             // cmd_mess
             // 
@@ -691,7 +696,7 @@
             this.cmd_mess.TabIndex = 1;
             this.cmd_mess.Text = "Tin nhắn ";
             this.toolTip1.SetToolTip(this.cmd_mess, "aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            //this.cmd_mess.Click += new System.EventHandler(this.cmd_mess_Click);
+            this.cmd_mess.Click += new System.EventHandler(this.cmd_mess_Click);
             // 
             // cmd_LamBai
             // 
@@ -703,7 +708,7 @@
             this.cmd_LamBai.Size = new System.Drawing.Size(75, 72);
             this.cmd_LamBai.TabIndex = 0;
             this.cmd_LamBai.Text = "Làm bài";
-            //this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click_1);
+            this.cmd_LamBai.Click += new System.EventHandler(this.cmd_LamBai_Click_2);
             // 
             // cmd_nop
             // 
@@ -715,6 +720,7 @@
             this.cmd_nop.Size = new System.Drawing.Size(75, 72);
             this.cmd_nop.TabIndex = 0;
             this.cmd_nop.Text = "Nộp bài";
+            this.cmd_nop.Click += new System.EventHandler(this.cmd_nop_Click);
             // 
             // lb_cauhientai
             // 

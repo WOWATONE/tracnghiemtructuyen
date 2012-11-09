@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txt_Masv = new DevExpress.XtraEditors.TextEdit();
             this.txt_Matkhau = new DevExpress.XtraEditors.TextEdit();
             this.cbo_Phong = new System.Windows.Forms.ComboBox();
@@ -38,8 +37,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_DangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Thoat = new DevExpress.XtraEditors.SimpleButton();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Masv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Matkhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
