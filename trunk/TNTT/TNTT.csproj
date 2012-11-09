@@ -218,7 +218,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Applica.cs" />
     <Compile Include="Class\C_BoMon.cs" />
     <Compile Include="Class\C_CauHoi.cs" />
     <Compile Include="Class\C_CauTraLoi.cs" />
@@ -715,7 +714,9 @@
     <Content Include="Resources\monhoc.png" />
     <None Include="Resources\Select.png" />
     <None Include="Resources\Ok16.png" />
+    <None Include="Resources\open1.png" />
     <Content Include="Resources\student.png" />
+    <None Include="Resources\Yahoo-Messenger-icon.png" />
     <Content Include="_ws.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -750,7 +751,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FirstConnectDB\FirstConnectDB.csproj">
+    <ProjectReference Include="..\..\TNTT10\FirstConnectDB\FirstConnectDB.csproj">
       <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
       <Name>FirstConnectDB</Name>
     </ProjectReference>

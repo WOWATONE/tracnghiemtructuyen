@@ -162,7 +162,7 @@
     <None Include="Resources\_ws.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FirstConnectDB\FirstConnectDB.csproj">
+    <ProjectReference Include="..\..\TNTT10\FirstConnectDB\FirstConnectDB.csproj">
       <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
       <Name>FirstConnectDB</Name>
     </ProjectReference>

@@ -32,7 +32,7 @@
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
-            this.btn_TaoMK = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lb_ip = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -53,19 +53,21 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.lst_Log = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmd_Mode = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_thubaithi = new DevExpress.XtraEditors.SimpleButton();
-            this.cmd_Mophongthi = new DevExpress.XtraEditors.SimpleButton();
-            this.cmd_Thongbao = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Help = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_Thongbao = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_Mophongthi = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.navBarControl1.SuspendLayout();
             this.navBarGroupControlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.navBarGroupControlContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -122,7 +124,7 @@
             // 
             // navBarGroupControlContainer1
             // 
-            this.navBarGroupControlContainer1.Controls.Add(this.btn_TaoMK);
+            this.navBarGroupControlContainer1.Controls.Add(this.pictureBox3);
             this.navBarGroupControlContainer1.Controls.Add(this.labelControl2);
             this.navBarGroupControlContainer1.Controls.Add(this.lb_ip);
             this.navBarGroupControlContainer1.Controls.Add(this.labelControl4);
@@ -136,15 +138,14 @@
             this.navBarGroupControlContainer1.Size = new System.Drawing.Size(223, 177);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
-            // btn_TaoMK
+            // pictureBox3
             // 
-            this.btn_TaoMK.Image = global::TNTT.Properties.Resources.taomatkhau;
-            this.btn_TaoMK.Location = new System.Drawing.Point(44, 81);
-            this.btn_TaoMK.Name = "btn_TaoMK";
-            this.btn_TaoMK.Size = new System.Drawing.Size(144, 50);
-            this.btn_TaoMK.TabIndex = 5;
-            this.btn_TaoMK.Text = "Tạo mật khẩu";
-            this.btn_TaoMK.Click += new System.EventHandler(this.btn_TaoMK_Click);
+            this.pictureBox3.Image = global::TNTT.Properties.Resources.taomatkhau;
+            this.pictureBox3.Location = new System.Drawing.Point(14, 81);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(43, 50);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
             // 
             // labelControl2
             // 
@@ -308,7 +309,8 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.lst_Log);
+            this.groupControl4.Controls.Add(this.listBox1);
+            this.groupControl4.Controls.Add(this.richTextBox1);
             this.groupControl4.Controls.Add(this.groupControl5);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
@@ -317,21 +319,27 @@
             this.groupControl4.Size = new System.Drawing.Size(721, 593);
             this.groupControl4.TabIndex = 8;
             // 
-            // lst_Log
+            // listBox1
             // 
-            this.lst_Log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lst_Log.FormattingEnabled = true;
-            this.lst_Log.Location = new System.Drawing.Point(2, 2);
-            this.lst_Log.Name = "lst_Log";
-            this.lst_Log.Size = new System.Drawing.Size(717, 367);
-            this.lst_Log.TabIndex = 3;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(599, 2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 367);
+            this.listBox1.TabIndex = 2;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.richTextBox1.Location = new System.Drawing.Point(2, 2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(146, 367);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // groupControl5
             // 
-            this.groupControl5.Controls.Add(this.labelControl6);
             this.groupControl5.Controls.Add(this.panel1);
-            this.groupControl5.Controls.Add(this.cmd_Thongbao);
-            this.groupControl5.Controls.Add(this.cmd_Help);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl5.Location = new System.Drawing.Point(2, 369);
             this.groupControl5.Name = "groupControl5";
@@ -340,63 +348,68 @@
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "Chức năng:";
             // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(283, 39);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(63, 13);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "labelControl6";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmd_Mode);
             this.panel1.Controls.Add(this.cmd_thubaithi);
+            this.panel1.Controls.Add(this.cmd_Help);
+            this.panel1.Controls.Add(this.cmd_Thongbao);
             this.panel1.Controls.Add(this.cmd_Mophongthi);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(473, 2);
+            this.panel1.Location = new System.Drawing.Point(29, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 218);
+            this.panel1.Size = new System.Drawing.Size(686, 218);
             this.panel1.TabIndex = 1;
+            // 
+            // cmd_Mode
+            // 
+            this.cmd_Mode.Image = global::TNTT.Properties.Resources.open1;
+            this.cmd_Mode.Location = new System.Drawing.Point(148, 11);
+            this.cmd_Mode.Name = "cmd_Mode";
+            this.cmd_Mode.Size = new System.Drawing.Size(105, 42);
+            this.cmd_Mode.TabIndex = 1;
+            this.cmd_Mode.Text = "Mở đề";
+            this.cmd_Mode.Click += new System.EventHandler(this.cmd_Mode_Click);
             // 
             // cmd_thubaithi
             // 
             this.cmd_thubaithi.Image = global::TNTT.Properties.Resources.saoluudulieu;
-            this.cmd_thubaithi.Location = new System.Drawing.Point(118, 10);
+            this.cmd_thubaithi.Location = new System.Drawing.Point(271, 11);
             this.cmd_thubaithi.Name = "cmd_thubaithi";
             this.cmd_thubaithi.Size = new System.Drawing.Size(115, 42);
             this.cmd_thubaithi.TabIndex = 0;
             this.cmd_thubaithi.Text = "Thu bài thi";
             this.cmd_thubaithi.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // cmd_Mophongthi
-            // 
-            this.cmd_Mophongthi.Image = global::TNTT.Properties.Resources.open;
-            this.cmd_Mophongthi.Location = new System.Drawing.Point(11, 11);
-            this.cmd_Mophongthi.Name = "cmd_Mophongthi";
-            this.cmd_Mophongthi.Size = new System.Drawing.Size(98, 42);
-            this.cmd_Mophongthi.TabIndex = 0;
-            this.cmd_Mophongthi.Text = "Mở phòng";
-            this.cmd_Mophongthi.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
-            // 
-            // cmd_Thongbao
-            // 
-            this.cmd_Thongbao.Image = global::TNTT.Properties.Resources.help;
-            this.cmd_Thongbao.Location = new System.Drawing.Point(125, 13);
-            this.cmd_Thongbao.Name = "cmd_Thongbao";
-            this.cmd_Thongbao.Size = new System.Drawing.Size(98, 40);
-            this.cmd_Thongbao.TabIndex = 0;
-            this.cmd_Thongbao.Text = "Thông báo";
-            this.cmd_Thongbao.Click += new System.EventHandler(this.cmd_Thongbao_Click);
-            // 
             // cmd_Help
             // 
             this.cmd_Help.Image = global::TNTT.Properties.Resources.help;
-            this.cmd_Help.Location = new System.Drawing.Point(21, 13);
+            this.cmd_Help.Location = new System.Drawing.Point(19, 117);
             this.cmd_Help.Name = "cmd_Help";
             this.cmd_Help.Size = new System.Drawing.Size(98, 40);
             this.cmd_Help.TabIndex = 0;
             this.cmd_Help.Text = "Trợ giúp";
             this.cmd_Help.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
+            // 
+            // cmd_Thongbao
+            // 
+            this.cmd_Thongbao.Image = global::TNTT.Properties.Resources.Yahoo_Messenger_icon;
+            this.cmd_Thongbao.Location = new System.Drawing.Point(18, 71);
+            this.cmd_Thongbao.Name = "cmd_Thongbao";
+            this.cmd_Thongbao.Size = new System.Drawing.Size(108, 40);
+            this.cmd_Thongbao.TabIndex = 0;
+            this.cmd_Thongbao.Text = "Thông báo";
+            this.cmd_Thongbao.Click += new System.EventHandler(this.cmd_Thongbao_Click);
+            // 
+            // cmd_Mophongthi
+            // 
+            this.cmd_Mophongthi.Image = global::TNTT.Properties.Resources.open;
+            this.cmd_Mophongthi.Location = new System.Drawing.Point(11, 11);
+            this.cmd_Mophongthi.Name = "cmd_Mophongthi";
+            this.cmd_Mophongthi.Size = new System.Drawing.Size(115, 42);
+            this.cmd_Mophongthi.TabIndex = 0;
+            this.cmd_Mophongthi.Text = "Mở phòng";
+            this.cmd_Mophongthi.Click += new System.EventHandler(this.cmd_Mophongthi_Click);
             // 
             // cbo_Phongthi
             // 
@@ -415,6 +428,7 @@
             this.navBarControl1.ResumeLayout(false);
             this.navBarGroupControlContainer1.ResumeLayout(false);
             this.navBarGroupControlContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.navBarGroupControlContainer2.ResumeLayout(false);
             this.navBarGroupControlContainer2.PerformLayout();
@@ -425,7 +439,6 @@
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
-            this.groupControl5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -443,9 +456,7 @@
         private DevExpress.XtraEditors.SimpleButton cmd_Mophongthi;
         private DevExpress.XtraEditors.LabelControl lb_thoigian;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraEditors.SimpleButton btn_TaoMK;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private System.Windows.Forms.ListBox lst_Log;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.LabelControl lb_ip;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -465,6 +476,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraEditors.SimpleButton cmd_Thongbao;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private DevExpress.XtraEditors.SimpleButton cmd_Mode;
     }
 }

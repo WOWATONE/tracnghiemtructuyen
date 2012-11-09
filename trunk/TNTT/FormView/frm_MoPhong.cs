@@ -34,35 +34,39 @@ namespace TNTT.FormView
             cbo_DsPhong.DataSource = dt;
             cbo_DsPhong.ValueMember = "idphongthi";
             cbo_DsPhong.DisplayMember = "tenphongthi";
-            if(cbo_DsPhong.Items.Count>0)
+            if (cbo_DsPhong.Items.Count > 0)
+            {
                 cbo_DsPhong.SelectedIndex = 0;
+            }
         }
 
         private void frm_MoPhong_Load(object sender, EventArgs e)
         {
             lb_ip.Text = GetIP();
-            // rich_mess.Enabled = false;
             cmd_thubaithi.Enabled = false;
-            lst_Log.Enabled = false;
+            richTextBox1.Enabled = false;
             Loaddata();
            
             lb_tengv.Text = Class.PreBase.obj_user.Hoten_giangvien;
             LoadImage();
 
         }
-
-        private void btn_TaoMK_Click(object sender, EventArgs e)
+        void TaoMatKhau()
         {
             if (index != -1)
             {
-                strimg = dt.Rows[index]["matkhau"].ToString();
-                if (dt.Rows[index]["matkhau"].ToString().Length < 3)
-                    strimg = Class.C_Random.GetStringRandom(4);
+               // cmdTaoMK.Visible = false;
+                dt.Rows[index]["matkhau"] = strimg;
+                strimg = Class.C_Random.GetStringRandom(4);
                 pictureBox1.Image = Component.Com_Base.Convert_Text_to_Image(strimg, "Bookman Old Style", 20); // Passing appropriate value to Convert_Text_to_Image method 
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                btn_TaoMK.Visible = false;
-                dt.Rows[index]["matkhau"] = strimg;
+                cbo_DsPhong.Enabled = false;
+
             }
+        }
+        private void btn_TaoMK_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Mật khẩu phòng thi là "+strimg);
         }
 
         private void lst_phongThi_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,10 +101,11 @@ namespace TNTT.FormView
         {
             cmd_thubaithi.Enabled = flag;
             cmd_Mophongthi.Enabled = !flag;
-            lst_Log.Enabled = !flag;
+            richTextBox1.Enabled = !flag;
         }
         private void cmd_Mophongthi_Click(object sender, EventArgs e)
         {
+            TaoMatKhau();
             if (Class.PreBase.obj_user.IsConnect == false)
                 OpenConnection();
             ChangeStatus(true);
@@ -212,7 +217,7 @@ namespace TNTT.FormView
                 // Hence we will use the invoke method on the control which will
                 // be called when the Main thread is free
                 // Do UI update on UI thread
-                lst_Log.BeginInvoke(new UpdateClientListCallback(UpdateClientList), null);
+                richTextBox1.BeginInvoke(new UpdateClientListCallback(UpdateClientList), null);
             }
             else
             {
@@ -223,19 +228,24 @@ namespace TNTT.FormView
         }
         void UpdateClientList()
         {
-            lst_Log.Items.Clear();
-            for (int i = 0; i < m_workerSocketList.Count; i++)
+            try
             {
-                string clientKey = Convert.ToString(i + 1);
-                Socket workerSocket = (Socket)m_workerSocketList[i];
-                if (workerSocket != null)
+                listBox1.Items.Clear();
+                for (int i = 0; i < m_workerSocketList.Count; i++)
                 {
-                    if (workerSocket.Connected)
+                    string clientKey = Convert.ToString(i + 1);
+                    Socket workerSocket = (Socket)m_workerSocketList[i];
+                    if (workerSocket != null)
                     {
-                        lst_Log.Items.Add(clientKey);
+                        if (workerSocket.Connected)
+                        {
+                            listBox1.Items.Add(clientKey);
+                            //richTextBox1.AppendText(clientKey);
+                        }
                     }
                 }
             }
+            catch { }
         }
         void SendMsgToClient(string msg, int clientNumber)
         {
@@ -282,6 +292,22 @@ namespace TNTT.FormView
             // Buffer to store the data sent by the client
             public byte[] dataBuffer = new byte[1024];
         }
+        private void OnUpdateRichEdit(string msg)
+        {
+            richTextBox1.AppendText(msg);
+        }
+        private void AppendToRichEditControl(string msg)
+        {
+            // Check to see if this method is called from a thread  other than the one created the control
+            if (InvokeRequired)
+            {
+                //Không thể cập nhật giao diện trên thread
+                object[] pList = { msg };
+                richTextBox1.BeginInvoke(new UpdateRichEditCallback(OnUpdateRichEdit), pList);
+            }
+            else
+                OnUpdateRichEdit(msg);
+        }
         public void OnDataReceived(IAsyncResult asyn)
         {
             SocketPacket socketData = (SocketPacket)asyn.AsyncState;
@@ -298,9 +324,9 @@ namespace TNTT.FormView
                     0, iRx, chars, 0);
 
                 System.String szData = new System.String(chars);
-                string msg = "" + socketData.m_clientNumber + ":";
-                //AppendToRichEditControl(msg + szData);
-
+                string msg = "Sinh viên " + socketData.m_clientNumber + " đã đăng nhập vào hệ thống. MSSV: ";
+                AppendToRichEditControl(msg + szData);
+                UpdateClientList();
                 // Send back the reply to the client
                 string replyMsg = "Server Reply:" + subCreateConnect(doilai(szData.ToUpper()));
                 // Convert the reply to byte array
@@ -322,8 +348,8 @@ namespace TNTT.FormView
             {
                 if (se.ErrorCode == 10054) // Error code for Connection reset by peer
                 {
-                    string msg = "Client " + socketData.m_clientNumber + " Disconnected" + "\n";
-                    //AppendToRichEditControl(msg);
+                    string msg = "Sinh viên " + socketData.m_clientNumber + " đã nộp bài " + "\n";
+                    AppendToRichEditControl(msg);
 
                     // Remove the reference to the worker socket of the closed client
                     // so that this object will get garbage collected
@@ -419,7 +445,7 @@ namespace TNTT.FormView
             try
             {
                 string msg = message;// rich_mess.Text;
-                msg = "Tin nhan tu giam thi:" + msg + "\n";
+                //msg = msg ;
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(msg);
                 Socket workerSocket = null;
                 for (int i = 0; i < m_workerSocketList.Count; i++)
@@ -439,10 +465,37 @@ namespace TNTT.FormView
                 MessageBox.Show(se.Message);
             }
         }
+
+/// <summary>
+/// /==========================================================================================
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void btn_Tinnhan_Click(object sender, EventArgs e)
         {
             
         }
+
+
+
+
+
+
 
 
 
@@ -474,6 +527,7 @@ namespace TNTT.FormView
             {
                 lb_maphong.Text = cbo_DsPhong.SelectedText;
                 lb_thoigian.Text = dt.Rows[index]["thoigianthi"].ToString();
+               // cmdTaoMK.Visible= true;
             }
         }
 
@@ -497,6 +551,11 @@ namespace TNTT.FormView
             // Set de text of the textbox to the value of the textbox of form 2
             string data = ((DevExpress.XtraRichEdit.RichEditControl)sender).Text;
             SendMessage(data);
+        }
+
+        private void cmd_Mode_Click(object sender, EventArgs e)
+        {
+            SendMessage("mode1001");
         }
 
     }

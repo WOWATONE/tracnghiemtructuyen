@@ -60,133 +60,12 @@ namespace SINHVIEN
         }
         private void frm_Thi_Load(object sender, EventArgs e)
         {
-
-           
             LoadInfo();
         }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            pnl_daB.Visible = false;
-            pnl_daC.Visible = false;
-            pnl_daD.Visible = false;
-            pnl_daE.Visible = false;
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            pnl_daB.Visible = true;
-            pnl_daC.Visible = true;
-            pnl_daD.Visible = true;
-            pnl_daE.Visible = true;
-        }
-
-
-        #region SOCKET
-        /// <summary>
-        /// Socket
-        /// </summary>
-        byte[] m_dataBuffer = new byte[10];
-        IAsyncResult m_result;
-        public AsyncCallback m_pfnCallBack;
-        private System.Windows.Forms.Button btnClear;
-        public Socket m_clientSocket;
-        int port = 8000;
-        void ConnectToServer()
-        {
-            try
-            {
-                //UpdateControls(false);
-                // Create the socket instance
-                m_clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                // Cet the remote IP address
-                IPAddress ip = IPAddress.Parse("10.0.0.25");
-                int iPortNo = port;
-                // Create the end point 
-                IPEndPoint ipEnd = new IPEndPoint(ip, iPortNo);
-                // Connect to the remote host
-                m_clientSocket.Connect(ipEnd);
-                if (m_clientSocket.Connected)
-                {
-
-                   // UpdateControls(true);
-                    //Wait for data asynchronously 
-                    WaitForData();
-                }
-            }
-            catch (SocketException se)
-            {
-                string str;
-                str = "\nConnection failed, is the server running?\n" + se.Message;
-                MessageBox.Show(str);
-               // UpdateControls(false);
-            }		
-        }
-        public void WaitForData()
-        {
-            try
-            {
-                if (m_pfnCallBack == null)
-                {
-                    m_pfnCallBack = new AsyncCallback(OnDataReceived);
-                }
-                SocketPacket theSocPkt = new SocketPacket();
-                theSocPkt.thisSocket = m_clientSocket;
-                // Start listening to the data asynchronously
-                m_result = m_clientSocket.BeginReceive(theSocPkt.dataBuffer,
-                                                        0, theSocPkt.dataBuffer.Length,
-                                                        SocketFlags.None,
-                                                        m_pfnCallBack,
-                                                        theSocPkt);
-            }
-            catch (SocketException se)
-            {
-                MessageBox.Show(se.Message);
-            }
-
-        }
-        string message = "";
-        public void OnDataReceived(IAsyncResult asyn)
-        {
-            try
-            {
-                
-                SocketPacket theSockId = (SocketPacket)asyn.AsyncState;
-                int iRx = theSockId.thisSocket.EndReceive(asyn);
-                char[] chars = new char[iRx + 1];
-                System.Text.Decoder d = System.Text.Encoding.UTF8.GetDecoder();
-                int charLen = d.GetChars(theSockId.dataBuffer, 0, iRx, chars, 0);
-                System.String szData = new System.String(chars);
-                message = szData;
-                cmd_mess.Image = Properties.Resources.newMessages48;
-                cmd_mess.Enabled = true;
-                WaitForData();
-                
-            }
-            catch (ObjectDisposedException)
-            {
-                System.Diagnostics.Debugger.Log(0, "1", "\nOnDataReceived: Socket has been closed\n");
-            }
-            catch (SocketException se)
-            {
-                MessageBox.Show(se.Message);
-            }
-        }
-        public class SocketPacket
-        {
-            public System.Net.Sockets.Socket thisSocket;
-            public byte[] dataBuffer = new byte[1024];
-        }
-        #endregion
-
-
-
         private void cmd_Nopbai_Click(object sender, EventArgs e)
         {
 
         }
-
         public void TachDeThi()
         {
             dt_th = dth.GetIDQuestionByIdDeThi(C_Base.tt.Dethi);
@@ -209,7 +88,7 @@ namespace SINHVIEN
             {
                 ds[index] = new Class.C_Aquestion();
                 ds[index].Id = a[i];
-                
+
                 for (int j = dt_ans.Rows.Count - 1; j >= 0; j--)
                 {
                     if (dt_ans.Rows[j]["nhch_idnganhangcauhoi"].ToString() == ds[index].Id)
@@ -220,7 +99,7 @@ namespace SINHVIEN
                         //Trạng thái đúng sai = dapan trong csdl
                         ds[index].ListAns[ds[index].NumberAns] = new DA();
                         ds[index].ListAns[ds[index].NumberAns].answer = dt_ans.Rows[j]["cautraloi"].ToString();
-                        ds[index].ListAns[ds[index].NumberAns].status =Convert.ToBoolean(dt_ans.Rows[j]["dapan"].ToString());
+                        ds[index].ListAns[ds[index].NumberAns].status = Convert.ToBoolean(dt_ans.Rows[j]["dapan"].ToString());
                         dt_ans.Rows.RemoveAt(j);
                         ds[index].NumberAns++; //so dap án hien tai
                     }
@@ -331,7 +210,6 @@ namespace SINHVIEN
             
             
         }
-
         private void cmd_Next_Click(object sender, EventArgs e)
         {
             UpdateNav(current);
@@ -459,10 +337,7 @@ namespace SINHVIEN
             }
         }
 
-        private void cmd_LamBai_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
         void ConvertToSec(int time)
         {
             int h = time / 3600;
@@ -507,7 +382,57 @@ namespace SINHVIEN
             }
         }
 
-        private void cmd_LamBai_Click_1(object sender, EventArgs e)
+         private void cmd_mess_Click(object sender, EventArgs e)
+        {
+            cmd_mess.Image = Properties.Resources.Messages48;
+            cmd_mess.Enabled = false;
+            frm_Message frm = new frm_Message(message);
+            frm.Show();
+        }
+        void CloseSocket()
+        {
+            if (m_clientSocket != null)
+            {
+                m_clientSocket.Close();
+                m_clientSocket = null;
+               
+                //UpdateControls(false);
+            }
+        }
+        void Scoring()
+        {
+            //chạy từ đầu tới cuối danh sách
+            int count = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+               // MessageBox.Show(ds[i].NumberAns.ToString());
+                bool isTrue = true;
+                for (int j = 0; j < ds[i].NumberAns; j++)
+                {
+                    //trong cau hoi do, trong list cau tra loi so sanh tung phan tu
+                    if (ds[i].ListAns[j].isCheck != ds[i].ListAns[j].status)
+                        isTrue = false;
+                }
+                if (isTrue)
+                    count++;
+            }
+            MessageBox.Show(count + "/" + a.Length);
+            Application.Restart();
+           
+            
+        }
+        private void cmd_nop_Click(object sender, EventArgs e)
+        {
+            Scoring();
+            CloseSocket();
+        }
+
+        private void cmdConnect_Click_1(object sender, EventArgs e)
+        {
+            ConnectToServer();
+        }
+
+        private void cmd_LamBai_Click_2(object sender, EventArgs e)
         {
             cmd_LamBai.Enabled = false;
             cmd_nop.Enabled = true;
@@ -525,32 +450,140 @@ namespace SINHVIEN
             timer1.Start();
         }
 
-        private void cmd_Connect_Click_1(object sender, EventArgs e)
-        {
-            //ConnectToServer();
-            MessageBox.Show("Kết nối thành công");
-        }
 
-        private void cmdConnect_Click(object sender, EventArgs e)
+
+
+        #region SOCKET
+        /// <summary>
+        /// Socket
+        /// </summary>
+        byte[] m_dataBuffer = new byte[10];
+        IAsyncResult m_result;
+        public AsyncCallback m_pfnCallBack;
+        private System.Windows.Forms.Button btnClear;
+        public Socket m_clientSocket;
+        int port = 8000;
+        void UpdateControls()
         {
-           
-                ConnectToServer();
-                cmdConnect.Enabled = false;
+            cmdConnect.Enabled = false;
+            //cmd_LamBai.Enabled = true;
+        }
+        void ConnectToServer()
+        {
+            try
+            {
+                // Create the socket instance
+                m_clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPAddress ip = IPAddress.Parse("192.168.1.101");
+                int iPortNo = port;
+                IPEndPoint ipEnd = new IPEndPoint(ip, iPortNo);
+                m_clientSocket.Connect(ipEnd);
+                if (m_clientSocket.Connected)
+                    WaitForData();
+                //sau khi ket noi thanh cong tien hang gui thong tin den máy chủ
+                SendInfo();
+                UpdateControls();
+            }
+            catch (SocketException se)
+            {
+                string str;
+                str = "\nConnection failed, is the server running?\n" + se.Message;
+                MessageBox.Show(str);
+                // UpdateControls(false);
+            }
+        }
+        public void WaitForData()
+        {
+            try
+            {
+                if (m_pfnCallBack == null)
+                {
+                    m_pfnCallBack = new AsyncCallback(OnDataReceived);
+                }
+                SocketPacket theSocPkt = new SocketPacket();
+                theSocPkt.thisSocket = m_clientSocket;
+                // Start listening to the data asynchronously
+                m_result = m_clientSocket.BeginReceive(theSocPkt.dataBuffer, 0, theSocPkt.dataBuffer.Length, SocketFlags.None, m_pfnCallBack, theSocPkt);
+            }
+            catch (SocketException se)
+            {
+                MessageBox.Show(se.Message);
+            }
+
+        }
+        string message = "";
+        public void OnDataReceived(IAsyncResult asyn)
+        {
+            try
+            {
+
+                SocketPacket theSockId = (SocketPacket)asyn.AsyncState;
+                int iRx = theSockId.thisSocket.EndReceive(asyn);
+                char[] chars = new char[iRx + 1];
+                System.Text.Decoder d = System.Text.Encoding.UTF8.GetDecoder();
+                int charLen = d.GetChars(theSockId.dataBuffer, 0, iRx, chars, 0);
+                System.String szData = new System.String(chars);
+                RecivedSignal(szData);
+                message = szData;
+                WaitForData();
+
+            }
+            catch (ObjectDisposedException)
+            {
+                System.Diagnostics.Debugger.Log(0, "1", "\nOnDataReceived: Socket has been closed\n");
+            }
+            catch (SocketException se)
+            {
+                MessageBox.Show(se.Message);
+            }
+        }
+        void RecivedSignal(string message)
+        {
+            if (InvokeRequired)
+            {
+                //Không thể cập nhật giao diện trên thread
+                object[] pList = { message };
+                //cmd_mess.Invoke(new (OnUpdateRichEdit), pList);
+                if (message.ToString() == "mode1001")
+                    cmd_LamBai.Enabled = true;
+                else
+                    OnUpdateSignal(message);
+            }
+            else
+                OnUpdateSignal(message);
+        }
+        void OnUpdateSignal(string message)
+        {
+            if (message.Length < 10)
+            {
                 cmd_LamBai.Enabled = true;
+                // MessageBox.Show(message);
+                this.message = message;
+                cmd_mess.Image = Properties.Resources.newMessages48;
+                cmd_mess.Enabled = true;
+            }
         }
-
-        private void cmd_mess_Click(object sender, EventArgs e)
+        public class SocketPacket
         {
-            cmd_mess.Image = Properties.Resources.Messages48;
-            cmd_mess.Enabled = false;
-            frm_Message frm = new frm_Message(message);
-            frm.Show();
+            public System.Net.Sockets.Socket thisSocket;
+            public byte[] dataBuffer = new byte[1024];
         }
-
-
-
-
-
+        void SendInfo()
+        {
+            try
+            {
+                string msg = C_Base.obj.Masinhvien;
+                NetworkStream networkStream = new NetworkStream(m_clientSocket);
+                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream);
+                streamWriter.WriteLine(msg);
+                streamWriter.Flush();
+            }
+            catch (SocketException se)
+            {
+                MessageBox.Show(se.Message);
+            }
+        }
+        #endregion
 
 
     }
