@@ -68,6 +68,7 @@ namespace TNTT.Class
             string sql = "SELECT * FROM SINHVIEN WHERE masinhvien='"+id+"'";
             return db.GetData(sql);
         }
+        
         #endregion
     }
 }

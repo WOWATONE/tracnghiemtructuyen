@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_Masv = new DevExpress.XtraEditors.TextEdit();
             this.txt_Matkhau = new DevExpress.XtraEditors.TextEdit();
             this.cbo_Phong = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmd_Config = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_DangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.cmd_Thoat = new DevExpress.XtraEditors.SimpleButton();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Masv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Matkhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
@@ -100,14 +101,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Mật khẩu phòng thi:";
             // 
-            // simpleButton1
+            // cmd_Config
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 167);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Cấu hình";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.cmd_Config.Location = new System.Drawing.Point(12, 167);
+            this.cmd_Config.Name = "cmd_Config";
+            this.cmd_Config.Size = new System.Drawing.Size(75, 23);
+            this.cmd_Config.TabIndex = 4;
+            this.cmd_Config.Text = "Cấu hình";
+            this.cmd_Config.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // cmd_DangNhap
             // 
@@ -138,7 +139,7 @@
             this.ClientSize = new System.Drawing.Size(355, 202);
             this.Controls.Add(this.cmd_Thoat);
             this.Controls.Add(this.cmd_DangNhap);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.cmd_Config);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -166,7 +167,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton cmd_Config;
         private DevExpress.XtraEditors.SimpleButton cmd_DangNhap;
         private DevExpress.XtraEditors.SimpleButton cmd_Thoat;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;

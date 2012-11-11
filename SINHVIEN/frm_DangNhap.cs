@@ -69,16 +69,15 @@ namespace SINHVIEN
         bool CheckLogin()
         {
             dt_sv = sv.Login(txt_Masv.Text,txt_Matkhau.Text);
+            SINHVIEN.C_Base.obj.Masinhvien = txt_Masv.Text;
+            DataTable dt_info = new DataTable();
+            dt_info = sv.GetInfoById(txt_Masv.Text);
             if (dt_sv.Rows.Count == 1)
             {
-                
-                SINHVIEN.C_Base.obj.Masinhvien = txt_Masv.Text;
-                DataTable dt_info = new DataTable();
-                dt_info = sv.GetInfoById(txt_Masv.Text);
-
                 C_Base.obj.Tensinhvien = dt_info.Rows[0]["tensinhvien"].ToString();
                 C_Base.obj.Ngaysinh = dt_info.Rows[0]["ngaysinh_sinhvien"].ToString();
                 C_Base.obj.Lop = dt_info.Rows[0]["lop_idlop"].ToString();
+               if(dt_info.Rows[0]["avartar_sinhvien"].ToString()!="")
                 C_Base.obj.Avatar = (byte[])dt_info.Rows[0]["avartar_sinhvien"];
 
 
@@ -88,11 +87,21 @@ namespace SINHVIEN
 
 
                 C_Base.tt.Idphong = dt_info.Rows[0]["idphongthi"].ToString();
-                C_Base.tt.Matkhau=dt_info.Rows[0]["Matkhau"].ToString();
+                C_Base.tt.Matkhau = dt_info.Rows[0]["Matkhau"].ToString();
                 C_Base.tt.Dethi = dt_info.Rows[0]["dethi_iddethi"].ToString();
                 C_Base.tt.Thoigian = dt_info.Rows[0]["tongthoigianthi"].ToString();
+
+                if (!CheckScored())
+                {
+                   this.Hide();
+                    //XtraMessageBox.Show("Sinh viên có MSSV:" + txt_Masv.Text + " đã nộp bài");
+                    frm_KetQuaBaiThi frm = new frm_KetQuaBaiThi();
+                    frm.ShowDialog();
+                    this.Close();
+                    return false;
+                }
                 return true;
-            }
+            }  
             XtraMessageBox.Show("Đăng nhập không thành công");
             return false;
         }
@@ -100,12 +109,34 @@ namespace SINHVIEN
         {
             Close();
         }
-
+        /// <summary>
+        /// Kiểm tra đã nộp bài và chấm điểm hay chưa
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        bool CheckScored()
+        {
+            C_DanhSachThi dst = new C_DanhSachThi();
+            return  dst.KiemTraDangNhap(txt_Masv.Text,cbo_Phong.SelectedValue.ToString());
+        }
+        bool CheckExitsUserLogin()
+        {
+            DataTable dt_temp = new DataTable();
+            C_DanhSachDangThi dangthi=  new C_DanhSachDangThi();
+            dt_temp = dangthi.GetList(C_Base.tt.Idphong,C_Base.obj.Masinhvien);
+            if (dt_temp.Rows.Count >= 1)
+            {
+                XtraMessageBox.Show("Sinh viên "+C_Base.obj.Tensinhvien+" đang đăng nhập hệ thống tại 1 máy khác");
+                return false;
+            }
+            return true;
+        }
         private void cmd_DangNhap_Click(object sender, EventArgs e)
         {
             if (ValidInput())
             {
-                if (CheckLogin())
+
+                if (CheckLogin() && CheckExitsUserLogin())
                 {
                     Hide();
                     frm_MDI frm = new frm_MDI();
@@ -117,7 +148,7 @@ namespace SINHVIEN
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+           // frm_KetQuaBaiThi 
         }
     }
 }

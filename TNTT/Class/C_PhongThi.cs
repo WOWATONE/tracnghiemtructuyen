@@ -22,7 +22,7 @@ namespace TNTT.Class
         }
         public DataTable GetListByDate()
         {
-            string sql = @"SET DATEFORMAT DMY 
+            string sql = @"set dateformat dmy
                     SELECT * FROM Phongthi
                     WHERE ngaythi = '"+DateTime.Now.ToShortDateString()+"'";
             return db.GetData(sql);
@@ -67,6 +67,16 @@ and lop_idlop in (select lop_idlop from SINHVIEN where masinhvien='"+masv+"')";
         public void CloseRoom(string id)
         {
             string sql = "update PHONGTHI set tinhtrang = 0 where idphongthi = " + id;
+            db.ExcuteNonQuery(sql);
+        }
+        public void SetPassword(string id,string matkhau)
+        {
+            string sql = "update PHONGTHI set matkhau = '"+matkhau+"' where idphongthi = " + id;
+            db.ExcuteNonQuery(sql);
+        }
+        public void Scoring(string masinhvien, string idphongthi, string diem)
+        {
+            string sql = string.Format("INSERT INTO DANHSACHTHI VALUES('{0}',{1},{2},'01/01/2000','01/01/2000')", masinhvien, idphongthi, diem);
             db.ExcuteNonQuery(sql);
         }
     }

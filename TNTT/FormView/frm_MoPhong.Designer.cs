@@ -87,7 +87,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(235, 593);
+            this.groupControl2.Size = new System.Drawing.Size(219, 593);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "groupControl1";
             // 
@@ -105,8 +105,8 @@
             this.navBarItem2});
             this.navBarControl1.Location = new System.Drawing.Point(2, 2);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 231;
-            this.navBarControl1.Size = new System.Drawing.Size(231, 558);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 215;
+            this.navBarControl1.Size = new System.Drawing.Size(215, 586);
             this.navBarControl1.TabIndex = 9;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -135,7 +135,7 @@
             this.navBarGroupControlContainer1.Controls.Add(this.labelControl3);
             this.navBarGroupControlContainer1.Controls.Add(this.labelControl1);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(223, 177);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(207, 174);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
             // pictureBox3
@@ -244,7 +244,7 @@
             this.navBarGroupControlContainer2.Controls.Add(this.pictureBox2);
             this.navBarGroupControlContainer2.Controls.Add(this.labelControl5);
             this.navBarGroupControlContainer2.Name = "navBarGroupControlContainer2";
-            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(223, 287);
+            this.navBarGroupControlContainer2.Size = new System.Drawing.Size(207, 284);
             this.navBarGroupControlContainer2.TabIndex = 1;
             // 
             // lb_chucvu
@@ -274,7 +274,7 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(31, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(157, 179);
+            this.pictureBox2.Size = new System.Drawing.Size(145, 179);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -300,10 +300,10 @@
             this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl1.Controls.Add(this.groupControl4);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(235, 0);
+            this.groupControl1.Location = new System.Drawing.Point(219, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(721, 593);
+            this.groupControl1.Size = new System.Drawing.Size(737, 593);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -316,24 +316,24 @@
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.ShowCaption = false;
-            this.groupControl4.Size = new System.Drawing.Size(721, 593);
+            this.groupControl4.Size = new System.Drawing.Size(737, 593);
             this.groupControl4.TabIndex = 8;
             // 
             // listBox1
             // 
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(599, 2);
+            this.listBox1.Location = new System.Drawing.Point(540, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 367);
+            this.listBox1.Size = new System.Drawing.Size(195, 367);
             this.listBox1.TabIndex = 2;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(146, 367);
+            this.richTextBox1.Size = new System.Drawing.Size(733, 367);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
@@ -344,7 +344,7 @@
             this.groupControl5.Location = new System.Drawing.Point(2, 369);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.ShowCaption = false;
-            this.groupControl5.Size = new System.Drawing.Size(717, 222);
+            this.groupControl5.Size = new System.Drawing.Size(733, 222);
             this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "Chức năng:";
             // 
@@ -355,8 +355,8 @@
             this.panel1.Controls.Add(this.cmd_Help);
             this.panel1.Controls.Add(this.cmd_Thongbao);
             this.panel1.Controls.Add(this.cmd_Mophongthi);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(29, 2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 218);
             this.panel1.TabIndex = 1;
@@ -364,7 +364,7 @@
             // cmd_Mode
             // 
             this.cmd_Mode.Image = global::TNTT.Properties.Resources.open1;
-            this.cmd_Mode.Location = new System.Drawing.Point(148, 11);
+            this.cmd_Mode.Location = new System.Drawing.Point(280, 11);
             this.cmd_Mode.Name = "cmd_Mode";
             this.cmd_Mode.Size = new System.Drawing.Size(105, 42);
             this.cmd_Mode.TabIndex = 1;
@@ -374,7 +374,7 @@
             // cmd_thubaithi
             // 
             this.cmd_thubaithi.Image = global::TNTT.Properties.Resources.saoluudulieu;
-            this.cmd_thubaithi.Location = new System.Drawing.Point(271, 11);
+            this.cmd_thubaithi.Location = new System.Drawing.Point(403, 11);
             this.cmd_thubaithi.Name = "cmd_thubaithi";
             this.cmd_thubaithi.Size = new System.Drawing.Size(115, 42);
             this.cmd_thubaithi.TabIndex = 0;
@@ -384,7 +384,7 @@
             // cmd_Help
             // 
             this.cmd_Help.Image = global::TNTT.Properties.Resources.help;
-            this.cmd_Help.Location = new System.Drawing.Point(19, 117);
+            this.cmd_Help.Location = new System.Drawing.Point(536, 9);
             this.cmd_Help.Name = "cmd_Help";
             this.cmd_Help.Size = new System.Drawing.Size(98, 40);
             this.cmd_Help.TabIndex = 0;
@@ -394,7 +394,7 @@
             // cmd_Thongbao
             // 
             this.cmd_Thongbao.Image = global::TNTT.Properties.Resources.Yahoo_Messenger_icon;
-            this.cmd_Thongbao.Location = new System.Drawing.Point(18, 71);
+            this.cmd_Thongbao.Location = new System.Drawing.Point(154, 13);
             this.cmd_Thongbao.Name = "cmd_Thongbao";
             this.cmd_Thongbao.Size = new System.Drawing.Size(108, 40);
             this.cmd_Thongbao.TabIndex = 0;
@@ -404,7 +404,7 @@
             // cmd_Mophongthi
             // 
             this.cmd_Mophongthi.Image = global::TNTT.Properties.Resources.open;
-            this.cmd_Mophongthi.Location = new System.Drawing.Point(11, 11);
+            this.cmd_Mophongthi.Location = new System.Drawing.Point(20, 13);
             this.cmd_Mophongthi.Name = "cmd_Mophongthi";
             this.cmd_Mophongthi.Size = new System.Drawing.Size(115, 42);
             this.cmd_Mophongthi.TabIndex = 0;

@@ -15,6 +15,7 @@
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
     <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -58,6 +58,9 @@
     </Win32Resource>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -73,6 +76,7 @@
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Charts.v11.2.Core, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
@@ -130,6 +134,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.2.Extensions, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -147,6 +152,9 @@
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -221,6 +229,8 @@
     <Compile Include="Class\C_BoMon.cs" />
     <Compile Include="Class\C_CauHoi.cs" />
     <Compile Include="Class\C_CauTraLoi.cs" />
+    <Compile Include="Class\C_DanhSachDangThi.cs" />
+    <Compile Include="Class\C_DanhSachThi.cs" />
     <Compile Include="Class\C_DeThi.cs" />
     <Compile Include="Class\C_DSMH.cs" />
     <Compile Include="Class\C_Export.cs" />
@@ -261,6 +271,18 @@
     </Compile>
     <Compile Include="Component\frm_EditInformation.Designer.cs">
       <DependentUpon>frm_EditInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\frm_PhucHoiDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\frm_PhucHoiDuLieu.designer.cs">
+      <DependentUpon>frm_PhucHoiDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\frm_SaoLuuDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\frm_SaoLuuDuLieu.Designer.cs">
+      <DependentUpon>frm_SaoLuuDuLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\frm_Thongbao.cs">
       <SubType>Form</SubType>
@@ -432,9 +454,27 @@
     <Compile Include="frm_MDI.Designer.cs">
       <DependentUpon>frm_MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Import-Export\frm_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import-Export\frm_Import.Designer.cs">
+      <DependentUpon>frm_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import-Export\frm_SelectSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import-Export\frm_SelectSheet.Designer.cs">
+      <DependentUpon>frm_SelectSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="PreBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RpDanhSachSv1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpDanhSachSv1.Designer.cs">
+      <DependentUpon>RpDanhSachSv1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Component\frm_About.resx">
       <DependentUpon>frm_About.cs</DependentUpon>
     </EmbeddedResource>
@@ -446,6 +486,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_EditInformation.resx">
       <DependentUpon>frm_EditInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\frm_PhucHoiDuLieu.resx">
+      <DependentUpon>frm_PhucHoiDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\frm_SaoLuuDuLieu.resx">
+      <DependentUpon>frm_SaoLuuDuLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\frm_Thongbao.resx">
       <DependentUpon>frm_Thongbao.cs</DependentUpon>
@@ -531,6 +577,12 @@
     <EmbeddedResource Include="frm_MDI.resx">
       <DependentUpon>frm_MDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Import-Export\frm_Import.resx">
+      <DependentUpon>frm_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import-Export\frm_SelectSheet.resx">
+      <DependentUpon>frm_SelectSheet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -542,6 +594,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RpDanhSachSv1.resx">
+      <DependentUpon>RpDanhSachSv1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Database\App.config" />
     <None Include="Properties\Settings.settings">
@@ -681,6 +736,8 @@
     <Content Include="Database\ThucHanh-CNPM.sql" />
     <Content Include="Images\changepass.png" />
     <None Include="Resources\about_us.png" />
+    <None Include="Resources\add16.png" />
+    <None Include="Resources\add161.png" />
     <Content Include="Resources\avt.png" />
     <None Include="Resources\Eye-icon.png" />
     <None Include="Resources\eyes.png" />
@@ -710,6 +767,7 @@
     <Content Include="Resources\class.png" />
     <Content Include="Resources\closeall.png" />
     <None Include="Resources\INRP1.png" />
+    <None Include="Resources\delete16.png" />
     <Content Include="Resources\khoa.png" />
     <Content Include="Resources\monhoc.png" />
     <None Include="Resources\Select.png" />
@@ -723,6 +781,15 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="ADOX">
+      <Guid>{00000600-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="AxDSOFramer">
       <Guid>{00460180-9E5E-11D5-B7C8-B8269041DD57}</Guid>
       <VersionMajor>1</VersionMajor>

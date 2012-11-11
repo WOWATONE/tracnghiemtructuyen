@@ -127,7 +127,7 @@ namespace TNTT
 
         private void btn_Setup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowDiaLog<FrmAddConnection>(this);
+            PreBase.ShowDiaLog<Component.frm_Config>(this);
         }
 
         private void btn_Monhoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -182,7 +182,7 @@ namespace TNTT
 
         private void btn_Backup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PreBase.ShowForm<FormView.frm_TaoCauHoi>(this);
+            PreBase.ShowDiaLog<Component.frm_SaoLuuDuLieu>(this);
         }
 
         private void btn_Phongthi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -223,6 +223,11 @@ namespace TNTT
         private void btn_About_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             PreBase.ShowDiaLog<Component.frm_About>(this);
+        }
+
+        private void btn_Restore_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PreBase.ShowDiaLog<Component.frm_PhucHoiDuLieu>(this);
         }
     }
 }

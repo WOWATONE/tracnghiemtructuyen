@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TNTT.Class;
+using TNTT.Import_Export;
 using DevExpress.XtraEditors;
 namespace TNTT.FormView
 {
@@ -42,6 +43,7 @@ namespace TNTT.FormView
             Init();
             DataBind();
             Click_Perform(true);
+
         }
         #region OVERIDE
        
@@ -52,6 +54,9 @@ namespace TNTT.FormView
                 AllowDelete = false;
             base.UserAccessFunction();
         }
+
+        
+
         public override void Add()
         {
             //PreBase.ShowDiaLog<frm_CauHoi>(this);

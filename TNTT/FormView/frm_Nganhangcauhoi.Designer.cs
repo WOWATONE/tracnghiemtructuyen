@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.rec_NoiDung = new DevExpress.XtraRichEdit.RichEditControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
@@ -41,7 +40,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_NHCauHoi)).BeginInit();
@@ -55,9 +54,9 @@
             this.groupControl1.Controls.Add(this.splitterControl1);
             this.groupControl1.Controls.Add(this.grd_NHCauHoi);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 63);
+            this.groupControl1.Location = new System.Drawing.Point(0, 65);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1020, 365);
+            this.groupControl1.Size = new System.Drawing.Size(1020, 363);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -65,16 +64,16 @@
             // 
             this.rec_NoiDung.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
             this.rec_NoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rec_NoiDung.Location = new System.Drawing.Point(603, 21);
+            this.rec_NoiDung.Location = new System.Drawing.Point(602, 21);
             this.rec_NoiDung.Name = "rec_NoiDung";
-            this.rec_NoiDung.Size = new System.Drawing.Size(415, 342);
+            this.rec_NoiDung.Size = new System.Drawing.Size(416, 340);
             this.rec_NoiDung.TabIndex = 2;
             // 
             // splitterControl1
             // 
             this.splitterControl1.Location = new System.Drawing.Point(597, 21);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(6, 342);
+            this.splitterControl1.Size = new System.Drawing.Size(5, 340);
             this.splitterControl1.TabIndex = 1;
             this.splitterControl1.TabStop = false;
             // 
@@ -84,7 +83,7 @@
             this.grd_NHCauHoi.Location = new System.Drawing.Point(2, 21);
             this.grd_NHCauHoi.MainView = this.gridView1;
             this.grd_NHCauHoi.Name = "grd_NHCauHoi";
-            this.grd_NHCauHoi.Size = new System.Drawing.Size(595, 342);
+            this.grd_NHCauHoi.Size = new System.Drawing.Size(595, 340);
             this.grd_NHCauHoi.TabIndex = 0;
             this.grd_NHCauHoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

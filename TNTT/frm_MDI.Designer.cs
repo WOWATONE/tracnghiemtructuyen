@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MDI));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup18 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem18 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.iNew = new DevExpress.XtraBars.BarButtonItem();
             this.iOpen = new DevExpress.XtraBars.BarButtonItem();
@@ -100,8 +99,8 @@
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.TabMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.TabMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -494,6 +493,7 @@
             this.btn_Restore.Id = 90;
             this.btn_Restore.LargeGlyph = global::TNTT.Properties.Resources.restore;
             this.btn_Restore.Name = "btn_Restore";
+            this.btn_Restore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Restore_ItemClick);
             // 
             // btn_Question
             // 
@@ -505,7 +505,7 @@
             // 
             // btn_Phongthi
             // 
-            this.btn_Phongthi.Caption = "Thi trực tuyến";
+            this.btn_Phongthi.Caption = "Quản lý phòng thi";
             this.btn_Phongthi.Id = 92;
             this.btn_Phongthi.LargeGlyph = global::TNTT.Properties.Resources.lophoc;
             this.btn_Phongthi.Name = "btn_Phongthi";
@@ -548,15 +548,15 @@
             // ribbonGalleryBarItem1
             // 
             this.ribbonGalleryBarItem1.Gallery.AllowHoverImages = true;
-            galleryItemGroup2.Caption = "Group1";
-            galleryItem2.Caption = "Item1";
-            galleryItem2.Checked = true;
-            galleryItem2.HoverImage = global::TNTT.Properties.Resources.user;
-            galleryItem2.Image = global::TNTT.Properties.Resources.user;
-            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem2});
+            galleryItemGroup18.Caption = "Group1";
+            galleryItem18.Caption = "Item1";
+            galleryItem18.Checked = true;
+            galleryItem18.HoverImage = global::TNTT.Properties.Resources.user;
+            galleryItem18.Image = global::TNTT.Properties.Resources.user;
+            galleryItemGroup18.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem18});
             this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup2});
+            galleryItemGroup18});
             this.ribbonGalleryBarItem1.Id = 99;
             this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             this.ribbonGalleryBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ribbonGalleryBarItem1_ItemClick);
@@ -571,7 +571,7 @@
             // 
             // btn_MoPhong
             // 
-            this.btn_MoPhong.Caption = "Mở phòng thi";
+            this.btn_MoPhong.Caption = "Mở phòng thi trắc nghiệm";
             this.btn_MoPhong.Id = 101;
             this.btn_MoPhong.LargeGlyph = global::TNTT.Properties.Resources.exam;
             this.btn_MoPhong.Name = "btn_MoPhong";

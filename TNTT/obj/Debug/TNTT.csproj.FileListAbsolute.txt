@@ -449,3 +449,12 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.exe
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.pdb
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\FirstConnectDB.dll
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\FirstConnectDB.pdb
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\Interop.ADOX.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Import_Export.frm_Import.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Import_Export.frm_SelectSheet.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Microsoft.Office.Interop.Excel.xml
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Debug\Interop.ADOX.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.RpDanhSachSv1.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_PhucHoiDuLieu.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Debug\TNTT.Component.frm_SaoLuuDuLieu.resources
