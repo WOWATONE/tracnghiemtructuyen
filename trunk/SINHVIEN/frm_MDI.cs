@@ -61,6 +61,7 @@ namespace SINHVIEN
         private void frm_Thi_Load(object sender, EventArgs e)
         {
             LoadInfo();
+            UpdateList(true);
         }
         private void cmd_Nopbai_Click(object sender, EventArgs e)
         {
@@ -402,10 +403,14 @@ namespace SINHVIEN
         void Scoring()
         {
             //chạy từ đầu tới cuối danh sách
+            DataTable dt_temp = new DataTable();
+            dt_temp.Columns.Add("STT");
+            dt_temp.Columns.Add("Trạng thái");
             int count = 0;
             for (int i = 0; i < a.Length; i++)
             {
-               // MessageBox.Show(ds[i].NumberAns.ToString());
+               // Số thứ tự
+                
                 bool isTrue = true;
                 for (int j = 0; j < ds[i].NumberAns; j++)
                 {
@@ -414,15 +419,23 @@ namespace SINHVIEN
                         isTrue = false;
                 }
                 if (isTrue)
+                {
+                    dt_temp.Rows.Add(i.ToString(), "Đúng");
                     count++;
+                }
+                else
+                    dt_temp.Rows.Add(i.ToString(), "Sai");
             }
-            MessageBox.Show(count + "/" + a.Length);
-            Application.Restart();
-           
+            TNTT.Class.C_PhongThi pt = new C_PhongThi();
+            pt.Scoring(C_Base.obj.Masinhvien,C_Base.tt.Idphong,((count/a.Length)*10).ToString());
+            C_Base.obj.Diem = (count / a.Length) * 10;
+            frm_KetQuaBaiThi frm = new frm_KetQuaBaiThi(dt_temp);
+            frm.ShowDialog();         
             
         }
         private void cmd_nop_Click(object sender, EventArgs e)
         {
+            cmd_nop.Enabled = false;
             Scoring();
             CloseSocket();
         }
@@ -468,6 +481,21 @@ namespace SINHVIEN
             cmdConnect.Enabled = false;
             //cmd_LamBai.Enabled = true;
         }
+        string ipaddress = "192.168.1.101";
+        void UpdateList(bool add)
+        {
+            if (add)
+            {
+                C_DanhSachDangThi dathi = new C_DanhSachDangThi();
+                dathi.Add(C_Base.tt.Idphong, C_Base.obj.Masinhvien);
+            }
+            else
+            {
+                C_DanhSachDangThi dathi = new C_DanhSachDangThi();
+                dathi.Delete(C_Base.obj.Masinhvien,C_Base.tt.Idphong);
+
+            }
+        }
         void ConnectToServer()
         {
             try
@@ -483,13 +511,17 @@ namespace SINHVIEN
                 //sau khi ket noi thanh cong tien hang gui thong tin den máy chủ
                 SendInfo();
                 UpdateControls();
+                //danh sach thi
+                //UpdateList(true);
             }
             catch (SocketException se)
             {
-                string str;
-                str = "\nConnection failed, is the server running?\n" + se.Message;
-                MessageBox.Show(str);
-                // UpdateControls(false);
+                var result = MessageBox.Show("Máy chủ không hoạt động. Bạn có muốn cấu hình với 1 IP khác không?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    frm_Ip frm = new frm_Ip();
+                    //ipaddress += new frm_Ip.Iphandler(
+                }
             }
         }
         public void WaitForData()
@@ -584,6 +616,12 @@ namespace SINHVIEN
             }
         }
         #endregion
+
+        private void frm_MDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //xoa danh sách
+            UpdateList(false);
+        }
 
 
     }

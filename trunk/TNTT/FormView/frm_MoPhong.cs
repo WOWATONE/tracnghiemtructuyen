@@ -61,6 +61,7 @@ namespace TNTT.FormView
                 pictureBox1.Image = Component.Com_Base.Convert_Text_to_Image(strimg, "Bookman Old Style", 20); // Passing appropriate value to Convert_Text_to_Image method 
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 cbo_DsPhong.Enabled = false;
+                pt.SetPassword(cbo_DsPhong.SelectedValue.ToString(), strimg);
 
             }
         }
@@ -134,7 +135,8 @@ namespace TNTT.FormView
                         }
                     }
                 }
-
+                Class.PreBase.obj_user.IsConnect = true;
+                //MessageBox.Show("Kết nối thành công");
             }
             catch (SocketException se)
             {
@@ -239,6 +241,7 @@ namespace TNTT.FormView
                     {
                         if (workerSocket.Connected)
                         {
+                            // listBox1.Items.Add();
                             listBox1.Items.Add(clientKey);
                             //richTextBox1.AppendText(clientKey);
                         }

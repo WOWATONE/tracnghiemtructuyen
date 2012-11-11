@@ -91,7 +91,7 @@ namespace TNTT.FormView
             cmd_Add.Enabled = cmd_Delete.Enabled = cmd_Edit.Enabled = cmd_Refresh.Enabled= cmd_Print.Enabled=cmd_Search.Enabled= flag;
             cmd_Save.Enabled = cmd_Cancel.Enabled = !flag;
         }
-        public virtual void LayDuLieu(){ }
+        public virtual void LayDuLieu() { }
         public virtual void InDuLieu() { }
         #endregion
         private void cmd_Add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -304,7 +304,7 @@ namespace TNTT.FormView
 
         private void cmd_InDuLieu_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            InDuLieu();
         }
 
         

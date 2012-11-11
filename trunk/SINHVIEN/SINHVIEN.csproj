@@ -61,12 +61,18 @@
     <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.XtraRichEdit.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -110,6 +116,18 @@
     <Compile Include="frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Ip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ip.Designer.cs">
+      <DependentUpon>frm_Ip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_KetQuaBaiThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_KetQuaBaiThi.Designer.cs">
+      <DependentUpon>frm_KetQuaBaiThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_MDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +144,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ip.resx">
+      <DependentUpon>frm_Ip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_KetQuaBaiThi.resx">
+      <DependentUpon>frm_KetQuaBaiThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MDI.resx">
       <DependentUpon>frm_MDI.cs</DependentUpon>

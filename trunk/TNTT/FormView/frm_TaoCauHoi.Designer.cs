@@ -130,7 +130,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(49, 344);
+            this.barDockControlLeft.Size = new System.Drawing.Size(51, 344);
             // 
             // barDockControlRight
             // 
@@ -149,10 +149,10 @@
             // 
             this.axFramerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axFramerControl1.Enabled = true;
-            this.axFramerControl1.Location = new System.Drawing.Point(49, 0);
+            this.axFramerControl1.Location = new System.Drawing.Point(51, 0);
             this.axFramerControl1.Name = "axFramerControl1";
             this.axFramerControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axFramerControl1.OcxState")));
-            this.axFramerControl1.Size = new System.Drawing.Size(682, 344);
+            this.axFramerControl1.Size = new System.Drawing.Size(680, 344);
             this.axFramerControl1.TabIndex = 0;
             // 
             // frm_TaoCauHoi

@@ -190,3 +190,14 @@ F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.FormView.frm_TaoCauHoi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\bin\Release\Database\QLCHAMDIEMTRACNGHIEM.mdf
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.FormView.cbo_Phongthi.resources
 F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.FormView.frm_TaoDeTC.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Release\FirstConnectDB.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Release\Microsoft.Office.Interop.Excel.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Release\FirstConnectDB.pdb
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Release\Microsoft.Office.Interop.Excel.xml
+F:\De Tai Mon Hoc\TNTT\TNTT\bin\Release\Interop.ADOX.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\Interop.ADOX.dll
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.Component.frm_About.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.Component.frm_Thongbao.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.FormView.frm_SVHocLai.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.Import_Export.frm_Import.resources
+F:\De Tai Mon Hoc\TNTT\TNTT\obj\Release\TNTT.Import_Export.frm_SelectSheet.resources

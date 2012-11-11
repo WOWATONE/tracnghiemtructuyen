@@ -27,10 +27,22 @@ namespace TNTT.Database
         }
         public void ExcuteNonQuery(string sql)
         {
-            SqlCommand sqlcm = new SqlCommand(sql, sqlcnn);
-            sqlcnn.Open();
-            sqlcm.ExecuteNonQuery();
-            sqlcnn.Close();
+            try
+            {
+
+                SqlCommand sqlcm = new SqlCommand(sql, sqlcnn);
+                sqlcnn.Open();
+                sqlcm.ExecuteNonQuery();
+                sqlcnn.Close();
+            }
+            catch (Exception ex)
+            {
+            }
+            finally {
+                if (sqlcnn.State == ConnectionState.Open)
+                    sqlcnn.Close();
+            }
+
         }
         
 

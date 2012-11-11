@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
-
+using TNTT.Import_Export;
 namespace TNTT.FormView
 {
     public partial class frm_SinhVien : frm_tool
@@ -25,7 +25,8 @@ namespace TNTT.FormView
         DataTable dt_khoa = new DataTable();
         DataTable dt_sinhvien = new DataTable();
         string _state = "";
-
+        string i = "";
+        DataTable temp = new DataTable();
         public frm_SinhVien()
         {
             InitializeComponent();
@@ -77,6 +78,8 @@ namespace TNTT.FormView
         {
             string str = tlDanhSachLop.FocusedNode.GetValue("id").ToString();
             dt_sinhvien = sinhvien.GetListbyIdLop(str);
+            temp = sinhvien.GetListbyIdLop(str);
+            i = str;
             grd_DanhSach.DataSource = dt_sinhvien;
             LoadImage();
             //ClearDataBind();
@@ -85,6 +88,127 @@ namespace TNTT.FormView
         }
 
         #region override
+
+        public override void LayDuLieu()
+        {
+            base.LayDuLieu();
+            frm_Import imp = new frm_Import();
+            imp.ShowDialog();
+        }
+
+        public override void InDuLieu()
+        {
+            try
+            {
+                temp.Columns.Remove("avartar_sinhvien");
+                temp.Columns.Remove("malop");
+                Export(temp, "ThongTinSinhVien", "Thông Tin Sinh Viên");
+                base.InDuLieu();
+            }
+            catch { }
+        }
+
+        public void Export(DataTable dt, string sheetName, string title)
+        {
+            int i = dt.Columns.Count;
+            //Tạo các đối tượng Excel 
+            Microsoft.Office.Interop.Excel.Application oExcel = new
+            Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbooks oBooks;
+            Microsoft.Office.Interop.Excel.Sheets oSheets;
+            Microsoft.Office.Interop.Excel.Workbook oBook;
+            Microsoft.Office.Interop.Excel.Worksheet oSheet;
+
+            //Tạo mới một Excel WorkBook  
+            oExcel.Visible = true;
+            oExcel.DisplayAlerts = false;
+            oExcel.Application.SheetsInNewWorkbook = 1;
+            oBooks = oExcel.Workbooks;
+
+            oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
+            oSheets = oBook.Worksheets;
+            oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
+            oSheet.Name = sheetName;
+
+            // Tạo phần đầu 
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
+            head.MergeCells = true;
+            head.Value2 = title;
+            head.Font.Bold = true;
+            head.Font.Name = "Tahoma";
+            head.Font.Size = "18";
+            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Tạo tiêu đề cột  
+            Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
+            cl1.Value2 = "masinhvien";
+            cl1.ColumnWidth = 13.5;
+            Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
+            cl2.Value2 = "tensinhvien";
+            cl2.ColumnWidth = 20.0;
+
+            Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
+            cl3.Value2 = "ngaysinh_sinhvien";
+            cl3.ColumnWidth = 20.0;
+
+            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
+            cl4.Value2 = "diachi_sinhvien";
+            cl4.ColumnWidth = 20.0;
+
+            Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
+            cl5.Value2 = "dienthoai_sinhvien";
+            cl5.ColumnWidth = 20.0;
+
+            Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
+            cl6.Value2 = "email_sinhvien";
+            cl6.ColumnWidth = 20.0;
+
+            Microsoft.Office.Interop.Excel.Range cl8 = oSheet.get_Range("G3", "G3");
+            cl8.Value2 = "lop_idlop";
+            cl8.ColumnWidth = 20.0;
+
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "G3");
+            rowHead.Font.Bold = true;
+            // Kẻ viền 
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+            // Thiết lập màu nền 
+            rowHead.Interior.ColorIndex = 15;
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            // Tạo mảng đối tượng để lưu dữ toàn bồ dữ liệu trong DataTable, 
+            object[,] arr = new object[dt.Rows.Count, dt.Columns.Count];
+            //Chuyển dữ liệu từ DataTable vào mảng đối tượng 
+            for (int r = 0; r < dt.Rows.Count; r++)
+            {
+                DataRow dr = dt.Rows[r];
+                for (int c = 0; c < dt.Columns.Count; c++)
+                {
+                    arr[r, c] = dr[c];
+                }
+            }
+            //Thiết lập vùng điền dữ liệu 
+            int rowStart = 4;
+            int columnStart = 1;
+
+            int rowEnd = rowStart + dt.Rows.Count - 1;
+            int columnEnd = dt.Columns.Count;
+            if (rowEnd >= rowStart && columnEnd >= columnStart)
+            {
+                // Ô bắt đầu điền dữ liệu 
+                Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
+                // Ô kết thúc điền dữ liệu 
+                Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
+                // Lấy về vùng điền dữ liệu 
+                Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
+                //Điền dữ liệu vào vùng đã thiết lập 
+                range.Value2 = arr;
+                // Kẻ viền 
+                range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+                // Canh giữa cột STT 
+                Microsoft.Office.Interop.Excel.Range c3 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnStart];
+                Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
+                oSheet.get_Range(c3, c4).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            }
+        }
 
         public override void UserAccessFunction()
         {
@@ -143,6 +267,7 @@ namespace TNTT.FormView
                 base.DataBind();
             }
         }
+
         public override void Cancel()
         {
             base.Cancel();
@@ -150,6 +275,7 @@ namespace TNTT.FormView
             Init();
             DataBind();
         }
+
         public override void Init()
         {
             BestFit();
@@ -198,6 +324,7 @@ namespace TNTT.FormView
                 XtraMessageBox.Show("Không thể xóa sinh viên !\nvì trong sinh viên này còn danh sách thi hoặc danh sách môn học lại  !! ");
             }
         }
+
         public override bool ValidInput()
         {
             if (txtMaSinhVien.Text.Trim() == null)
@@ -234,6 +361,7 @@ namespace TNTT.FormView
 
             return base.ValidInput();
         }
+
         public override void Save()
         {
             switch (_state)
@@ -276,6 +404,7 @@ namespace TNTT.FormView
                 e.Handled = true;
             }
         }
+
         void ConvertImage(string path)
         {
             FileInfo finfo = new FileInfo(path);
@@ -288,6 +417,7 @@ namespace TNTT.FormView
             avatar_sinhvien = btImage;
             //pic_avt.Image = new Bitmap(open.FileName);
         }
+
         private void cmd_changeAvt_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -298,6 +428,7 @@ namespace TNTT.FormView
                 pic_avt.Image = new Bitmap(open.FileName);
             }  
         }
+
         void LoadImage()
         {
             try
@@ -314,6 +445,7 @@ namespace TNTT.FormView
                 pic_avt.Refresh();
             }
         }
+
         void SaveImage(string idsinhvien)
         {
 
@@ -332,12 +464,14 @@ namespace TNTT.FormView
                 }
             }
         }
+
         void DefaultImage()
         {
             pic_avt.Image = Image.FromFile(@"Avatar/1.jpg");
             pic_avt.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_avt.Refresh();
         }
+
         void ReloadImage()
         {
             try
@@ -348,6 +482,7 @@ namespace TNTT.FormView
             }
             catch { LoadImage(); }
         }
+
         private void gv_DanhSach_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             try

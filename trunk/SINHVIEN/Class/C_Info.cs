@@ -43,5 +43,12 @@ namespace SINHVIEN.Class
             get { return avatar; }
             set { avatar = value; }
         }
+        int diem;
+
+        public int Diem
+        {
+            get { return diem; }
+            set { diem = value; }
+        }
     }
 }
